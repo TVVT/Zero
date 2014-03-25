@@ -1,0 +1,12 @@
+#list{
+	width: 100%;
+	background-color: #ffffff;
+	text-align: center;
+	color: #000;
+	margin-bottom: 2px;
+}
+#list ul li{
+	line-height: 40px;
+	background-color: green;
+	margin-top: 2px;
+}

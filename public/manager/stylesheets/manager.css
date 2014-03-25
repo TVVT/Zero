@@ -1,0 +1,52 @@
+*{
+	margin:0;
+	padding: 0
+}
+body{
+	background-color: #F3F2F2;
+}
+#manager-header{
+	height: 60px;
+	background-color: #740101;
+}
+#manager-header .manager-title{
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #F3F2F2;
+	text-indent: 20px;
+}
+#manager-content{
+
+}
+#manager-content .manager-ui-info,#manager-content .manager-page-info{
+	float: left;
+	width: 300px;
+	border-right: 1px solid #000;
+	min-height: 800px;
+}
+#manager-content .manager-ui-show,#manager-content .manager-page-show,#manager-content .manager-page-analyse{
+	float: left;
+	width: 320px;
+	padding: 50px;
+}
+#manager-content .manager-page-show{
+	border-right: 1px solid #000;
+	min-height: 800px;
+
+}
+.manager-info-wrapper{
+	margin: 50px 50px 0 30px;
+}
+.manager-info-wrapper div{
+
+}
+.manager-info-wrapper label{
+	line-height: 30px;
+	width: 80px;
+	text-align: right;
+	display: inline-block;
+}
+#page-manager-iframe{
+	min-height: 800px;
+}

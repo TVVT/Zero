@@ -5,7 +5,7 @@
 
 var express = require('express');
 var uis = require('./routes/uis');
-var views = require('./routes/views')
+var pages = require('./routes/pages')
 var http = require('http');
 var path = require('path');
 
@@ -28,11 +28,14 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-// app.get('/', routes.index);
-// app.get('/users', user.list);
+
 app.get('/uis',uis.list);
 app.get('/uis/:name',uis.ui);
-// app.get('/views/:id',views.index);
+app.get('/uis/:name/:id',uis.uiById);
+
+app.get('/pages',pages.list);
+app.get('/pages/:name',pages.page);
+app.get('/pages/preview/:name',pages.pagePreview);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
