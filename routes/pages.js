@@ -37,7 +37,7 @@ exports.pagePreview = function(req,res){
 				'textAlign':'center'
 			},
 			list:{
-				listData:[{id:1,name:'kevin14'},{id:2,name:'fengfeng'}],
+				listData:[{id:1,name:'kevin14'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'}],
 				'textAlign':'left'
 			},
 			footer:{
