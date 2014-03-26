@@ -1,5 +1,5 @@
 {
-	"projectName": "./",
+	"projectName": "test_project",
 	"pages": {
 		"homepage": {
 			"moduleName": "homepage",

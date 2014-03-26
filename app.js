@@ -35,8 +35,8 @@ app.get('/uis/download/:name',uis.uiDownload);
 app.get('/uis/:name/:id',uis.uiById);
 
 app.get('/pages',pages.list);
-app.get('/pages/:name',pages.page);
-app.get('/pages/preview/:name',pages.pagePreview);
+app.get('/pages/:projectName/:name',pages.page);
+app.get('/pages/preview/:projectName/:name',pages.pagePreview);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

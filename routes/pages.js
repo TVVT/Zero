@@ -5,7 +5,7 @@ var ejs = require('ejs'),
 	dirname = path.dirname,
 	extname = path.extname,
 	join = path.join,
-	moduleConfig = require('../moduleConfig.json');
+	moduleConfig ={};
 /*
  * GET users listing.
  */
@@ -16,8 +16,10 @@ exports.list = function(req, res){
 
 exports.page = function(req,res){
 	var pageName = req.params.name;
+	var projectName = req.params.projectName;
+	moduleConfig = require('../views/'+projectName+'/moduleConfig.json');
 	var pageConfig = getModuleConfig("pages",pageName);
-
+	pageConfig.projectName = projectName;
 	var renderData = {
 		moduleConfig:pageConfig
 	}
@@ -35,11 +37,14 @@ exports.page = function(req,res){
 
 exports.pagePreview = function(req,res){
 	var pageName = req.params.name;
+	var projectName = req.params.projectName;
+	moduleConfig = require('../views/'+projectName+'/moduleConfig.json');
 	var pageConfig = getModuleConfig("pages",pageName);
+	pageConfig.projectName = projectName;
 	var renderData = {
 		moduleConfig:pageConfig
 	}
-	res.render(moduleConfig.projectName+'pages/'+pageName+'.ejs',renderData);
+	res.render(moduleConfig.projectName+'/pages/'+pageName+'.ejs',renderData);
 }
 
 /*
@@ -64,7 +69,7 @@ function getModuleConfig(moduleType,name){
 function getHtmls(pathNames,renderData){
 	var htmls = [];
 	for(var i = 0;i<pathNames.length;i++){
-		var pathName = resolveInclude('../../'+pathNames[i],fs.realpathSync(pathNames[i]));
+		var pathName = resolveInclude('../../../'+pathNames[i],fs.realpathSync(pathNames[i]));
 		var html = ejs.render(read(pathName, 'utf8'),renderData);
 		htmls.push(html);
 	}

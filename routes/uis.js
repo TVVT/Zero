@@ -51,7 +51,7 @@ exports.uiDownload = function(req, res) {
 function getHtmls(pathNames,renderData){
 	var htmls = [];
 	for(var i = 0;i<pathNames.length;i++){
-		var pathName = resolveInclude('../../'+pathNames[i],fs.realpathSync(pathNames[i]));
+		var pathName = resolveInclude('../../../'+pathNames[i],fs.realpathSync(pathNames[i]));
 		var html = ejs.render(read(pathName, 'utf8'),renderData);
 		htmls.push(html);
 	}
