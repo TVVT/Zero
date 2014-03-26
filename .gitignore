@@ -1,1 +1,4 @@
 node_modules/
+
+#TMP_Files
+*.DS_Store

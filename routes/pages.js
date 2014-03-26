@@ -17,7 +17,7 @@ exports.list = function(req, res){
 exports.page = function(req,res){
 	var pageName = req.params.name;
 	var projectName = req.params.projectName;
-	moduleConfig = require('../views/'+projectName+'/moduleConfig.json');
+	moduleConfig = require('../../Projects/'+projectName+'/config.json');
 	var pageConfig = getModuleConfig("pages",pageName);
 	pageConfig.projectName = projectName;
 	var renderData = {
@@ -30,15 +30,16 @@ exports.page = function(req,res){
 	}
 	var htmls = getHtmls(modulePath,renderData);
 	renderData.htmls = htmls;
-
-
-	res.render('manager/manager_page.ejs',renderData);
+	console.log(renderData);
+	res.send('...');
+	// res.render('manager/manager_page.ejs',renderData);
 }
 
 exports.pagePreview = function(req,res){
+	console.log('pagePreview');
 	var pageName = req.params.name;
 	var projectName = req.params.projectName;
-	moduleConfig = require('../views/'+projectName+'/moduleConfig.json');
+	moduleConfig = require('../../Projects/'+projectName+'/config.json');
 	var pageConfig = getModuleConfig("pages",pageName);
 	pageConfig.projectName = projectName;
 	var renderData = {
