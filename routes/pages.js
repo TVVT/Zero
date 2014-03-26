@@ -19,7 +19,7 @@ exports.page = function(req,res){
 	//renderData中的这些4个配置不能少 pageName,modules,moduleConfig,htmls,modulesName[i]
 	var renderData = {
 		pageName:pageName,
-		modules:['m.yhd.com.views/uis/header.ejs','m.yhd.com.views/uis/list.ejs','m.yhd.com.views/uis/footer.ejs'],
+		modules:['views/uis/header.ejs','views/uis/list.ejs','views/uis/footer.ejs'],
 		modulesName:['header','list','footer'],
 		moduleConfig:{
 			header:{

@@ -38,7 +38,7 @@ exports.list = function(req, res) {
 
 exports.uiDownload = function(req, res) {
 	var uiName = req.params.name;
-	var downloadLink = fs.realpathSync('m.yhd.com.views/uis/'+uiName+'.ejs');
+	var downloadLink = fs.realpathSync('views/uis/'+uiName+'.ejs');
 	res.download(downloadLink, uiName+'.ejs', function(err) {
 		if (err) {
 			console.log(err);
