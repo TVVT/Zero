@@ -31,7 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/uis',uis.list);
 app.get('/uis/:name',uis.ui);
-app.get('/uis/download/:name',uis.uiDownload);
+app.get('/uis/download/:projectName/:name',uis.uiDownload);
 app.get('/uis/:name/:id',uis.uiById);
 
 app.get('/pages',pages.list);

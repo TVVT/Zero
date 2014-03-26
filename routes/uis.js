@@ -4,7 +4,8 @@ var ejs = require('ejs'),
 	path = require('path'),
 	dirname = path.dirname,
 	extname = path.extname,
-	join = path.join;
+	join = path.join,
+	moduleConfig ={};
 
 exports.list = function(req, res) {
 	res.send('成功！');
@@ -38,7 +39,8 @@ exports.list = function(req, res) {
 
 exports.uiDownload = function(req, res) {
 	var uiName = req.params.name;
-	var downloadLink = fs.realpathSync('views/uis/'+uiName+'.ejs');
+	var projectName = req.params.projectName;
+	var downloadLink = fs.realpathSync('views/'+projectName+'/uis/'+uiName+'.ejs');
 	res.download(downloadLink, uiName+'.ejs', function(err) {
 		if (err) {
 			console.log(err);
