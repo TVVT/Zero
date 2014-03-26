@@ -38,10 +38,8 @@ exports.list = function(req, res) {
 
 exports.uiDownload = function(req, res) {
 	var uiName = req.params.name;
-
-	var html = getHtmls('m.yhd.com.views/uis/'+uiName+'.ejs')
-
-	res.download('/Users/kevin14/web/m.yhd.com/UIManager/m.yhd.com.views/layouts/base.ejs', 'base.ejs', function(err) {
+	var downloadLink = fs.realpathSync('m.yhd.com.views/uis/'+uiName+'.ejs');
+	res.download(downloadLink, uiName+'.ejs', function(err) {
 		if (err) {
 			console.log(err);
 		} else {
