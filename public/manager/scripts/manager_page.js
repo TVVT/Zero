@@ -18,7 +18,7 @@
 			return;
 		};
 
-		e_developper.innerText = developper.value;
-		e_moduleName.innerText = moduleName.value;
+		// e_developper.innerText = developper.value;
+		// e_moduleName.innerText = moduleName.value;
 	}
 })(window);

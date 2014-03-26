@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="/ui_source/stylesheets/list.css">
 <div id="list" module-name="list" developper="kevin14">
 	<ul>
-		<%for(var i=0;i<moduleConfig.list.listData.length;i++){ %>
+		<%for(var i=0;i<moduleConfig.list.defaultData.length;i++){ %>
 			<li>
-				<span><%=moduleConfig.list.listData[i].id%></span>
-				<span><%=moduleConfig.list.listData[i].name%></span>
+				<span><%=moduleConfig.list.defaultData[i].id%></span>
+				<span><%=moduleConfig.list.defaultData[i].name%></span>
 			</li>
 		<%}%>
 	</ul>

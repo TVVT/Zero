@@ -4,7 +4,8 @@ var ejs = require('ejs'),
 	path = require('path'),
 	dirname = path.dirname,
 	extname = path.extname,
-	join = path.join;
+	join = path.join,
+	moduleConfig = require('../moduleConfig.json');
 /*
  * GET users listing.
  */
@@ -15,51 +16,49 @@ exports.list = function(req, res){
 
 exports.page = function(req,res){
 	var pageName = req.params.name;
+	var pageConfig = getModuleConfig("pages",pageName);
 
-	//renderData中的这些4个配置不能少 pageName,modules,moduleConfig,htmls,modulesName[i]
 	var renderData = {
-		pageName:pageName,
-		modules:['views/uis/header.ejs','views/uis/list.ejs','views/uis/footer.ejs'],
-		modulesName:['header','list','footer'],
-		moduleConfig:{
-			header:{
-				uiInfo:'文字居中的header',
-				textAlign:'center'
-			},
-			list:{
-				listData:[{'id':1,'name':'kevin14'}],
-				textAlign:'left',
-				uiInfo:'文字居左的list',
-			},
-			footer:{
-				'textAlign':'center',
-				uiInfo:'文字居中的footer',
-			}
-		}
+		moduleConfig:pageConfig
 	}
-	var htmls = getHtmls(renderData.modules,renderData)
+
+	var modulePath = [];
+	for(var i=0;i<pageConfig.modules.length;i++){
+		modulePath.push('views/'+moduleConfig.projectName+'/uis/'+pageConfig.modules[i]+'.ejs');
+	}
+	var htmls = getHtmls(modulePath,renderData);
 	renderData.htmls = htmls;
+
+
 	res.render('manager/manager_page.ejs',renderData);
 }
 
 exports.pagePreview = function(req,res){
 	var pageName = req.params.name;
+	var pageConfig = getModuleConfig("pages",pageName);
 	var renderData = {
-		pageName:pageName,
-		moduleConfig:{
-			header:{
-				'textAlign':'center'
-			},
-			list:{
-				listData:[{id:1,name:'kevin14'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'},{id:2,name:'fengfeng'}],
-				'textAlign':'left'
-			},
-			footer:{
-				'textAlign':'center'
-			}
-		}
+		moduleConfig:pageConfig
 	}
-	res.render('pages/'+pageName+'.ejs',renderData);
+	res.render(moduleConfig.projectName+'pages/'+pageName+'.ejs',renderData);
+}
+
+/*
+	通过name获取moduleConfig.json中的模块配置 return {}
+*/
+function getModuleConfig(moduleType,name){
+	var data = {};
+	for(mt in moduleConfig){
+		if (mt == moduleType) {
+			for(module in moduleConfig[mt]){
+				if (module == name) {
+					data = moduleConfig[mt][module];
+					break;
+				};
+			}
+			break;
+		};
+	}
+	return data;
 }
 
 function getHtmls(pathNames,renderData){

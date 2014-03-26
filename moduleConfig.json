@@ -1,0 +1,67 @@
+{
+	"projectName": "./",
+	"pages": {
+		"homepage": {
+			"moduleName": "homepage",
+			"modules": ["header", "list", "footer"],
+			"developper": "kevin14",
+			"email": "yangjing1@yhd.com",
+			"header": {
+				"moduleName": "header",
+				"developper": "kevin14",
+				"email": "yangjing1@yhd.com",
+				"defaultData": [],
+				"uiInfo": "文字居中的header",
+				"textAlign": "center"
+			},
+			"list": {
+				"moduleName": "list",
+				"developper": "kevin14",
+				"email": "yangjing1@yhd.com",
+				"defaultData": [{
+					"id": "1",
+					"name": "kevin14"
+				}],
+				"uiInfo": "文字居中的list",
+				"textAlign": "center"
+			},
+			"footer": {
+				"moduleName": "footer",
+				"developper": "kevin14",
+				"email": "yangjing1@yhd.com",
+				"defaultData": [],
+				"uiInfo": "文字居中的footer",
+				"textAlign": "center"
+			}
+		}
+	},
+	"uis": {
+		"header": {
+			"moduleName": "header",
+			"developper": "kevin14",
+			"email": "yangjing1@yhd.com",
+			"defaultData": [],
+			"uiInfo": "文字居中的header",
+			"textAlign": "center"
+		},
+		"list": {
+			"moduleName": "list",
+			"developper": "kevin14",
+			"email": "yangjing1@yhd.com",
+			"defaultData": [{
+				"id": "1",
+				"name": "kevin14"
+			}],
+			"uiInfo": "文字居中的list",
+			"textAlign": "center"
+		},
+		"footer": {
+			"moduleName": "footer",
+			"developper": "kevin14",
+			"email": "yangjing1@yhd.com",
+			"defaultData": [],
+			"uiInfo": "文字居中的footer",
+			"textAlign": "center"
+		}
+	}
+}
