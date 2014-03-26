@@ -13,7 +13,7 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'demos'));
+app.set('views', path.join(__dirname, 'm.yhd.com.views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/uis',uis.list);
 app.get('/uis/:name',uis.ui);
+app.get('/uis/download/:name',uis.uiDownload);
 app.get('/uis/:name/:id',uis.uiById);
 
 app.get('/pages',pages.list);
