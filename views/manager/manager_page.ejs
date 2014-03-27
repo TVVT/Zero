@@ -5,23 +5,23 @@
 	<title>一号店UIManager-<%=moduleConfig.moduleName %></title>
 	<link rel="stylesheet" href="/manager/stylesheets/manager.css">
 </head>
-<body manager-module-name="<%=moduleConfig.moduleName %>">
+<body manager-module-name="<%=pageName %>">
 	<div id="manager-header">
-		<p class="manager-title">一号店UIManager－>page-><%=moduleConfig.moduleName%></p>
+		<p class="manager-title">一号店UIManager－>page-><%=pageName%></p>
 	</div>
 	<div id="manager-content">
 		<div class="manager-page-info">
 			<div class="manager-info-wrapper">
-				<div><label>页面：</label><span class="manager-page-attr-name"><%=moduleConfig.moduleName||"未知"%></span></div>
+				<div><label>页面：</label><span class="manager-page-attr-name"><%=pageName||"未知"%></span></div>
 				<div><label>开发者：</label><span class="manager-page-attr-developper"></span><%=moduleConfig.developper||"未知"%></div>
 				<div><label>邮箱：</label><span class="manager-page-attr-email"></span><%=moduleConfig.email||"未知"%></div>
 			</div>
 		</div>
 		<div class="manager-page-show">
 			<!-- 引入html文件 -->
-			<iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="no" src="/pages/preview/<%=projectName %>/<%=moduleConfig.moduleName%>" frameborder="0"></iframe>
-			<a class="page-manager-goto-preview" href="/pages/preview/<%=projectName %>/<%=moduleConfig.moduleName %>" target="_blank">点击进入预览页面</a>
-			<img src="http://chart.apis.google.com/chart?cht=qr&chl=http://localhost/pages/preview/<%=projectName %>/<%=moduleConfig.moduleName %>&chs=200x200" alt="">
+			<iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="no" src="/pages/preview/<%=projectName %>/<%=pageName%>" frameborder="0"></iframe>
+			<a class="page-manager-goto-preview" href="/pages/preview/<%=projectName %>/<%=pageName %>" target="_blank">点击进入预览页面</a>
+			<img src="http://chart.apis.google.com/chart?cht=qr&chl=http://localhost/pages/preview/<%=projectName %>/<%=pageName %>&chs=200x200" alt="">
 		</div>
 		<div class="manager-page-analyse">
 			<% for(i=0;i<htmls.length;i++){%>

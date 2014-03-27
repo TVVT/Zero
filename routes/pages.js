@@ -22,7 +22,8 @@ exports.page = function(req, res) {
 	var renderData = {
 		moduleConfig: pageConfig,
 		moduleData: pageData,
-		projectName: projectName
+		projectName: projectName,
+		pageName:pageName
 	}
 
 	var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
@@ -58,7 +59,8 @@ exports.pagePreview = function(req, res) {
 		pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
 	var renderData = {
 		moduleConfig: pageConfig,
-		moduleData: pageData
+		moduleData: pageData,
+		pageName:pageName
 	}
 	res.render(projectName + '/pages/' + pageName + '.ejs', renderData);
 }
