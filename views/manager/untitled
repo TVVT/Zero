@@ -1,0 +1,12 @@
+		<div class="manager-page-analyse">
+			<% for(i=0;i<htmls.length;i++){%>
+				<div class="module-ui-wrapper">
+					<%- htmls[i]%>
+					<div class="manager-page-tip">
+						<div class="manager-page-tip-arrow"></div>
+						<span><%=moduleData[moduleConfig.modules[i]].uiInfo%></span>
+					</div>
+					<a class="module-ui-download" href="/uis/download/<%=moduleConfig.projectName %>/<%=moduleConfig.modules[i]%>" target="_blank">点击下载模块</a>
+				</div>	
+			<%}%>
+		</div>
