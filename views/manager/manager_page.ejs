@@ -15,11 +15,20 @@
 				<div><label>页面：</label><span class="manager-page-attr-name"><%=pageName||"未知"%></span></div>
 				<div><label>开发者：</label><span class="manager-page-attr-developper"></span><%=moduleConfig.developper||"未知"%></div>
 				<div><label>邮箱：</label><span class="manager-page-attr-email"></span><%=moduleConfig.email||"未知"%></div>
+				<label>配置：</label>
+				<pre><%=moduleDataToString%></pre>
 			</div>
 		</div>
 		<div class="manager-page-show">
+			<a id="watch-source">查看源代码</a>
 			<!-- 引入html文件 -->
-			<iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="no" src="/pages/preview/<%=projectName %>/<%=pageName%>" frameborder="0"></iframe>
+			<div id="iframe-wrapper">
+				<iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="no" src="/pages/preview/<%=projectName %>/<%=pageName%>" frameborder="0"></iframe>
+			</div>
+			<!-- 查看源码 -->
+			<div id="source-code-wrapper">
+				<pre><%=pageSource%></pre>
+			</div>
 			<a class="page-manager-goto-preview" href="/pages/preview/<%=projectName %>/<%=pageName %>" target="_blank">点击进入预览页面</a>
 			<img src="http://chart.apis.google.com/chart?cht=qr&chl=http://localhost/pages/preview/<%=projectName %>/<%=pageName %>&chs=200x200" alt="">
 		</div>
@@ -31,7 +40,7 @@
 						<div class="manager-page-tip-arrow"></div>
 						<span><%=moduleData[modules[i]].uiInfo%></span>
 					</div>
-					<a class="module-ui-download" href="/components/download/<%=projectName %>/<%=modules[i]%>" target="_blank">点击下载模块</a>
+					<a class="module-ui-download" download href="/components/download/<%=projectName %>/<%=modules[i]%>">点击下载模块</a>
 				</div>	
 			<%}%>
 		</div>

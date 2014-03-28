@@ -18,3 +18,20 @@ exports.mimes_types = {
     "wmv": "video/x-ms-wmv",
     "xml": "text/xml"
 };
+
+exports.readFile = function(filePath,charset,callback){
+    path.exists(filePath, function(exists) {
+        if (!exists) {
+            return callback("文件不存在！");
+        } else {
+            //找到文件在这里进行处理
+            fs.readFile(filePath, charset, function(err, file) {
+                if (err) {
+                    return callback(err);
+                } else {
+                    return callback(file.toString());
+                }
+            });
+        }
+    });
+}

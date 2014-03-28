@@ -5,7 +5,8 @@ var ejs = require('ejs'),
 	dirname = path.dirname,
 	extname = path.extname,
 	join = path.join,
-	moduleConfig = {};
+	moduleConfig = {},
+	utils = require('../utils/utils.js');
 
 exports.list = function(req, res) {
 	res.send("respond with a resource");
@@ -18,15 +19,15 @@ exports.page = function(req, res) {
 		projectName = req.params.projectName,
 		pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
 		pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json'),
+		pageEjs,
 		modules;
-
 	var renderData = {
 		moduleConfig: pageConfig,
 		moduleData: pageData,
 		projectName: projectName,
-		pageName:pageName
+		pageName: pageName,
+		moduleDataToString: JSON.stringify(pageData,'',2)
 	}
-
 	var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
 	fs.exists(realPath, function(exists) {
 		if (!exists) {
@@ -45,6 +46,7 @@ exports.page = function(req, res) {
 					var htmls = getHtmls(modulePath, renderData);
 					renderData.htmls = htmls;
 					renderData.modules = modules;
+					renderData.pageSource = file.toString();
 					var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
 					res.render(managerPagePath, renderData);
 				}
@@ -61,7 +63,7 @@ exports.pagePreview = function(req, res) {
 	var renderData = {
 		moduleConfig: pageConfig,
 		moduleData: pageData,
-		pageName:pageName
+		pageName: pageName
 	}
 	res.render(projectName + '/pages/' + pageName + '.ejs', renderData);
 }
@@ -88,7 +90,7 @@ function getModuleConfig(moduleType, name) {
 function getHtmls(pathNames, renderData) {
 	var htmls = [];
 	for (var i = 0; i < pathNames.length; i++) {
-		var pathName = path.join(__dirname, '../../Projects/'+pathNames[i]);
+		var pathName = path.join(__dirname, '../../Projects/' + pathNames[i]);
 		var html = ejs.render(read(pathName, 'utf8'), renderData);
 		htmls.push(html);
 	}
@@ -96,7 +98,7 @@ function getHtmls(pathNames, renderData) {
 }
 
 function resolveInclude(name, filename) {
-	console.log("path is :"+name+"----"+filename);
+	console.log("path is :" + name + "----" + filename);
 	var path = join(dirname(filename), name);
 	var ext = extname(name);
 	if (!ext) path += '.ejs';

@@ -97,3 +97,15 @@ body{
 .module-ui-download{
 	line-height: 20px;
 }
+#watch-source{
+	cursor: pointer;
+	line-height: 20px;
+}
+#source-code-wrapper{
+	display: none;
+	width: 300px;
+}
+#source-code-wrapper pre{
+	width: 300px;
+	white-space: pre-wrap;
+}
