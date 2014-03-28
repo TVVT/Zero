@@ -120,11 +120,6 @@ header li:hover i{
     display: none;
 }
 
-.manager-info-wrapper{
-    margin: 50px 0px 0 30px;
-}
-
-
 .manager-info-wrapper label{
     line-height: 30px;
     width: 80px;
@@ -133,7 +128,17 @@ header li:hover i{
 }
 #page-manager-iframe{
     display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
 }
+
+#iframe-wrapper{
+    height: 100%;
+    width: 100%;
+}
+
+
 .page-manager-goto-preview{
     line-height: 30px;
 }
