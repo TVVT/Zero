@@ -13,6 +13,7 @@ exports.list = function(req, res) {
 
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
+
 	var pageName = req.params.name,
 		projectName = req.params.projectName,
 		pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
