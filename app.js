@@ -46,4 +46,6 @@ app.get('/projects/*',_static.getFile);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
+  console.log('you can view your project at http://localhost:' +  app.get('port') + '/pages/:project/:name');
+  console.log('you can preview your project at http://localhost:' +  app.get('port') + '/pages/preview/:project/:name');
 });

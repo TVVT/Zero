@@ -1,6 +1,7 @@
 *{
 	margin:0;
-	padding: 0
+	padding: 0;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 body{
 	background-color: #F3F2F2;
@@ -17,21 +18,18 @@ body{
 	text-indent: 20px;
 }
 #manager-content{
-
+	display: flex;
 }
 #manager-content .manager-ui-info,#manager-content .manager-page-info{
-	float: left;
 	width: 300px;
 	border-right: 1px solid #000;
 	min-height: 800px;
 }
 #manager-content .manager-ui-show,#manager-content .manager-page-show{
-	float: left;
 	width: 320px;
 	padding: 50px;
 }
 #manager-content .manager-page-analyse{
-	float: left;
 	padding: 50px;
 }
 #manager-content .manager-page-show{
