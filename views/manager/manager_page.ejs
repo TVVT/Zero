@@ -10,15 +10,17 @@
     <header>
         <h1>1UI</h1>
         <ul>
-            <li class="icon-list"><i>下载模块</i></li>
+            <li class="icon-download"><i>下载模块</i></li>
             <li class="icon-mobile"><i>二维码</i></li>
-            <li class="icon-browser"><i>查看源码</i></li>
+            <li class="icon-browser showSource"><i>查看源码</i></li>
+            <li class="icon-camera"><i>快照</i></li>
+            <li class="icon-database"><i>页面数据</i></li>
             <li class="icon-info2"><i>显示信息</i></li>
-            <li><a href="/pages/preview/<%=projectName %>/<%=pageName %>" class="icon-earth" target="_blank"></a><i>打开链接</i></li>
+            <li><a href="/pages/preview/<%=projectName %>/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
         </ul>
     </header>
 
-    <div id="manager-content">
+    <div class="manager-content">
         <div class="manager-page-info">
             <div class="manager-info-wrapper">
                 <div><label>页面：</label><span class="manager-page-attr-name"><%=pageName||"未知"%></span></div>
@@ -32,7 +34,7 @@
             <!-- <a id="watch-source">查看源代码</a> -->
             <!-- 引入html文件 -->
             <div id="iframe-wrapper">
-                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="no" src="/pages/preview/<%=projectName %>/<%=pageName%>" frameborder="0"></iframe>
+                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/pages/preview/<%=projectName %>/<%=pageName%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
             </div>
         </div>
         <div class="manager-page-analyse">
@@ -50,19 +52,24 @@
 
 
         <!-- 查看源码 -->
- <!--        <div id="source-code-wrapper">
+        <div class="source-code-wrapper">
             <pre><%=pageSource%></pre>
+            <div class="close icon-cross3"></div>
+        </div>
+
+        <!-- 二维码 -->
+<!--         <div class="source-code-wrapper">
+            <pre><%=pageSource%></pre>
+            <div class="close"></div>
+            <img src="http://chart.apis.google.com/chart?cht=qr&chl=http://localhost/pages/preview/<%=projectName %>/<%=pageName %>&chs=200x200" alt="">
         </div> -->
-<!--         <a class="page-manager-goto-preview" href="/pages/preview/<%=projectName %>/<%=pageName %>" target="_blank">点击进入预览页面</a>
- -->        <!-- <img src="http://chart.apis.google.com/chart?cht=qr&chl=http://localhost/pages/preview/<%=projectName %>/<%=pageName %>&chs=200x200" alt="">
- -->
+
+
 
     </div>
 
-
     <footer>&copy; TvvT 2014.</footer>
-
-
+    <script src="/manager/scripts/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/manager/scripts/manager_page.js"></script>
 </body>
 </html>

@@ -24,9 +24,10 @@ header{
     height: 44px;
     line-height: 44px;
     background: rgba(0,0,0,0.8);
-    box-shadow: 0 0 3px rgba(0,0,0,0.3);
     display: flex;
     color: #fff;
+    -webkit-user-select:none;
+    border-bottom: 1px solid #fff;
 }
 
 header h1{
@@ -52,6 +53,11 @@ header li{
     border-right: 1px solid #444;
     position: relative;
     cursor: pointer;
+    transition:all 0.3s;
+}
+
+header li:hover{
+    color: #5cb521;
 }
 
 header li:before{
@@ -77,33 +83,34 @@ header li i{
     display: block;
     position: absolute;
     font-size: 12px;
-    background: rgba(0,0,0,0.8);
     color: #fff;
     width: 100%;
-    top: 44px;
+    bottom: 0;
     left: 0;
-    opacity: 0;
-    transition:all 0.5s;
+    opacity: 1;
     text-align: center;
     height: 14px;
     line-height: 14px;
+    font-weight: normal;
+    opacity: 0;
 }
 
 header li:hover i{
     opacity: 1;
 }
 
-#manager-content{
+.manager-content{
     display: flex;
     flex:1;
+    position: relative;
 }
 
-#manager-content .manager-ui-info,#manager-content .manager-page-info{
+.manager-content .manager-ui-info,.manager-content .manager-page-info{
     width: 300px;
     display: none;
 }
 
-#manager-content .manager-ui-show,#manager-content .manager-page-show{
+.manager-content .manager-ui-show,.manager-content .manager-page-show{
     width: 320px;
     margin:62px auto 0;
     overflow: hidden;
@@ -112,11 +119,11 @@ header li:hover i{
     background: #fff;
 }
 
-#manager-content .manager-page-show:hover{
+.manager-content .manager-page-show:hover{
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
 }
 
-#manager-content .manager-page-analyse{
+.manager-content .manager-page-analyse{
     display: none;
 }
 
@@ -197,11 +204,49 @@ footer{
     cursor: pointer;
     line-height: 20px;
 }
-#source-code-wrapper{
+.source-code-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    left: 0;
+    top: 0;
+    overflow: scroll;
+    -webkit-overflow-scrolling:touch;
+    color: #fff;
+    box-sizing:border-box;
+    padding: 64px;
     display: none;
-    width: 300px;
 }
-#source-code-wrapper pre{
-    width: 300px;
+
+.source-code-wrapper.show{
+    display: block;
+}
+
+.source-code-wrapper pre{
     white-space: pre-wrap;
+    color: #fff;
+    font-size:14px; 
 }
+
+.source-code-wrapper .close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 64px;
+    height: 64px;
+    color: #fff;
+    font-size: 32px;
+    line-height: 64px;
+    text-align: center;
+    cursor: pointer;
+    transition:all 0.5s;
+}
+
+.source-code-wrapper .close:hover{
+    color: #ec1b51;
+}
+
+
+
+
