@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -9,6 +8,8 @@ var pages = require('./routes/pages')
 var http = require('http');
 var path = require('path');
 var _static = require('./routes/static');
+var util = require('./utils/utils');
+
 
 var app = express();
 
@@ -28,24 +29,24 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+	app.use(express.errorHandler());
 }
 
 
-app.get('/components',uis.list);
-app.get('/components/:name',uis.ui);
-app.get('/components/download/:projectName/:name',uis.uiDownload);
-app.get('/components/:name/:id',uis.uiById);
+app.get('/components', uis.list);
+app.get('/components/:name', uis.ui);
+app.get('/:projectName/components/download/:name', uis.uiDownload);
+app.get('/components/:name/:id', uis.uiById);
 
-app.get('/pages',pages.list);
-app.get('/pages/:projectName/:name',pages.page);
-app.get('/pages/preview/:projectName/:name',pages.pagePreview);
+app.get('/:projectName/pages', pages.list);
+app.get('/:projectName/pages/:name', pages.page);
+app.get('/:projectName/pages/preview/:name', pages.pagePreview);
 
 //读取public下面的静态文件
-app.get('/projects/*',_static.getFile);
+app.get('/projects/*', _static.getFile);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-  console.log('you can view your project at http://localhost:' +  app.get('port') + '/pages/:project/:name');
-  console.log('you can preview your project at http://localhost:' +  app.get('port') + '/pages/preview/:project/:name');
+http.createServer(app).listen(app.get('port'), function() {
+	console.log('Express server listening on port ' + app.get('port'));
+	console.log('you can view your project at http://localhost:' + app.get('port') + '/:project/pages/:name');
+	console.log('you can preview your project at http://localhost:' + app.get('port') + '/:project/pages/preview/:name');
 });

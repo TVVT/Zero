@@ -2,19 +2,28 @@ var ejs = require('ejs'),
 	fs = require('fs'),
 	read = fs.readFileSync,
 	path = require('path'),
-	dirname = path.dirname,
-	extname = path.extname,
-	join = path.join,
 	moduleConfig = {},
-	utils = require('../utils/utils.js');
+	utils = require('../utils/utils.js'),
+	managerPath = path.join(__dirname, '../views/manager/'),
+	ws = require('../ws.js');
 
 exports.list = function(req, res) {
-	res.send("respond with a resource");
+	var projectName = req.params.projectName;
+	var managerPageListPath = managerPath + 'manager_page_home.ejs';
+	var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
+	var fileNames = utils.getDirFileNames(realPath, true, '.ejs'); //获得所有page
+
+	var renderData = {
+		project: projectName,
+		pages: fileNames
+	}
+	process.nextTick(function() {
+		res.render(managerPageListPath, renderData);
+	})
 };
 
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
-
 	var pageName = req.params.name,
 		projectName = req.params.projectName,
 		pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
@@ -26,7 +35,8 @@ exports.page = function(req, res) {
 		moduleData: pageData,
 		projectName: projectName,
 		pageName: pageName,
-		moduleDataToString: JSON.stringify(pageData,'',2)
+		moduleDataToString: JSON.stringify(pageData, '', 2),
+		randonNum:utils.getRandomMd5()
 	}
 	var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
 	fs.exists(realPath, function(exists) {
@@ -56,6 +66,13 @@ exports.page = function(req, res) {
 }
 
 exports.pagePreview = function(req, res) {
+
+	var clientId = req.query.clientId;
+	//如果有clientId 那么连接webSocket
+
+	if (clientId) {
+		ws.send(clientId,JSON.stringify({'status':'ready'}));
+	};
 	var pageName = req.params.name,
 		projectName = req.params.projectName,
 		pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
@@ -99,8 +116,8 @@ function getHtmls(pathNames, renderData) {
 
 function resolveInclude(name, filename) {
 	console.log("path is :" + name + "----" + filename);
-	var path = join(dirname(filename), name);
-	var ext = extname(name);
+	var path = path.join(path.dirname(filename), name);
+	var ext = path.extname(name);
 	if (!ext) path += '.ejs';
 	return path;
 }
