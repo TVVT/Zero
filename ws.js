@@ -1,7 +1,7 @@
 //单例的ws
 
 var webSocketServer = require('ws').Server,
-	wss = new webSocketServer({
+	wss = wss?wss:new webSocketServer({
 		port: 8081
 	}),
 	wsGroup = {};//ws连接池
@@ -11,7 +11,7 @@ var webSocketServer = require('ws').Server,
 wss.on('connection', function(ws) {
 	console.log("connected!");
 	ws.on('message', function(message) {
-		console.log(message);
+		var msg = JSON.parse(message);
 		wsGroup[msg.cid] = ws;
 	});
 });
