@@ -163,6 +163,12 @@
     display: none;
     transition:height 0.5s;
     padding: 10px;
+    max-height: 80%;
+    overflow: auto;
+}
+
+.manager-page-qrcode.show{
+    display: block;
 }
 
 .manager-page-info{
@@ -186,10 +192,6 @@
     text-align: right;
     width: 100px;
     display: inline-block;
-}
-
-.manager-page-qrcode.show{
-    display: block;
 }
 
 .page-feedback{

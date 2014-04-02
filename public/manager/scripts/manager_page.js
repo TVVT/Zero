@@ -1,9 +1,9 @@
 $(function() {
     //二维码加载好之后开启webSocket
     var qrCodeImg = document.getElementById('qrCodeImg');
-    var url = 'http://192.168.112.117:3000/feedBack';
+    var url = 'http://localhost:3000/feedBack';
     qrCodeImg.onload = function() {
-        var ws = new WebSocket("ws://192.168.112.117:8081");
+        var ws = new WebSocket("ws://localhost:8081");
 
         ws.onopen = function(e) {
             console.log("连接成功。。。");
@@ -27,14 +27,14 @@ $(function() {
 
                 status.append(btn_ok,'，',btn_error);
 
-                var $form = $('<div class="form">' +
-                                '<form id="feedBackForm">' +
+                var $form_box = $('<div class="form">' +
+                                '<form class="feedBackForm">' +
                                     '<textarea name="feedback" placeholder="请描述一下你的问题...."></textarea>' +
-                                    '<input id="feedBackSubmit" type="submit" value="提交" />' +
+                                    '<input class="feedBackSubmit" type="submit" value="提交" />' +
                                 '</form>' +
                             '</div>');
 
-                $div.append(ua_span,status,$form);
+                $div.append(ua_span,status,$form_box);
 
                 $('.page-feedback').append($div);
 
@@ -44,52 +44,48 @@ $(function() {
                     var formData = new FormData();
                     formData.append('projectName',document.body.getAttribute("project-name"));
                     formData.append('pageName',document.body.getAttribute('page-name'));
-                    formData.append('clientInfo',document.querySelector('.user-agent').innerText);
+                    formData.append('clientInfo',ua_span.html());
                     formData.append('isOK','true');
 
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function(){
-                        if(xhr.readyState === 4){
+                        if(xhr.readyState === 4 && xhr.status === 200){
                             //success here
-                            
+                            status.html('thanks!');
+                            $form_box.remove();
                         }
                     };
                     // alert(url)
                     xhr.open('POST',url,true);
                     xhr.send(formData);
 
-
-                    status.html('thanks!');
-                    $form.remove();
                 });
 
                 btn_error.on('click',function(){
-                    $form.toggleClass('show');
-
-                    feedBackSubmit.onclick = function(e){
-                        var feedBackForm = document.querySelector('#feedBackForm'),
-                        feedBackSubmit = document.querySelector('#feedBackSubmit');
-                        var formData = new FormData(feedBackForm);
-                        formData.append('projectName',document.body.getAttribute("project-name"));
-                        formData.append('pageName',document.body.getAttribute('page-name'));
-                        formData.append('clientInfo',document.querySelector('.user-agent').innerText);
-                        formData.append('isOK','false');
-                        var xhr = new XMLHttpRequest();
-                        xhr.onreadystatechange = function(){
-                            if(xhr.readyState === 4){
-                                                       
-                            }
-                        };
-                        xhr.open('POST',url,true);
-                        xhr.send(formData);
-                        status.html('thanks!');
-                        $form.remove();
-                        return false;
-                    }
+                    $form_box.toggleClass('show');
                 });
 
 
+                var feedBackSubmit = $form_box.find('.feedBackSubmit'),
+                _form = $form_box.find('form')[0];
 
+                feedBackSubmit.on('click',function(e){
+                    e.preventDefault();
+                    var formData = new FormData(_form);
+                    formData.append('projectName',document.body.getAttribute("project-name"));
+                    formData.append('pageName',document.body.getAttribute('page-name'));
+                    formData.append('clientInfo',ua_span.html());
+                    formData.append('isOK','false');
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function(){
+                        if(xhr.readyState === 4 && xhr.status === 200){
+                            status.html('thanks!');
+                            $form_box.remove();                     
+                        }
+                    };
+                    xhr.open('POST',url,true);
+                    xhr.send(formData);
+                });
             };
         }
 
