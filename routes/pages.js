@@ -6,19 +6,18 @@ var ejs = require('ejs'),
 	utils = require('../utils/utils.js'),
 	managerPath = path.join(__dirname, '../views/manager/'),
 	ws = require('../ws.js'),
-	os=require('os');
+	os = require('os');
 
-	var ifaces=os.networkInterfaces();
-	var ipAddress = '';
-	
-	for (var dev in ifaces) {
-	  ifaces[dev].forEach(function(details){
-	  	// 这里暂时写成 en0. 不知道会不会有问题。
-	    if (details.family=='IPv4' && dev.indexOf('en0') !== -1) {
-	    	ipAddress = details.address;
-	    }
-	  });
-	}
+var ifaces = os.networkInterfaces();
+var ipAddress = '';
+
+for (var dev in ifaces) {
+	ifaces[dev].forEach(function(details) {
+		if (details.family == 'IPv4' && !details.internal) {
+			ipAddress = details.address;
+		}
+	});
+}
 
 
 exports.list = function(req, res) {
@@ -37,25 +36,44 @@ exports.list = function(req, res) {
 };
 
 exports.feedBack = function(req, res) {
+	var data = req.body;
+	var feedBack = data.feedBack ? data.feedBack : 'null';
+	var date = new Date(),
+		dateId = date.getTime(),
+		time = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+	var insertData = dateId + ',' + time + ',' + data.projectName + ',' + data.pageName + ',' + data.clientInfo + ',' + data.isOK + ',' + feedBack + ';\n'
 
-	// MongoClient.connect('mongodb://127.0.0.1:27017/UIManager', function(err, db) {
-	//     if(err) throw err;
+	var infoPath = path.join(__dirname, '../../Projects/' + data.projectName + '/info');
+	fs.exists(infoPath, function(exists) {
+		if (!exists) {
+			//如果没有这个文件 那么创建一个
+			fs.open(infoPath, "w", 0644, function(e, fd) {
+				if (e) throw e;
+				fs.write(fd, insertData, 0, 'utf8', function(e) {
+					if (e) throw e;
+					fs.closeSync(fd);
+					res.send("123");
+				})
+			});
+		} else {
+			//如果有的话 那么写入文件
+			fs.open(infoPath, "a+", 0644, function(e, fd) {
+				if (e) throw e;
+				fs.readFile(infoPath, 'utf8', function(err, file) {
+					if (err) console.log(err);
+					else {
+						insertData = insertData + file.toString();
+						fs.write(fd, insertData, 0, 'utf8', function(e) {
+							if (e) console.log(e);
+							fs.closeSync(fd);
+							res.send("123");
+						})
+					}
+				})
+			});
+		}
+	});
 
-	//     var collection = db.collection('test_project');
-	//     var page = collection.find({'homepage':{ $exists : true }});
-
-	//     	page.insert({a:2}, function(err, docs) {
-	// 	      collection.count(function(err, count) {
-	// 	        console.log("count =", count);
-	// 	      });
-	//       	page.find().toArray(function(err, results) {
-	//         	console.dir(results);
-	//         	db.close();
-	//       	});
-	//     });
-	//   })
-
-	res.send("123");
 }
 
 

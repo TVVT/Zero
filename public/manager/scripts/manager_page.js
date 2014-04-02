@@ -15,12 +15,10 @@ $(function() {
 		ws.onmessage = function(event) {
 			var data = JSON.parse(event.data);
 			if (data && data.status === 'ready') {
-				// qrCodeImg.style.display = 'none';
 				$('.page-feedback').css('display','block');
 				$('.user-agent').text(data['user-agent']);
 			};
 		}
-
 	}
 
 	$('#nav li').on('click', function(e) {
