@@ -26,6 +26,18 @@
     display: none;
 }
 
+.manager-page-modules{
+    background: #fff;
+    transition:width 0.3s cubic-bezier(.14,.56,.63,1.17); 
+
+    width: 0px;
+}
+
+.manager-page-modules.show{
+    width: 320px;
+}
+
+
 .manager-info-wrapper label{
     line-height: 30px;
     width: 80px;

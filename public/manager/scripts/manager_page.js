@@ -21,20 +21,24 @@ $(function() {
 		}
 	}
 
-	$('#nav li').on('click', function(e) {
-		$('.board').children().hide();
-		$('.board .close').show();
-		$('.board').toggleClass('show');
+	// $('#nav li').on('click', function(e) {
+	// 	$('.board').children().hide();
+	// 	$('.board .close').show();
+	// 	$('.board').toggleClass('show');
 
-		switch (e.target.id.toString()) {
-			case 'showQrCode':
-				$('.board .qrCode').show();
-				break;
-			case 'showSource':
-				$('.board .page-source').show();
-				break;
-			default:
-		}
+	// 	switch (e.target.id.toString()) {
+	// 		case 'showQrCode':
+	// 			$('.board .qrCode').show();
+	// 			break;
+	// 		case 'showSource':
+	// 			$('.board .page-source').show();
+	// 			break;
+	// 		default:
+	// 	}
+	// })
+
+	$('#showModules').on('click',function(){
+		$('.manager-page-modules').toggleClass('show');
 	})
 
 	$('.board .close').on('click', function() {
