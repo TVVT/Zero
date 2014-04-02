@@ -95,7 +95,6 @@ $(function() {
 
     }
 
-
     $('#showQrCode').on('click',function(){
         $('.manager-page-qrcode').toggleClass('show');
     });
@@ -103,6 +102,20 @@ $(function() {
     $('#showModules').on('click',function(){
         $('.manager-page-modules').toggleClass('show');
     });
+
+    $('#showSource').on('click',function(){
+        $('.page-data-board').removeClass('show');
+        $('.page-source-board').toggleClass('show');
+    })
+
+    $('#pageData').on('click',function(){
+        $('.page-source-board').removeClass('show');
+        $('.page-data-board').toggleClass('show');
+    })
+
+    $('#pageInfo').on('click',function(){
+        $('.manager-page-info').toggleClass('show');
+    })
 
     $('.board .close').on('click', function() {
         $('.board').removeClass('show');

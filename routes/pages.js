@@ -99,7 +99,7 @@ exports.page = function(req, res) {
 				moduleData: pageData,
 				projectName: projectName,
 				pageName: pageName,
-				moduleDataToString: JSON.stringify(pageData, '', 2),
+				moduleDataToString: JSON.stringify(pageData, '', 4),
 				randonNum: utils.getRandomMd5()
 			}
 			var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
@@ -114,14 +114,17 @@ exports.page = function(req, res) {
 						modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
 					}
 					var htmls = getHtmls(modulePath, renderData);
-					// var pageSourcePath = [];
-					// pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
-					// console.log(pageSourcePath);
+					var pageSourcePath = [];
+
+					pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
+					console.log(pageSourcePath);
+					
 					renderData.htmls = htmls;
 					renderData.modules = modules;
 					renderData.pageSource = file.toString();
-					// renderData.pageSource = getHtmls(modulePath,renderData);
-					// console.log(renderData.pageSource);
+					
+					var source = getHtmls(pageSourcePath,renderData);
+
 					renderData.ipAddress = ipAddress;
 					renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
 

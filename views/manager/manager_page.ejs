@@ -15,23 +15,13 @@
             <li class="icon-mobile" id="showQrCode"><i>二维码</i></li>
             <li class="icon-browser" id="showSource"><i>查看源码</i></li>
             <!-- <li class="icon-camera"><i>快照</i></li> -->
-            <li class="icon-database"><i>页面数据</i></li>
-            <li class="icon-info2"><i>显示信息</i></li>
+            <li class="icon-database" id="pageData"><i>页面数据</i></li>
+            <li class="icon-info2" id="pageInfo"><i>显示信息</i></li>
             <li><a href="http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
         </ul>
     </header>
 
     <div class="manager-content">
-        <div class="manager-page-info">
-            <div class="manager-info-wrapper">
-                <div><label>页面：</label><span class="manager-page-attr-name"><%=pageName||"未知"%></span></div>
-                <div><label>开发者：</label><span class="manager-page-attr-developper"></span><%=moduleConfig.developper||"未知"%></div>
-                <div><label>邮箱：</label><span class="manager-page-attr-email"></span><%=moduleConfig.email||"未知"%></div>
-                <label>配置：</label>
-                <pre><%=moduleDataToString%></pre>
-            </div>
-        </div>
-
         <div class="manager-page-modules">
             <div class="qrCode">
                 <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
@@ -57,23 +47,32 @@
             <%}%>
         </div>
 
-        <div class="board">
-            <!-- 查看源码 -->
+        <!-- 查看源码 -->
+        <div class="board page-source-board">
             <div class="page-source">
                 <pre><%=pageSource%></pre>
             </div>
-            <!-- 二维码 -->
-            <div class="qrCode">
-                <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
+            <div class="close icon-cross3"></div>
+        </div>
+        <!-- 页面数据 -->
+        <div class="board page-data-board">
+            <div class="page-data">
+                <pre><%=moduleDataToString%></pre>
             </div>
             <div class="close icon-cross3"></div>
         </div>
-
+                
+            
         <div class="manager-page-qrcode">
            <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
             <div class="page-feedback"></div> 
         </div>
-
+        
+        <div class="manager-page-info">
+            <div><label>页面：</label><span class="manager-page-attr-name"><%=moduleConfig.pageName||"未知"%> </span></div>
+            <div><label>开发者：</label><span class="manager-page-attr-developper"><%=moduleConfig.developper||"未知"%></span></div>
+            <div><label>邮箱：</label><span class="manager-page-attr-email"><%=moduleConfig.email||"未知"%></span></div>
+        </div>
 
         
 

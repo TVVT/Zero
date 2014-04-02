@@ -4,7 +4,7 @@
     position: relative;
 }
 
-.manager-content .manager-ui-info,.manager-content .manager-page-info{
+.manager-content .manager-ui-info{
     width: 300px;
     display: none;
 }
@@ -123,7 +123,7 @@
     display: block;
 }
 
-.page-source pre{
+.page-data pre,.page-source pre{
     white-space: pre-wrap;
     color: #fff;
     font-size:14px; 
@@ -163,6 +163,29 @@
     display: none;
     transition:height 0.5s;
     padding: 10px;
+}
+
+.manager-page-info{
+    position: absolute;
+    background: #fff;
+    width: 300px;
+    top: 10px;
+    left: 200px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    transition:height 0.5s;
+    padding: 10px;
+    display: none;
+}
+
+.manager-page-info.show{
+    display: block;
+}
+
+.manager-page-info label{
+    text-align: right;
+    width: 100px;
+    display: inline-block;
 }
 
 .manager-page-qrcode.show{
