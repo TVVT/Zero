@@ -57,7 +57,7 @@ header li{
 }
 
 header li:hover{
-    color: #5cb521;
+    /*color: #5cb521;*/
 }
 
 header li:before{

@@ -6,8 +6,19 @@ var ejs = require('ejs'),
 	utils = require('../utils/utils.js'),
 	managerPath = path.join(__dirname, '../views/manager/'),
 	ws = require('../ws.js'),
-	MongoClient = require('mongodb').MongoClient;
+	os=require('os');
 
+	var ifaces=os.networkInterfaces();
+	var ipAddress = '';
+	
+	for (var dev in ifaces) {
+	  ifaces[dev].forEach(function(details){
+	  	// 这里暂时写成 en0. 不知道会不会有问题。
+	    if (details.family=='IPv4' && dev.indexOf('en0') !== -1) {
+	    	ipAddress = details.address;
+	    }
+	  });
+	}
 
 
 exports.list = function(req, res) {
@@ -83,7 +94,11 @@ exports.page = function(req, res) {
 					var htmls = getHtmls(modulePath, renderData);
 					renderData.htmls = htmls;
 					renderData.modules = modules;
+
 					renderData.pageSource = file.toString();
+					renderData.ipAddress = ipAddress;
+					renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
+
 					var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
 					res.render(managerPagePath, renderData);
 				}

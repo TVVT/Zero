@@ -10,8 +10,8 @@ var path = require('path');
 var _static = require('./routes/static');
 var util = require('./utils/utils');
 
-
 var app = express();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);

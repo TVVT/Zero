@@ -17,7 +17,7 @@
             <li class="icon-camera"><i>快照</i></li>
             <li class="icon-database"><i>页面数据</i></li>
             <li class="icon-info2"><i>显示信息</i></li>
-            <li><a href="/pages/preview/<%=projectName %>/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
+            <li><a href="http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
         </ul>
     </header>
 
@@ -57,7 +57,7 @@
             </div>
             <!-- 二维码 -->
             <div class="qrCode">
-                <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://192.168.112.117:3000/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
+<!--                 <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://192.168.112.117:3000/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
                 <div class="page-feedback">
                     <h3 class="feedback-title">这个页面是否符合要求？</h3>
                     <div><label>手机浏览器user-agent是:<span class="user-agent"></span></label></div>
@@ -65,7 +65,8 @@
                     <label for="checkForFalse">不符合<input id="checkForFalse" type="radio" name="agreeNess" value="false"></label>
                     <input type="text" name="feedback">
                     <a id="feedback-submit" class="submit">提交</a>
-                </div>
+                </div> -->
+                <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
             </div>
             <div class="close icon-cross3"></div>
         </div>
