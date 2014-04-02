@@ -23,15 +23,19 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
+
+//将public配置提前
+app.use(express.static(path.join(__dirname, './public')));
 app.use(app.router);
 
-app.use(express.static(path.join(__dirname, './public')));
+
 
 // development only
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
 
+app.post('/feedBack',pages.feedBack);
 
 app.get('/components', uis.list);
 app.get('/components/:name', uis.ui);
@@ -44,6 +48,17 @@ app.get('/:projectName/pages/preview/:name', pages.pagePreview);
 
 //读取public下面的静态文件
 app.get('/projects/*', _static.getFile);
+
+// 404
+// app.get('*', function(req, res){
+//     // res.render('404.html', {
+//     //     title: 'No Found'
+//     // })
+// 	res.send("404...")
+// });
+
+//检测项目目录 并且自动生成mongodb数据库 有必要吗？没必要 暂时不做
+
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));

@@ -1,19 +1,24 @@
 $(function() {
 
-
 	//二维码加载好之后开启webSocket
-	document.getElementById('qrCodeImg').onload = function() {
+	var qrCodeImg = document.getElementById('qrCodeImg');
+	qrCodeImg.onload = function() {
 		var ws = new WebSocket("ws://localhost:8081");
 
 		ws.onopen = function(e) {
-			alert("开始连接...");
+			console.log("连接成功。。。");
 			ws.send(JSON.stringify({
 				cid: $('#qrCodeImg').attr('qrCode')
 			}));
 		};
 
 		ws.onmessage = function(event) {
-			alert(event.data);
+			var data = JSON.parse(event.data);
+			if (data && data.status === 'ready') {
+				// qrCodeImg.style.display = 'none';
+				$('.page-feedback').css('display','block');
+				$('.user-agent').text(data['user-agent']);
+			};
 		}
 
 	}
