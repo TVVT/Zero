@@ -9,6 +9,7 @@
     "express": "*",
     "ejs": "*",
     "ws":"*",
-    "mongodb":"*"
+    "mongodb":"*",
+    "formidable":"*"
   }
 }

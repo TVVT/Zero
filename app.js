@@ -39,7 +39,7 @@ if ('development' == app.get('env')) {
 app.post('/feedBack',pages.feedBack);
 
 app.get('/components', uis.list);
-app.get('/components/:name', uis.ui);
+app.get('/:projectName/components/:componentName', uis.showComponent);
 app.get('/:projectName/components/download/:name', uis.uiDownload);
 app.get('/components/:name/:id', uis.uiById);
 

@@ -6,7 +6,8 @@ var ejs = require('ejs'),
 	utils = require('../utils/utils.js'),
 	managerPath = path.join(__dirname, '../views/manager/'),
 	ws = require('../ws.js'),
-	os = require('os');
+	os = require('os'),
+	formidable = require('formidable');
 
 var ifaces = os.networkInterfaces();
 var ipAddress = '';
@@ -36,44 +37,47 @@ exports.list = function(req, res) {
 };
 
 exports.feedBack = function(req, res) {
-	var data = req.body;
-	var feedBack = data.feedBack ? data.feedBack : 'null';
-	var date = new Date(),
-		dateId = date.getTime(),
-		time = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-	var insertData = dateId + ',' + time + ',' + data.projectName + ',' + data.pageName + ',' + data.clientInfo + ',' + data.isOK + ',' + feedBack + ';\n'
+	form = new formidable.IncomingForm();
+	form.parse(req, function(err, fields, files) {
+		if (err) return res.end('formidable failed...');
+		var data = fields;
+		var feedBack = data.feedback ? data.feedback : 'null';
+		var date = new Date(),
+			dateId = date.getTime(),
+			time = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+		var insertData = dateId + ',' + time + ',' + data.projectName + ',' + data.pageName + ',' + data.clientInfo + ',' + data.isOK + ',' + feedBack + ';\n'
 
-	var infoPath = path.join(__dirname, '../../Projects/' + data.projectName + '/info');
-	fs.exists(infoPath, function(exists) {
-		if (!exists) {
-			//如果没有这个文件 那么创建一个
-			fs.open(infoPath, "w", 0644, function(e, fd) {
-				if (e) throw e;
-				fs.write(fd, insertData, 0, 'utf8', function(e) {
-					if (e) throw e;
-					fs.closeSync(fd);
-					res.send("123");
-				})
-			});
-		} else {
-			//如果有的话 那么写入文件
-			fs.open(infoPath, "a+", 0644, function(e, fd) {
-				if (e) throw e;
-				fs.readFile(infoPath, 'utf8', function(err, file) {
-					if (err) console.log(err);
-					else {
-						insertData = insertData + file.toString();
-						fs.write(fd, insertData, 0, 'utf8', function(e) {
-							if (e) console.log(e);
-							fs.closeSync(fd);
-							res.send("123");
-						})
-					}
-				})
-			});
-		}
+		var infoPath = path.join(__dirname, '../../Projects/' + data.projectName + '/info');
+		fs.exists(infoPath, function(exists) {
+			if (!exists) {
+				//如果没有这个文件 那么创建一个
+				fs.open(infoPath, "w", 0644, function(e, fd) {
+					if (e) console.log(e);
+					fs.write(fd, insertData, 0, 'utf8', function(e) {
+						if (e) console.log(e);
+						fs.closeSync(fd);
+					})
+				});
+			} else {
+				//如果有的话 那么写入文件
+				fs.open(infoPath, "a+", 0644, function(e, fd) {
+					if (e) console.log(e);
+					fs.readFile(infoPath, 'utf8', function(err, file) {
+						if (err) console.log(err);
+						else {
+							insertData = insertData + file.toString();
+							fs.write(fd, insertData, 0, 'utf8', function(e) {
+								if (e) console.log(e);
+								fs.closeSync(fd);
+							})
+						}
+					})
+				});
+			}
+		});
+		res.set('Access-Control-Allow-Origin', '*');
+		res.send("ok");
 	});
-
 }
 
 
@@ -110,10 +114,14 @@ exports.page = function(req, res) {
 						modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
 					}
 					var htmls = getHtmls(modulePath, renderData);
+					// var pageSourcePath = [];
+					// pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
+					// console.log(pageSourcePath);
 					renderData.htmls = htmls;
 					renderData.modules = modules;
-
 					renderData.pageSource = file.toString();
+					// renderData.pageSource = getHtmls(modulePath,renderData);
+					// console.log(renderData.pageSource);
 					renderData.ipAddress = ipAddress;
 					renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
 

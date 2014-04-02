@@ -5,19 +5,20 @@ var ejs = require('ejs'),
 	dirname = path.dirname,
 	extname = path.extname,
 	join = path.join,
-	moduleConfig ={};
+	moduleConfig ={},
+	managerPath = path.join(__dirname, '../views/manager/');
 
 exports.list = function(req, res) {
 	res.send('成功！');
-	// res.render('index', { title: 'Express' });
 };
 
-exports.ui = function(req, res) {
-	var uiName = req.params.name;
+exports.showComponent = function(req, res) {
 	var renderData = {
-		'uiName': uiName
+		'component': req.params.componentName,
+		'projectName':req.params.projectName,
+		modulePath: '../components/' + req.params.componentName + '.ejs'
 	}
-	res.render('manager/manager_ui.ejs', renderData);
+	res.render(managerPath+'manager_ui_preview.ejs', renderData);
 }
 
 exports.uiById = function(req, res) {
