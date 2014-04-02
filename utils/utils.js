@@ -40,6 +40,55 @@ exports.readFile = function(filePath, charset, callback) {
     });
 }
 
+/**
+ * [checkFileExist 判断文件在Projects文件夹中是否存在]如果pageName.ejs存在 返回true 否则返回false 其他的文件如若不存在则自动创建
+ * @param  {[string]} projectName
+ * @param  {[string]} pageName
+ * @return {[boolean]}
+ */
+exports.checkFileExist = function(projectName, pageName, callback) {
+    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName),
+        realPathEjs = realPath + '.ejs',
+        realPathConfig = realPath + '.config.json',
+        realPathData = realPath + '.data.json';
+
+    fs.exists(realPathEjs, function(exists) {
+        if (!exists) {
+            return callback(false);
+        } else {
+            fs.exists(realPathConfig, function(configExists) {
+                if (!configExists) {
+                    fs.open(realPathConfig, "w", 0644, function(e, fd) {
+                        if (e) throw e;
+                        fs.write(fd, "{}", 0, 'utf8', function(e) {
+                            if (e) throw e;
+                            fs.closeSync(fd);
+                            // return callback(true);
+                        })
+                    });
+                }else{
+                    // return callback(true);
+                }
+            })
+            fs.exists(realPathData, function(dataExists) {
+                if (!dataExists) {
+                    fs.open(realPathData, "w", 0644, function(e, fd) {
+                        if (e) throw e;
+                        fs.write(fd, "{}", 0, 'utf8', function(e) {
+                            if (e) throw e;
+                            fs.closeSync(fd);
+                            // return callback(true);
+                        })
+                    });
+                }else{
+                    // return callback(true);
+                }
+            })
+            return callback(true);
+        }
+    });
+}
+
 /*
  *   读取目录下所有文件的文件名  返回数组
  *   param1 路径名 绝对路径
@@ -75,8 +124,8 @@ exports.getDirFileNames = function(filePath, isModule, extName) {
 /**
  * 获取随机md5字符串 日期＋随机数字 md5
  */
-exports.getRandomMd5 = function(){
+exports.getRandomMd5 = function() {
     var md5 = crypto.createHash('md5'),
         date = new Date();
-    return md5.update((date.getTime()+Math.ceil(Math.random()*1000)).toString()).digest('hex');
+    return md5.update((date.getTime() + Math.ceil(Math.random() * 1000)).toString()).digest('hex');
 }

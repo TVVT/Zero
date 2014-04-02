@@ -141,6 +141,13 @@
     color: #ec1b51;
 }
 
+.page-feedback{
+    display: none;
+}
+
+.page-feedback *{
+    color: #fff;
+}
 
 
 

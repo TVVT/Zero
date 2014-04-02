@@ -17,8 +17,6 @@ wss.on('connection', function(ws) {
 });
 
 exports.send = function(cid,data){
-	console.log("sending!!!!");
-	console.log(wsGroup);
 	wsGroup[cid].send(data);
 }
 exports.wsGroup = wsGroup;

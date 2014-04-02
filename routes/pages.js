@@ -5,7 +5,10 @@ var ejs = require('ejs'),
 	moduleConfig = {},
 	utils = require('../utils/utils.js'),
 	managerPath = path.join(__dirname, '../views/manager/'),
-	ws = require('../ws.js');
+	ws = require('../ws.js'),
+	MongoClient = require('mongodb').MongoClient;
+
+
 
 exports.list = function(req, res) {
 	var projectName = req.params.projectName;
@@ -22,27 +25,51 @@ exports.list = function(req, res) {
 	})
 };
 
+exports.feedBack = function(req, res) {
+
+	// MongoClient.connect('mongodb://127.0.0.1:27017/UIManager', function(err, db) {
+	//     if(err) throw err;
+
+	//     var collection = db.collection('test_project');
+	//     var page = collection.find({'homepage':{ $exists : true }});
+
+	//     	page.insert({a:2}, function(err, docs) {
+	// 	      collection.count(function(err, count) {
+	// 	        console.log("count =", count);
+	// 	      });
+	//       	page.find().toArray(function(err, results) {
+	//         	console.dir(results);
+	//         	db.close();
+	//       	});
+	//     });
+	//   })
+
+	res.send("123");
+}
+
+
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
 	var pageName = req.params.name,
-		projectName = req.params.projectName,
-		pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-		pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json'),
-		pageEjs,
-		modules;
-	var renderData = {
-		moduleConfig: pageConfig,
-		moduleData: pageData,
-		projectName: projectName,
-		pageName: pageName,
-		moduleDataToString: JSON.stringify(pageData, '', 2),
-		randonNum:utils.getRandomMd5()
-	}
-	var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
-	fs.exists(realPath, function(exists) {
+		projectName = req.params.projectName;
+
+	utils.checkFileExist(projectName, pageName, function(exists) {
 		if (!exists) {
-			res.send("This request URL " + fileName + " was not found on this server.");
+			res.send("404...");
 		} else {
+			var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
+				pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json'),
+				pageEjs,
+				modules;
+			var renderData = {
+				moduleConfig: pageConfig,
+				moduleData: pageData,
+				projectName: projectName,
+				pageName: pageName,
+				moduleDataToString: JSON.stringify(pageData, '', 2),
+				randonNum: utils.getRandomMd5()
+			}
+			var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
 			fs.readFile(realPath, "utf-8", function(err, file) {
 				if (err) {
 					console.log(err);
@@ -71,7 +98,11 @@ exports.pagePreview = function(req, res) {
 	//如果有clientId 那么连接webSocket
 
 	if (clientId) {
-		ws.send(clientId,JSON.stringify({'status':'ready'}));
+		var userAgent = req.headers['user-agent'];
+		ws.send(clientId, JSON.stringify({
+			'status': 'ready',
+			'user-agent': userAgent
+		}));
 	};
 	var pageName = req.params.name,
 		projectName = req.params.projectName,
