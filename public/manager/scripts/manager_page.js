@@ -1,5 +1,4 @@
 $(function() {
-
     //二维码加载好之后开启webSocket
     var qrCodeImg = document.getElementById('qrCodeImg');
     qrCodeImg.onload = function() {
@@ -69,5 +68,6 @@ $(function() {
     $('.board .close').on('click', function() {
         $('.board').removeClass('show');
     });
+
 
 })

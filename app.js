@@ -35,6 +35,7 @@ if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
 
+//用户提交的反馈信息
 app.post('/feedBack',pages.feedBack);
 
 app.get('/components', uis.list);
