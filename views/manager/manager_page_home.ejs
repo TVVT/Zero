@@ -18,13 +18,13 @@
     </header>
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
-        <div class="iframe-wrapper">
-            <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
-        </div>
+            <div class="iframe-wrapper">
+                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
+            </div>
         <%}%>
     </div>
     <footer>&copy; TvvT 2014.</footer>
     <script src="/manager/scripts/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="/manager/scripts/manager_page.js"></script>
+    <script type="text/javascript" src="/manager/scripts/manager_page_home.js"></script>
 </body>
 </html>
