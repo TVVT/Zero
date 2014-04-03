@@ -1,9 +1,11 @@
 $(function() {
     //二维码加载好之后开启webSocket
-    var qrCodeImg = document.getElementById('qrCodeImg');
-    var url = 'http://localhost:3000/feedBack';
+    var qrCodeImg = document.getElementById('qrCodeImg'),
+        host = window.location.hostname;
+
+    var url = 'http://'+host+':3000/feedBack';
     qrCodeImg.onload = function() {
-        var ws = new WebSocket("ws://localhost:8081");
+        var ws = new WebSocket('ws://'+host+':8081');
 
         ws.onopen = function(e) {
             console.log("连接成功。。。");
@@ -97,6 +99,7 @@ $(function() {
 
     $('#showModules').on('click',function(){
         $('.manager-page-modules').toggleClass('show');
+        // $('.module-ui-wrapper').toggleClass('show');
     });
 
     $('#showSource').on('click',function(){

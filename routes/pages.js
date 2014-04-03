@@ -113,18 +113,22 @@ exports.page = function(req, res) {
 						//这里的modulePath 从 Projects根目录开始
 						modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
 					}
-					var htmls = getHtmls(modulePath, renderData);
-					var pageSourcePath = [];
+					var moduleRenderData = getModuleRenderData(projectName,modules);
 
+					//渲染modules 改变渲染数据为module的默认数据
+					renderData.moduleData = moduleRenderData;
+					var htmls = getHtmls(modulePath, renderData);
+					//将数据改为page的数据
+					renderData.moduleData = pageData;
+
+					var pageSourcePath = [];
 					pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
-					console.log(pageSourcePath);
-					
-					renderData.htmls = htmls;
-					renderData.modules = modules;
-					renderData.pageSource = file.toString();
-					
 					var source = getHtmls(pageSourcePath,renderData);
 
+					renderData.htmls = htmls;
+					renderData.modules = modules;
+					renderData.pageSource = source;
+					
 					renderData.ipAddress = ipAddress;
 					renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
 
@@ -179,11 +183,25 @@ function getModuleConfig(moduleType, name) {
 	return data;
 }
 
+/**
+ * [getModuleRenderData 获取模块渲染数据 数据从模块的data.json里来]
+ * @param  {[array]} modules＝
+ * @return {[data obejct]}
+ */
+function getModuleRenderData(projectName,modules){
+	var data = {};
+	for(var i =0;i<modules.length;i++){
+		data[modules[i]] = require('../../Projects/' + projectName + '/components/' + modules[i] + '.data.json')[modules[i]];
+	}
+	return data;
+}
+
 function getHtmls(pathNames, renderData) {
 	var htmls = [];
 	for (var i = 0; i < pathNames.length; i++) {
 		var pathName = path.join(__dirname, '../../Projects/' + pathNames[i]);
-		var html = ejs.render(read(pathName, 'utf8'), renderData);
+		renderData.filename = pathName;
+		var html = ejs.render(read(pathName,'utf8'), renderData);
 		htmls.push(html);
 	}
 	return htmls;

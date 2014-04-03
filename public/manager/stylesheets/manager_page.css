@@ -27,6 +27,7 @@
 }
 
 .manager-page-modules{
+    overflow: hidden;
     background: #fff;
     transition:width 0.3s cubic-bezier(.14,.56,.63,1.17); 
     width: 0px;
@@ -58,45 +59,21 @@
 .page-manager-goto-preview{
     line-height: 30px;
 }
-.manager-page-tip{
-    display: inline-block;
-    padding: 10px;
-    border-radius: 4px;
-    width: 100px;
-    text-align: center;
-    background-color: #6c747a;
-    position: absolute;
-    left: 330px;
-    top: 0px;
-}
-.manager-page-tip-arrow{
-    display: block;
-    width: 15px;
-    height: 15px;
-    left: -5px;
-    top:10px;
-    -moz-transform: rotate(45deg); /* FF3.5+ */
-    -o-transform: rotate(45deg); /* Opera 10.5 */
-    -webkit-transform: rotate(45deg); /* Saf3.1+, Chrome */
-    background-color: #6c747a;
-    position: absolute;
-}
-.module-ui-wrapper{
-    margin-top: 20px;
-    width: 320px;
-    position: relative;
-    -webkit-animation:anim 0.2s;
-    top: 10px;
-}
 
-@-webkit-keyframes anim
-{
-    0%   { top:0px;}
-    25%  { top:2px;}
-    50%  { top:4px;}
-    75%  { top:7px;}
-    100% { top:10px;}
+.module-ui-wrapper{
+    width: 320px;
+    margin-top: 20px;
 }
+/*.module-ui-wrapper{
+    overflow: hidden;
+    transition:width 0.3s cubic-bezier(.14,.56,.63,1.17); 
+    margin-top: 20px;
+    width: 0px;
+}*/
+/*.manager-ui-wrapper.show{
+    width: 320px;
+}*/
+
 .module-ui-download{
     line-height: 20px;
 }

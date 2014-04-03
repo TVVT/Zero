@@ -23,9 +23,12 @@
 
     <div class="manager-content">
         <div class="manager-page-modules">
-            <div class="qrCode">
-                <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=http://<%= ipAddress%>:<%= serverPort%>/<%=projectName %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
-            </div>
+            <% for(i=0;i<htmls.length;i++){%>
+                <div class="module-ui-wrapper">
+                    <%- htmls[i]%>
+                    <a class="module-ui-download" download href="/<%=projectName %>/components/download/<%=modules[i]%>">点击下载模块</a>
+                </div>  
+            <%}%>
         </div>
 
         <div class="manager-page-show">
@@ -33,18 +36,6 @@
             <div id="iframe-wrapper">
                 <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=projectName %>/pages/preview/<%=pageName%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
             </div>
-        </div>
-        <div class="manager-page-analyse">
-            <% for(i=0;i<htmls.length;i++){%>
-                <div class="module-ui-wrapper">
-                    <%- htmls[i]%>
-                    <div class="manager-page-tip">
-                        <div class="manager-page-tip-arrow"></div>
-                        <span><%=moduleData[modules[i]].uiInfo%></span>
-                    </div>
-                    <a class="module-ui-download" download href="/<%=projectName %>/components/download/<%=modules[i]%>">点击下载模块</a>
-                </div>  
-            <%}%>
         </div>
 
         <!-- 查看源码 -->
