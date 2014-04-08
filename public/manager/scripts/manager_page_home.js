@@ -1,18 +1,46 @@
 // manager_page_home.js
 
-$(function(){
+$(function() {
 
-	//初始化coverflow
-	var time = 0,
-		length = $('.iframe-wrapper').length,
-		startIndex = 2;//第二个是正面
-	$('.iframe-wrapper').each(function(index) {
-			var _this = $(this);
-			time += 150;
-			setTimeout(function() {
-				if (index<startIndex) _this.css('-webkit-transform','translate(-'+(100+40*(startIndex-1-index))+'%,0) rotateY(60deg)');
-				else if(index>startIndex) _this.css('-webkit-transform','translate('+(10+40*(length-index+1))+'%,0) rotateY(-60deg)');
-			}, time)
-		})
+	//coverflow效果 默认第二个是正面照～～～
+	var json = {
+		perspective: 500,
+		rotateX: 0,
+		rotateY: 0,
+		rotateZ: 0,
+		scaleX: 1,
+		scaleY: 1,
+		scaleZ: 1,
+		translateX: 0,
+		translateY: 0,
+		translateZ: 0
+	}
 
+	var iframeWrappers = document.querySelectorAll('.iframe-wrapper'),
+		list = document.querySelector(".manager-page-list");
+	var left = 0,
+		prevP = 0;
+	
+	$(iframeWrappers).each(function(index) {
+		var _this = $(iframeWrappers)[index];
+		json.rotateY = index * 25;
+		left = index * 340;
+		_this.style['left'] = left + "px";
+		_this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
+	})
+
+	$(list).scroll(function() {
+		var stepWidth = Math.ceil((list.scrollWidth -$(this).scrollLeft() )/ (iframeWrappers.length));
+		console.log(stepWidth)
+		if (Math.ceil($(this).scrollLeft() / stepWidth) != prevP) {
+			prevP = Math.ceil($(this).scrollLeft() / stepWidth);
+			$(iframeWrappers).each(function(index) {
+				var _this = $(iframeWrappers)[index];
+				json.rotateY = -25*prevP + index * 25;
+				_this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
+			})
+		}
+	})
+
+	// $(list).scrollTo(20)
 });
