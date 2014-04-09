@@ -105,12 +105,14 @@ exports.page = function(req, res) {
                 modules;
             var renderData = {
                 moduleConfig: pageConfig,
-                moduleData: pageData,
                 projectName: projectName,
                 pageName: pageName,
                 moduleDataToString: JSON.stringify(pageData, '', 4),
                 randonNum: utils.getRandomMd5()
             }
+
+            utils.extend(renderData,pageData);
+
             var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
             fs.readFile(realPath, "utf-8", function(err, file) {
                 if (err) {
@@ -123,9 +125,9 @@ exports.page = function(req, res) {
                         modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
                     }
                     var moduleRenderData = getModuleRenderData(projectName,modules);
-
                     //渲染modules 改变渲染数据为module的默认数据
-                    renderData.moduleData = moduleRenderData;
+                    utils.extend(renderData,moduleRenderData)
+
                     var htmls = getHtmls(modulePath, renderData);
                     //将数据改为page的数据
                     renderData.moduleData = pageData;
@@ -167,9 +169,9 @@ exports.pagePreview = function(req, res) {
         pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
     var renderData = {
         moduleConfig: pageConfig,
-        moduleData: pageData,
         pageName: pageName
     }
+    utils.extend(renderData,pageData);
     res.render(projectName + '/pages/' + pageName + '.ejs', renderData);
 }
 

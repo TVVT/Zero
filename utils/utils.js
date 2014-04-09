@@ -91,10 +91,17 @@ exports.checkFileExist = function(projectName, pageName, callback) {
 
 /**
  * [继承]
- * @return 继承两个json
+ * @return 让o1继承o2
  */
-exports.extend = function(){
-
+exports.extend = function(o1,o2){
+    if(typeof o1 === 'object' && typeof o2 === 'object'){
+        for(o in o2){
+            o1[o] = o2[o];
+        }
+        return true;
+    }else{
+        console.error("extend类型异常")
+    }
 }
 
 /*
