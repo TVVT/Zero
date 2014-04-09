@@ -90,9 +90,17 @@ exports.page = function(req, res) {
 		if (!exists) {
 			res.send("404...");
 		} else {
-			var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-				pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json'),
-				pageEjs,
+			
+			try{
+				var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
+				pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+			}catch(e){
+				console.log(e);
+				var pageConfig = {},
+				pageData = {};
+			}
+
+			var	pageEjs,
 				modules;
 			var renderData = {
 				moduleConfig: pageConfig,
