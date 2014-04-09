@@ -110,6 +110,7 @@ exports.page = function(req, res) {
 				moduleDataToString: JSON.stringify(pageData, '', 4),
 				randonNum: utils.getRandomMd5()
 			}
+			
 			var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
 			fs.readFile(realPath, "utf-8", function(err, file) {
 				if (err) {

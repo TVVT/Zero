@@ -89,6 +89,14 @@ exports.checkFileExist = function(projectName, pageName, callback) {
     });
 }
 
+/**
+ * [继承]
+ * @return 继承两个json
+ */
+exports.extend = function(){
+
+}
+
 /*
  *   读取目录下所有文件的文件名  返回数组
  *   param1 路径名 绝对路径
