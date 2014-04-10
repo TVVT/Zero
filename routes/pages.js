@@ -119,24 +119,24 @@ exports.page = function(req, res) {
                     console.log(err);
                 } else {
                     modules = getModules(file);
-                    var modulePath = [];
-                    for (var i = 0; i < modules.length; i++) {
-                        //这里的modulePath 从 Projects根目录开始
-                        modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
-                    }
-                    var moduleRenderData = getModuleRenderData(projectName,modules);
+                    // var modulePath = [];
+                    // for (var i = 0; i < modules.length; i++) {
+                    //     //这里的modulePath 从 Projects根目录开始
+                    //     modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
+                    // }
+                    // var moduleRenderData = getModuleRenderData(projectName,modules);
                     //渲染modules 改变渲染数据为module的默认数据
-                    utils.extend(renderData,moduleRenderData)
+                    // utils.extend(renderData,moduleRenderData)
 
-                    var htmls = getHtmls(modulePath, renderData);
+                    // var htmls = getHtmls(modulePath, renderData);
                     //将数据改为page的数据
-                    renderData.moduleData = pageData;
+                    // renderData.moduleData = pageData;
 
                     var pageSourcePath = [];
                     pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
                     var source = getHtmls(pageSourcePath,renderData);
 
-                    renderData.htmls = htmls;
+                    // renderData.htmls = htmls;
                     renderData.modules = modules;
                     renderData.pageSource = source;
                     
