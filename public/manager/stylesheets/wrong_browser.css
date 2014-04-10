@@ -1,0 +1,21 @@
+body{
+	background: #f3f3f3;
+	color:#333;
+	text-align: center;
+	font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+h1{
+	font-size: 40px;
+	margin-top: 160px;
+}
+
+a.download-chrome{
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+	display: inline-block;
+	background: #5fb336;
+	border-radius: 10px;
+	padding: 15px;
+}
