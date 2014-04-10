@@ -166,14 +166,32 @@ exports.pagePreview = function(req, res) {
     var pageName = req.params.name,
         projectName = req.params.projectName,
         pageConfig = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-        pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
-
+        pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json'),
+        modules,
+        content;
     var renderData = {
         moduleConfig: pageConfig,
         pageName: pageName
     }
     utils.extend(renderData,pageData);
-    res.render(projectName + '/pages/' + pageName + '.ejs', renderData);
+    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+    
+    try{
+        var file = fs.readFileSync(realPath, "utf-8");
+        modules = getModules(file);
+        var modulePath = [];
+        for (var i = 0; i < modules.length; i++) {
+            modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
+        }
+        content = getHtmls(modulePath,renderData).join("");
+    }catch(e){
+        console.error(e);
+    }
+    renderData.content = content;
+    var html = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+    res.charset = 'utf-8';
+    res.set('Content-Type', 'text/html');
+    res.send(html);
 }
 
 /*
