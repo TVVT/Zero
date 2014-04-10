@@ -12,17 +12,16 @@ exports.getFile = function(req, res) {
 			res.send("This request URL " + fileName + " was not found on this server.");
 		} else {
 			//找到文件在这里进行处理
-			fs.readFile(realPath, "utf-8", function(err, file) {
+			fs.readFile(realPath,function(err, file) {
 				if (err) {
 					res.end(err);
 				} else {
-					// file.encode('utf-8');
 					var ext = path.extname(realPath);
 					ext = ext ? ext.slice(1) : 'unknown';
 					var contentType = mime[ext] || "text/plain";
 					res.charset = 'utf-8';
 					res.set('Content-Type', mime[ext] || 'text/plain');
-					res.send(file);
+					res.end(file);
 				}
 			});
 		}
