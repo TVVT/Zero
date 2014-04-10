@@ -165,8 +165,9 @@ exports.pagePreview = function(req, res) {
     };
     var pageName = req.params.name,
         projectName = req.params.projectName,
-        pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-        pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+        pageConfig = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
+        pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+
     var renderData = {
         moduleConfig: pageConfig,
         pageName: pageName
@@ -230,6 +231,12 @@ function resolveInclude(name, filename) {
     if (!ext) path += '.ejs';
     return path;
 }
+
+function requireUncache(module){
+    delete require.cache[require.resolve(module)]
+    return require(module)
+}
+
 
 //读取page文件 自动判断其中include了几个模块 return [模块数组]
 function getModules(fs) {

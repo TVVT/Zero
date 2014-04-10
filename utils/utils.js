@@ -23,6 +23,11 @@ exports.mimes_types = {
     "xml": "text/xml"
 };
 
+exports.requireUncache = function(module){
+    delete require.cache[require.resolve(module)]
+    return require(module)
+}
+
 exports.readFile = function(filePath, charset, callback) {
     path.exists(filePath, function(exists) {
         if (!exists) {
