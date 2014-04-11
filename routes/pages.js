@@ -169,12 +169,8 @@ exports.pagePreview = function(req, res) {
     
     try{
         var file = fs.readFileSync(realPath, "utf-8");
-        modules = getModules(file);
-        var modulePath = [];
-        for (var i = 0; i < modules.length; i++) {
-            modulePath.push(projectName + '/components/' + modules[i] + '.ejs');
-        }
-        content = getHtmls(modulePath,renderData).join("");
+        renderData.filename = realPath;
+        content = ejs.render(file, renderData);
     }catch(e){
         console.error(e);
     }
