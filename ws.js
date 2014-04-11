@@ -15,9 +15,19 @@ wss.on('connection', function(ws) {
 	});
 });
 
+wss.on('close', function(data) {
+	console.log(data);
+    console.log('disconnected');
+});
+
 exports.send = function(cid, data) {
 	if (wsGroup[cid]) {
-		wsGroup[cid].send(data);
+		try{
+			wsGroup[cid].send(data);
+		}catch(e){
+			delete wsGroup[cid];
+			console.error(e);
+		}
 	}else{
 		console.log("没有"+cid+"的这个ws实例");
 	}
