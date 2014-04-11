@@ -83,7 +83,7 @@ exports.feedBack = function(req, res) {
 
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
-    
+
     //进行浏览器检测   
     if(req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30){
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
@@ -126,7 +126,11 @@ exports.page = function(req, res) {
                     modules = getModules(file);
                     var pageSourcePath = [];
                     pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
-                    var source = getHtmls(pageSourcePath,renderData);
+
+                    renderData.filename = realPath;
+                    var html = ejs.render(file,renderData);
+                    renderData.content = html;
+                    var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
 
                     renderData.modules = modules;
                     renderData.pageSource = source;
