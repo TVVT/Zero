@@ -19,7 +19,9 @@
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
             <div class="iframe-wrapper">
+                 <a class="iframe-link" href="#">
                 <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
+                </a>
             </div>
         <%}%>
     </div>
