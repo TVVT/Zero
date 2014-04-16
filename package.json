@@ -6,7 +6,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "*",
+    "express": "3.5.1",
     "ejs": "*",
     "ws":"*",
     "mongodb":"*",
