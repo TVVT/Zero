@@ -14,7 +14,7 @@ var ifaces = os.networkInterfaces();
 var ipAddress = '';
 
 for (var dev in ifaces) {
-    ifaces[dev].forEa ch(function(details) {
+    ifaces[dev].forEach(function(details) {
         if (details.family == 'IPv4' && !details.internal) {
             ipAddress = details.address;
         }
@@ -165,40 +165,38 @@ exports.pagePreview = function(req, res) {
         content;
 
     utils.checkFileExist(projectName, pageName, function(exists) {
-        if (exists) {
+        if (!exists) {
             res.send("404...")
         } else {
             try {
                 var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
                     pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
-            } catch {
+            } catch (e) {
                 console.log(e);
                 var pageConfig = {},
                     pageData = {};
-                var renderData = {
-                    moduleConfig: pageConfig,
-                    pageName: pageName
-                }
-                utils.extend(renderData, pageData);
-                var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
-
-                try {
-                    var file = fs.readFileSync(realPath, "utf-8");
-                    renderData.filename = realPath;
-                    content = ejs.render(file, renderData);
-                } catch (e) {
-                    console.error(e);
-                }
-                renderData.content = content;
-                var html = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
-                res.charset = 'utf-8';
-                res.set('Content-Type', 'text/html');
-                res.send(html);
             }
+            var renderData = {
+                moduleConfig: pageConfig,
+                pageName: pageName
+            }
+            utils.extend(renderData, pageData);
+            var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+
+            try {
+                var file = fs.readFileSync(realPath, "utf-8");
+                renderData.filename = realPath;
+                content = ejs.render(file, renderData);
+            } catch (e) {
+                console.error(e);
+            }
+            renderData.content = content;
+            var html = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+            res.charset = 'utf-8';
+            res.set('Content-Type', 'text/html');
+            res.send(html);
         }
     })
-
-
 }
 
 exports.downloadPackage = function(req, res) {
