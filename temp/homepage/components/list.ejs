@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/projects/test_project/resource/css/list.css">
+<div id="list" module-name="list" developper="kevin14">
+	<ul>
+		<%for(var i=0;i<list.defaultData.length;i++){ %>
+			<li>
+				<span><%=list.defaultData[i].id%></span>
+				<span><%=list.defaultData[i].name%></span>
+			</li>
+		<%}%>
+	</ul>
+</div>

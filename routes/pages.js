@@ -7,7 +7,8 @@ var ejs = require('ejs'),
     managerPath = path.join(__dirname, '../views/manager/'),
     ws = require('../ws.js'),
     os = require('os'),
-    formidable = require('formidable');
+    formidable = require('formidable'),
+    exec = require('child_process').exec;
 
 var ifaces = os.networkInterfaces();
 var ipAddress = '';
@@ -85,7 +86,7 @@ exports.feedBack = function(req, res) {
 exports.page = function(req, res) {
 
     //进行浏览器检测   
-    if(req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30){
+    if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
     }
 
@@ -96,14 +97,14 @@ exports.page = function(req, res) {
         if (!exists) {
             res.send("404...");
         } else {
-            
-            try{
+
+            try {
                 var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
-            }catch(e){
+                    pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+            } catch (e) {
                 console.log(e);
                 var pageConfig = {},
-                pageData = {};
+                    pageData = {};
             }
 
             var pageEjs,
@@ -116,7 +117,7 @@ exports.page = function(req, res) {
                 randonNum: utils.getRandomMd5()
             }
 
-            utils.extend(renderData,pageData);
+            utils.extend(renderData, pageData);
 
             var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
             fs.readFile(realPath, "utf-8", function(err, file) {
@@ -125,16 +126,16 @@ exports.page = function(req, res) {
                 } else {
                     modules = getModules(file);
                     var pageSourcePath = [];
-                    pageSourcePath.push(projectName+'/pages/'+pageName+'.ejs');
+                    pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
 
                     renderData.filename = realPath;
-                    var html = ejs.render(file,renderData);
+                    var html = ejs.render(file, renderData);
                     renderData.content = html;
                     var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
 
                     renderData.modules = modules;
                     renderData.pageSource = source;
-                    
+
                     renderData.ipAddress = ipAddress;
                     renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
 
@@ -168,14 +169,14 @@ exports.pagePreview = function(req, res) {
         moduleConfig: pageConfig,
         pageName: pageName
     }
-    utils.extend(renderData,pageData);
+    utils.extend(renderData, pageData);
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
-    
-    try{
+
+    try {
         var file = fs.readFileSync(realPath, "utf-8");
         renderData.filename = realPath;
         content = ejs.render(file, renderData);
-    }catch(e){
+    } catch (e) {
         console.error(e);
     }
     renderData.content = content;
@@ -183,6 +184,49 @@ exports.pagePreview = function(req, res) {
     res.charset = 'utf-8';
     res.set('Content-Type', 'text/html');
     res.send(html);
+}
+
+exports.downloadPackage = function(req, res) {
+
+    var projectName = req.params.projectName,
+        pageName = req.params.name,
+        modules,
+        cmd = "zip -j temp/" + pageName + ".zip";
+
+    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+    var file = fs.readFileSync(realPath, "utf-8");
+    modules = getModules(file);
+
+    for (var i = 0; i < modules.length; i++) {
+        cmd += " ../Projects/" + projectName + "/components/" + modules[i] + ".ejs"
+    }
+
+    var downloadPath = [
+        " ../Projects/" + projectName + "/resource/css/" + pageName + ".css",
+        " ../Projects/" + projectName + "/resource/scripts/" + pageName + ".js",
+        " ../Projects/" + projectName + "/pages/" + pageName + ".ejs"
+    ]
+
+    for (var i = 0; i < downloadPath.length; i++) {
+        cmd += downloadPath[i];
+    }
+
+    exec(cmd, function(err, stdout, stderr) {
+        if (err) {
+            console.error(err)
+            res.end("error")
+        } else {
+            var downloadLink = path.join(__dirname, "../temp/"+pageName+".zip")
+            res.download(downloadLink, pageName + '.zip', function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+
+                }
+            });
+        }
+
+    });
 }
 
 /*
@@ -209,12 +253,12 @@ function getModuleConfig(moduleType, name) {
  * @param  {[array]} modules＝
  * @return {[data obejct]}
  */
-function getModuleRenderData(projectName,modules){
+function getModuleRenderData(projectName, modules) {
     var data = {};
-    for(var i =0;i<modules.length;i++){
-        try{
+    for (var i = 0; i < modules.length; i++) {
+        try {
             data[modules[i]] = require('../../Projects/' + projectName + '/components/' + modules[i] + '.data.json')[modules[i]];
-        }catch(e){
+        } catch (e) {
             console.log(e);
             data[modules[i]] = {};
         }
@@ -227,7 +271,7 @@ function getHtmls(pathNames, renderData) {
     for (var i = 0; i < pathNames.length; i++) {
         var pathName = path.join(__dirname, '../../Projects/' + pathNames[i]);
         renderData.filename = pathName;
-        var html = ejs.render(read(pathName,'utf8'), renderData);
+        var html = ejs.render(read(pathName, 'utf8'), renderData);
         htmls.push(html);
     }
     return htmls;
@@ -241,7 +285,7 @@ function resolveInclude(name, filename) {
     return path;
 }
 
-function requireUncache(module){
+function requireUncache(module) {
     delete require.cache[require.resolve(module)]
     return require(module)
 }

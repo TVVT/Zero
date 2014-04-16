@@ -97,10 +97,10 @@ $(function() {
         $('.manager-page-qrcode').toggleClass('show');
     });
 
-    $('#showModules').on('click',function(){
-        $('.manager-page-modules').toggleClass('show');
-        // $('.module-ui-wrapper').toggleClass('show');
-    });
+    // $('#showModules').on('click',function(){
+    //     // $('.manager-page-modules').toggleClass('show');
+    //     // $('.module-ui-wrapper').toggleClass('show');
+    // });
 
     $('#showSource').on('click',function(){
         $('.page-data-board').removeClass('show');
