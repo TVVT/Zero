@@ -204,42 +204,82 @@ exports.downloadPackage = function(req, res) {
     var projectName = req.params.projectName,
         pageName = req.params.name,
         modules,
-        cmd = "zip -j temp/" + pageName + ".zip";
+        cmd = "mkdir ./temp/components;",
+        renderData = {};
 
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
     var file = fs.readFileSync(realPath, "utf-8");
     modules = getModules(file);
 
+    //copy compenents
     for (var i = 0; i < modules.length; i++) {
-        cmd += " ../Projects/" + projectName + "/components/" + modules[i] + ".ejs"
+        cmd += "cp ../Projects/" + projectName + "/components/" + modules[i] + ".ejs temp/components/" + modules[i] + ".ejs;"
     }
 
+    //copy js css ejs
     var downloadPath = [
-        " ../Projects/" + projectName + "/resource/css/" + pageName + ".css",
-        " ../Projects/" + projectName + "/resource/scripts/" + pageName + ".js",
-        " ../Projects/" + projectName + "/pages/" + pageName + ".ejs"
+        "cp ../Projects/" + projectName + "/resource/css/" + pageName + ".css temp/" + pageName + ".css;",
+        "cp ../Projects/" + projectName + "/resource/scripts/" + pageName + ".js temp/" + pageName + ".js;",
+        "cp ../Projects/" + projectName + "/pages/" + pageName + ".ejs temp/" + pageName + ".ejs;",
+        "cp -r ../Projects/" + projectName + "/resource/images temp/images;"
     ]
 
     for (var i = 0; i < downloadPath.length; i++) {
         cmd += downloadPath[i];
     }
 
-    exec(cmd, function(err, stdout, stderr) {
-        if (err) {
-            console.error(err)
-            res.end("error")
-        } else {
-            var downloadLink = path.join(__dirname, "../temp/" + pageName + ".zip")
-            res.download(downloadLink, pageName + '.zip', function(err) {
-                if (err) {
-                    console.log(err);
-                } else {
-
-                }
-            });
+    //生成html文件
+    try {
+        var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
+            pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+    } catch (e) {
+        console.error(e);
+        var pageConfig = {},
+            pageData = {};
+    }
+    var renderData = {
+        moduleConfig: pageConfig,
+        pageName: pageName
+    }
+    utils.extend(renderData, pageData);
+    renderData.filename = realPath;
+    var html = ejs.render(file, renderData);
+    renderData.content = html;
+    var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0],
+        htmlPath = path.join(__dirname,'../temp/'+pageName+'.html');
+    var regx = /\/projects\/.+\/resource\/(scripts|css|script|images)\//g;
+    source = source.replace(regx,function($0,$1){
+        if ($1 === 'images') {
+            return './images/';
+        }else{
+            return './';
         }
-
     });
+    fs.openSync(htmlPath,'w','0777');
+    fs.writeFileSync(htmlPath,source,'utf-8');
+    //压缩 并删除原文件 之后再创建temp文件夹
+    cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";
+
+    try {
+        exec(cmd, function(err, stdout, stderr) {
+            if (err) {
+                console.error(err)
+                res.end("error")
+            } else {
+                var downloadLink = path.join(__dirname, "../downloads/" + pageName + ".zip")
+                res.download(downloadLink, pageName + '.zip', function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        exec("rm ./downloads/" + pageName + ".zip", function() {})
+                    }
+                });
+            }
+
+        });
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 /*
