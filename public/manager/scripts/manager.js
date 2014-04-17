@@ -1,7 +1,7 @@
 (function(window) {
-	var moduleName,developper,totolType,currType,e,e_moduleName,e_developper,e_currType;
+	var moduleName,developer,totolType,currType,e,e_moduleName,e_developer,e_currType;
 	var e_moduleName = document.querySelector(".manager-ui-attr-name"),
-		e_developper = document.querySelector(".manager-ui-attr-developper"),
+		e_developer = document.querySelector(".manager-ui-attr-developer"),
 		e_currType = document.querySelector(".manager-ui-attr-type"),
 		managerModuleName = document.body.attributes.getNamedItem('manager-module-name').value;
 
@@ -12,18 +12,18 @@
 		}
 		e = window.frames["ui-manager-iframe"].document.getElementById("module-info");
 		//TODO 判断属性存在 如果不存在会出现错误
-		if(moduleName||developper||totolType||currType) {
+		if(moduleName||developer||totolType||currType) {
 			alert("模块信息不完整！");
 			return;
 		};
 
 		moduleName = e.attributes.getNamedItem('module-name');
-		developper = e.attributes.getNamedItem('developper');
+		developer = e.attributes.getNamedItem('developer');
 		totolType = e.attributes.getNamedItem('totol-type');
 		currType = e.attributes.getNamedItem('curr-type');
 
 		
-		e_developper.innerText = developper.value;
+		e_developer.innerText = developer.value;
 		e_moduleName.innerText = moduleName.value;
 		e_currType.value = Number(currType.value);
 
