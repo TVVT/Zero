@@ -100,7 +100,7 @@ exports.page = function(req, res) {
 
             try {
                 var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                    pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+                    pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
             } catch (e) {
                 console.log(e);
                 var pageConfig = {},
@@ -116,9 +116,7 @@ exports.page = function(req, res) {
                 moduleDataToString: JSON.stringify(pageData, '', 4),
                 randonNum: utils.getRandomMd5()
             }
-
             utils.extend(renderData, pageData);
-
             var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
             fs.readFile(realPath, "utf-8", function(err, file) {
                 if (err) {
@@ -170,7 +168,7 @@ exports.pagePreview = function(req, res) {
         } else {
             try {
                 var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                    pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+                    pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
             } catch (e) {
                 console.log(e);
                 var pageConfig = {},
