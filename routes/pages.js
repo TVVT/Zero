@@ -111,7 +111,7 @@ exports.page = function(req, res) {
                     modules;
                 var renderData = {
                     baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
-                    publicUrl: 'http://' + ipAddress + ':' + settings.port + '/public',
+                    publicUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/public',
                     managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                     moduleConfig: pageConfig,
                     projectName: projectName,
@@ -179,7 +179,7 @@ exports.pagePreview = function(req, res) {
             }
             var renderData = {
                 baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
-                publicUrl: 'http://' + ipAddress + ':' + settings.port + '/public',
+                publicUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/public',
                 managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                 moduleConfig: pageConfig,
                 pageName: pageName
