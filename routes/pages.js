@@ -8,7 +8,8 @@ var ejs = require('ejs'),
     ws = require('../ws.js'),
     os = require('os'),
     formidable = require('formidable'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    settings = require('../settings.json');
 
 var ifaces = os.networkInterfaces();
 var ipAddress = '';

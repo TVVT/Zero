@@ -1,0 +1,5 @@
+#stop server
+
+forever \
+stop \
+./app.js 
