@@ -110,8 +110,8 @@ exports.page = function(req, res) {
                 var pageEjs,
                     modules;
                 var renderData = {
-                    baseUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/projects/' + projectName,
-                    publicUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/public',
+                    baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
+                    publicUrl: 'http://' + ipAddress + ':' + settings.port + '/public',
                     managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                     moduleConfig: pageConfig,
                     projectName: projectName,
@@ -178,8 +178,8 @@ exports.pagePreview = function(req, res) {
                     pageData = {};
             }
             var renderData = {
-                baseUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/projects/' + projectName,
-                publicUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/public',
+                baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
+                publicUrl: 'http://' + ipAddress + ':' + settings.port + '/public',
                 managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                 moduleConfig: pageConfig,
                 pageName: pageName
