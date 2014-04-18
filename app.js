@@ -15,6 +15,7 @@ app.set('port', process.env.PORT || port);
 app.set('views', path.join(__dirname, '../Projects'));
 
 app.set('view engine', 'ejs');
+app.use(express.favicon(path.join(__dirname, 'public/manager/images/favicon.ico')));
 // app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());

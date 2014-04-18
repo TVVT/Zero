@@ -21,6 +21,8 @@ for (var dev in ifaces) {
         }
     });
 }
+var link = 'http://' + ipAddress + ':' + settings.port;
+
 
 
 exports.list = function(req, res) {
@@ -110,15 +112,16 @@ exports.page = function(req, res) {
                 var pageEjs,
                     modules;
                 var renderData = {
-                    baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
-                    publicUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/public',
-                    managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
+                    baseUrl: link + '/projects/' + projectName,
+                    publicUrl: link + '/projects/public',
+                    managerUrl: link + '/' + projectName,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
                     moduleDataToString: JSON.stringify(pageData, '', 4),
                     randonNum: utils.getRandomMd5()
                 }
+                console.log(renderData.managerUrl)
                 utils.extend(renderData, pageData);
                 var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
@@ -178,9 +181,9 @@ exports.pagePreview = function(req, res) {
                     pageData = {};
             }
             var renderData = {
-                baseUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/' + projectName,
-                publicUrl: 'http://' + ipAddress + ':' + settings.port + '/projects/public',
-                managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
+                baseUrl: link + '/projects/' + projectName,
+                publicUrl: link + '/projects/public',
+                managerUrl: link + '/' + projectName,
                 moduleConfig: pageConfig,
                 pageName: pageName
             }
