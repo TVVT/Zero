@@ -2,4 +2,4 @@
 
 forever \
 stop \
-./app.js 
+app.js 

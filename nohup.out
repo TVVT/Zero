@@ -1,0 +1,4179 @@
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+{ [Error: Command failed: /bin/sh: 1: zip: not found
+] killed: false, code: 127, signal: null }
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, no such file or directory '/home/yhd/yhd/UIManager/temp/home.html'
+    at Object.fs.openSync (fs.js:427:18)
+    at exports.downloadPackage (/home/yhd/yhd/UIManager/routes/pages.js:258:8)
+    at callbacks (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:164:37)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:138:11)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:135:11)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:135:11)
+    at pass (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+Error: ENOENT, no such file or directory '/home/yhd/yhd/UIManager/temp/home.html'
+    at Object.fs.openSync (fs.js:427:18)
+    at exports.downloadPackage (/home/yhd/yhd/UIManager/routes/pages.js:258:8)
+    at callbacks (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:164:37)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:138:11)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:135:11)
+    at param (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:135:11)
+    at pass (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/home/yhd/yhd/UIManager/node_modules/express/lib/router/index.js:33:10)
+    at next (/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+{ [Error: Command failed: cp: cannot stat `../Projects/lottery/resource/scripts/home.js': No such file or directory
+cp: cannot stat `../Projects/lottery/resource/images': No such file or directory
+/bin/sh: 1: zip: not found
+mkdir: cannot create directory `./temp': File exists
+] killed: false, code: 1, signal: null }
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+path.exists is now called `fs.exists`.
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+{ [Error: Command failed: mkdir: cannot create directory `./temp/components': File exists
+cp: cannot stat `../Projects/lottery/resource/scripts/home.js': No such file or directory
+cp: cannot stat `../Projects/lottery/resource/images': No such file or directory
+/bin/sh: 1: zip: not found
+mkdir: cannot create directory `./temp': File exists
+] killed: false, code: 1, signal: null }
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+
+undefined:24
+  throw err;
+        ^
+ReferenceError: /home/yhd/yhd/Projects/lottery/pages/home.ejs:3
+    1| <% include ../components/header.ejs %>
+    2| <div class="lottery_page-home">
+ >> 3|     <% include ../components/marquee.ejs %>
+    4|     <% include ../components/lists.ejs %>
+    5| </div>
+
+header is not defined
+    at buf.push..
+<div class="lottery_page-home">
+    .buf (eval at <anonymous> (/home/yhd/yhd/UIManager/node_modules/ejs/lib/ejs.js:242:14), <anonymous>:30:122)
+    at eval (eval at <anonymous> (/home/yhd/yhd/UIManager/node_modules/ejs/lib/ejs.js:242:14), <anonymous>:31:23)
+    at eval (eval at <anonymous> (/home/yhd/yhd/UIManager/node_modules/ejs/lib/ejs.js:242:14), <anonymous>:35:43)
+    at /home/yhd/yhd/UIManager/node_modules/ejs/lib/ejs.js:255:15
+    at Object.exports.render (/home/yhd/yhd/UIManager/node_modules/ejs/lib/ejs.js:293:13)
+    at /home/yhd/yhd/UIManager/routes/pages.js:132:36
+    at fs.js:266:14
+    at Object.oncomplete (fs.js:107:15)
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+connected!
+
+DEBUG: Running node-supervisor with
+DEBUG:   program 'app.js'
+DEBUG:   --watch '.'
+DEBUG:   --ignore 'undefined'
+DEBUG:   --extensions 'node,js'
+DEBUG:   --exec 'node'
+
+DEBUG: Starting child process with 'node app.js'
+DEBUG: Watching directory '/home/yhd/yhd/UIManager' for changes.
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+Error: ENOENT, open '/home/yhd/yhd/UIManager/node_modules/express/node_modules/connect/node_modules/static-favicon/../public/favicon.ico'
+DEBUG: Sending SIGHUP to child...
+
+DEBUG: Running node-supervisor with
+DEBUG:   program '$'
+DEBUG:   --watch '.'
+DEBUG:   --ignore 'undefined'
+DEBUG:   --extensions 'node,js'
+DEBUG:   --exec 'node'
+
+DEBUG: Starting child process with 'node $'
+DEBUG: Watching directory '/home/yhd/yhd/UIManager' for changes.
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module '/home/yhd/yhd/UIManager/$'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Function.Module.runMain (module.js:497:10)
+    at startup (node.js:119:16)
+    at node.js:902:3
+DEBUG: Program node $ exited with code 8
+
+DEBUG: Starting child process with 'node $'
+DEBUG: Sending SIGINT to child...
+
+DEBUG: Running node-supervisor with
+DEBUG:   program 'app.js'
+DEBUG:   --watch '.'
+DEBUG:   --ignore 'undefined'
+DEBUG:   --extensions 'node,js'
+DEBUG:   --exec 'node'
+
+DEBUG: Starting child process with 'node app.js'
+DEBUG: Watching directory '/home/yhd/yhd/UIManager' for changes.
+Express server listening on port 3000
+you can view your project at http://localhost:3000/:project/pages/:name
+you can preview your project at http://localhost:3000/:project/pages/preview/:name
+path.exists is now called `fs.exists`.
+DEBUG: Sending SIGINT to child...
