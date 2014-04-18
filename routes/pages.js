@@ -256,7 +256,7 @@ exports.downloadPackage = function(req, res) {
     renderData.content = html;
     var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0],
         htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
-    var regx = /\/projects\/.+\/resource\/(scripts|css|script|images)\//g;
+    var regx = /\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
         if ($1 === 'images') {
             return './images/';
