@@ -89,7 +89,7 @@ exports.page = function(req, res) {
     //进行浏览器检测   
     if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
-    } else{
+    } else {
         var pageName = req.params.name,
             projectName = req.params.projectName;
 
@@ -110,8 +110,9 @@ exports.page = function(req, res) {
                 var pageEjs,
                     modules;
                 var renderData = {
-                    baseUrl:settings.baseUrl+projectName+'/',
-                    publicUrl:settings.publicUrl,
+                    baseUrl: settings.baseUrl + '/projects/' + projectName,
+                    publicUrl: settings.baseUrl + '/public',
+                    managerUrl: settings.baseUrl + '/' + projectName,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
@@ -178,6 +179,9 @@ exports.pagePreview = function(req, res) {
                     pageData = {};
             }
             var renderData = {
+                baseUrl: settings.baseUrl + '/projects/' + projectName,
+                publicUrl: settings.baseUrl + '/public',
+                managerUrl: settings.baseUrl + '/' + projectName,
                 moduleConfig: pageConfig,
                 pageName: pageName
             }
