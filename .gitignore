@@ -1,4 +1,6 @@
 node_modules/
-
+err.log
+nohup.out
+out.log
 #TMP_Files
 *.DS_Store
