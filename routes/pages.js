@@ -88,61 +88,61 @@ exports.page = function(req, res) {
     //进行浏览器检测   
     if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
-    }
+    } else{
+        var pageName = req.params.name,
+            projectName = req.params.projectName;
 
-    var pageName = req.params.name,
-        projectName = req.params.projectName;
+        utils.checkFileExist(projectName, pageName, function(exists) {
+            if (!exists) {
+                res.send("404...");
+            } else {
 
-    utils.checkFileExist(projectName, pageName, function(exists) {
-        if (!exists) {
-            res.send("404...");
-        } else {
-
-            try {
-                var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                    pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
-            } catch (e) {
-                console.log(e);
-                var pageConfig = {},
-                    pageData = {};
-            }
-
-            var pageEjs,
-                modules;
-            var renderData = {
-                moduleConfig: pageConfig,
-                projectName: projectName,
-                pageName: pageName,
-                moduleDataToString: JSON.stringify(pageData, '', 4),
-                randonNum: utils.getRandomMd5()
-            }
-            utils.extend(renderData, pageData);
-            var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
-            fs.readFile(realPath, "utf-8", function(err, file) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    modules = getModules(file);
-                    var pageSourcePath = [];
-                    pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
-
-                    renderData.filename = realPath;
-                    var html = ejs.render(file, renderData);
-                    renderData.content = html;
-                    var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
-
-                    renderData.modules = modules;
-                    renderData.pageSource = source;
-
-                    renderData.ipAddress = ipAddress;
-                    renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
-
-                    var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
-                    res.render(managerPagePath, renderData);
+                try {
+                    var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
+                        pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+                } catch (e) {
+                    console.log(e);
+                    var pageConfig = {},
+                        pageData = {};
                 }
-            });
-        }
-    });
+
+                var pageEjs,
+                    modules;
+                var renderData = {
+                    moduleConfig: pageConfig,
+                    projectName: projectName,
+                    pageName: pageName,
+                    moduleDataToString: JSON.stringify(pageData, '', 4),
+                    randonNum: utils.getRandomMd5()
+                }
+                utils.extend(renderData, pageData);
+                var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+                fs.readFile(realPath, "utf-8", function(err, file) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        modules = getModules(file);
+                        var pageSourcePath = [];
+                        pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
+
+                        renderData.filename = realPath;
+                        var html = ejs.render(file, renderData);
+                        renderData.content = html;
+                        var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+
+                        renderData.modules = modules;
+                        renderData.pageSource = source;
+
+                        renderData.ipAddress = ipAddress;
+                        renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
+
+                        var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
+                        res.render(managerPagePath, renderData);
+                    }
+                });
+            }
+        });
+    }
 }
 
 exports.pagePreview = function(req, res) {
@@ -244,17 +244,17 @@ exports.downloadPackage = function(req, res) {
     var html = ejs.render(file, renderData);
     renderData.content = html;
     var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0],
-        htmlPath = path.join(__dirname,'../temp/'+pageName+'.html');
+        htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /\/projects\/.+\/resource\/(scripts|css|script|images)\//g;
-    source = source.replace(regx,function($0,$1){
+    source = source.replace(regx, function($0, $1) {
         if ($1 === 'images') {
             return './images/';
-        }else{
+        } else {
             return './';
         }
     });
-    fs.openSync(htmlPath,'w','0777');
-    fs.writeFileSync(htmlPath,source,'utf-8');
+    fs.openSync(htmlPath, 'w', '0777');
+    fs.writeFileSync(htmlPath, source, 'utf-8');
     //压缩 并删除原文件 之后再创建temp文件夹
     cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";
 
