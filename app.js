@@ -4,13 +4,14 @@ var pages = require('./routes/pages')
 var http = require('http');
 var path = require('path');
 var _static = require('./routes/static');
-var util = require('./utils/utils');
+var util = require('./utils/utils'),
+	port = require('./settings').port;
 
 var app = express();
 
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || port);
 app.set('views', path.join(__dirname, '../Projects'));
 
 app.set('view engine', 'ejs');

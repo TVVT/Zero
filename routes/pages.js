@@ -110,9 +110,9 @@ exports.page = function(req, res) {
                 var pageEjs,
                     modules;
                 var renderData = {
-                    baseUrl: settings.baseUrl + '/projects/' + projectName,
-                    publicUrl: settings.baseUrl + '/public',
-                    managerUrl: settings.baseUrl + '/' + projectName,
+                    baseUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/projects/' + projectName,
+                    publicUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/public',
+                    managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
@@ -138,7 +138,6 @@ exports.page = function(req, res) {
                         renderData.pageSource = source;
 
                         renderData.ipAddress = ipAddress;
-                        renderData.serverPort = 3000; // 这里暂时写死 不知道去哪里读取。
 
                         var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
                         res.render(managerPagePath, renderData);
@@ -179,9 +178,9 @@ exports.pagePreview = function(req, res) {
                     pageData = {};
             }
             var renderData = {
-                baseUrl: settings.baseUrl + '/projects/' + projectName,
-                publicUrl: settings.baseUrl + '/public',
-                managerUrl: settings.baseUrl + '/' + projectName,
+                baseUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/projects/' + projectName,
+                publicUrl: 'http://' + ipAddress + ':' + ':' + settings.port + '/public',
+                managerUrl: 'http://' + ipAddress + ':' + settings.port + '/' + projectName,
                 moduleConfig: pageConfig,
                 pageName: pageName
             }
