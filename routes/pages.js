@@ -110,6 +110,8 @@ exports.page = function(req, res) {
                 var pageEjs,
                     modules;
                 var renderData = {
+                    baseUrl:settings.baseUrl+projectName+'/',
+                    publicUrl:settings.publicUrl,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
