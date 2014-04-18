@@ -121,7 +121,6 @@ exports.page = function(req, res) {
                     moduleDataToString: JSON.stringify(pageData, '', 4),
                     randonNum: utils.getRandomMd5()
                 }
-                console.log(renderData.managerUrl)
                 utils.extend(renderData, pageData);
                 var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
@@ -245,6 +244,9 @@ exports.downloadPackage = function(req, res) {
             pageData = {};
     }
     var renderData = {
+        baseUrl: link + '/projects/' + projectName,
+        publicUrl: link + '/projects/public',
+        managerUrl: link + '/' + projectName,
         moduleConfig: pageConfig,
         pageName: pageName
     }
@@ -306,6 +308,14 @@ function getModuleConfig(moduleType, name) {
         };
     }
     return data;
+}
+
+function renderData(projectName) {
+    return {
+        baseUrl: link + '/projects/' + projectName,
+        publicUrl: link + '/projects/public',
+        managerUrl: link + '/' + projectName,
+    }
 }
 
 /**
