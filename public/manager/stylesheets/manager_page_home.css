@@ -11,25 +11,52 @@ footer{
 	/*padding: 0 30px;*/
 	/*flex:1;*/
 	height: 100%;
-	/*display: flex;*/
 	overflow: scroll;
-	/*flex-flow:wrap;*/
+	flex-flow:wrap;
 	background: #333;
 	position: relative;
 	/*-webkit-perspective: 1000px;*/
+    white-space: nowrap;
+    text-align: center;
 }
 
 .manager-page-list .iframe-wrapper{
 	width: 320px;
 	height: 480px;
-	position: absolute;
-    top: 64px;
+    display: inline-block;
+    margin: 100px 30px;
+	/*position: absolute;*/
+    /*top: 64px;*/
     /*left: 50%;*/
     /*margin-left: -160px;*/
     transition:-webkit-transform 0.5s;
     /*-webkit-transform: rotateY(-60deg) ;*/
-
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
+
+.manager-page-list .iframe-wrapper:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    background: rgba(0,0,0,0);
+    transition:background 0.5s;
+    text-align: center;
+    font-size: 14px;
+    line-height: 480px;
+    color: #fff;
+}
+
+.manager-page-list .iframe-wrapper:hover:after{
+    content:  attr(data-name);
+    background: rgba(0,0,0,0.65);
+}
+
 
 .manager-page-list .iframe-wrapper iframe{
     background: #fff;

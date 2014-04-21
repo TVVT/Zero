@@ -21,13 +21,20 @@ $(function() {
 	var left = 0,
 		prevP = 0;
 	
-	$(iframeWrappers).each(function(index) {
-		var _this = $(iframeWrappers)[index];
-		json.rotateY = index * 25;
-		left = index * 340;
-		_this.style['left'] = left + "px";
-		// _this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
-	})
+	// $(iframeWrappers).each(function(index) {
+	// 	var _this = $(iframeWrappers)[index];
+	// 	json.rotateY = index * 25;
+	// 	left = index * 340;
+	// 	_this.style['left'] = left + "px";
+	// 	// _this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
+	// })
+	
+	$('.iframe-wrapper').on('click',function(){
+		if($(this).attr('data-href')){
+			window.location.href = $(this).attr('data-href');
+		}
+	});
+
 
 	$(list).scroll(function() {
 		var stepWidth = Math.ceil((list.scrollWidth -$(this).scrollLeft() )/ (iframeWrappers.length));

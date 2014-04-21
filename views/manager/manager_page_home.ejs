@@ -18,9 +18,9 @@
     </header>
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
-            <div class="iframe-wrapper">
+            <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>">
                  <a class="iframe-link" href="#">
-                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
+                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" ></iframe>
                 </a>
             </div>
         <%}%>
