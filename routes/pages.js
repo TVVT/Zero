@@ -12,7 +12,7 @@ var ejs = require('ejs'),
     settings = require('../settings.json');
 
 var ifaces = os.networkInterfaces();
-var ipAddress = '';
+var ipAddress = 'localhost';
 
 for (var dev in ifaces) {
     ifaces[dev].forEach(function(details) {
@@ -134,7 +134,8 @@ exports.page = function(req, res) {
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
                         renderData.content = html;
-                        var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+                        pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
+                        var source = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0];
 
                         renderData.modules = modules;
                         renderData.pageSource = source;
@@ -197,7 +198,8 @@ exports.pagePreview = function(req, res) {
                 console.error(e);
             }
             renderData.content = content;
-            var html = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+            pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
+            var html = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0];
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
             res.send(html);
@@ -254,7 +256,8 @@ exports.downloadPackage = function(req, res) {
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
     renderData.content = html;
-    var source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0],
+    pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
+    var source = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0],
         htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /^[http:\/\/]{1}.+\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
