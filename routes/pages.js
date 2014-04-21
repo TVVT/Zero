@@ -134,8 +134,8 @@ exports.page = function(req, res) {
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
                         renderData.content = html;
-                        pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
-                        var source = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0];
+                        pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
+                        var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
 
                         renderData.modules = modules;
                         renderData.pageSource = source;
@@ -198,8 +198,8 @@ exports.pagePreview = function(req, res) {
                 console.error(e);
             }
             renderData.content = content;
-            pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
-            var html = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0];
+            pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
+            var html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
             res.send(html);
@@ -256,8 +256,8 @@ exports.downloadPackage = function(req, res) {
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
     renderData.content = html;
-    pageConfig.layout = pageConfig.layout?pageConfig.layout:'layout.ejs';
-    var source = getHtmls([projectName + '/layouts/'+pageConfig.layout], renderData)[0],
+    pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
+    var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0],
         htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /^[http:\/\/]{1}.+\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
@@ -297,6 +297,7 @@ exports.downloadPackage = function(req, res) {
 /*
     通过name获取moduleConfig.json中的模块配置 return {}
 */
+
 function getModuleConfig(moduleType, name) {
     var data = {};
     for (mt in moduleConfig) {
@@ -326,6 +327,7 @@ function renderData(projectName) {
  * @param  {[array]} modules＝
  * @return {[data obejct]}
  */
+
 function getModuleRenderData(projectName, modules) {
     var data = {};
     for (var i = 0; i < modules.length; i++) {
@@ -365,6 +367,7 @@ function requireUncache(module) {
 
 
 //读取page文件 自动判断其中include了几个模块 return [模块数组]
+
 function getModules(fs) {
     var modules = [];
     fs.toString().replace(/<%\s*include{1}\s+\S*\/{1}(\S+)\.ejs{1}\s*\S*%>/ig, function($1, $2) {
