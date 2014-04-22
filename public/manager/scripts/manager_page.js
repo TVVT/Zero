@@ -111,7 +111,9 @@ $(function() {
         $('.page-source-board').removeClass('show');
         $('.page-data-board').toggleClass('show');
     })
-
+    // $('#git').on('click',function(){
+    //     $('.git-info').toggleClass('show');
+    // })
     $('#pageInfo').on('click',function(){
         $('.manager-page-info').toggleClass('show');
     })
