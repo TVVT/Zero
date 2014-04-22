@@ -32,7 +32,6 @@ footer{
     transition:-webkit-transform 0.5s;
     /*-webkit-transform: rotateY(-60deg) ;*/
     position: relative;
-    overflow: hidden;
     cursor: pointer;
 }
 
