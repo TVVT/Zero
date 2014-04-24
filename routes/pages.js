@@ -229,7 +229,7 @@ exports.downloadPackage = function(req, res) {
         "cp ../Projects/" + projectName + "/resource/css/" + pageName + ".css temp/" + pageName + ".css;",
         "cp ../Projects/" + projectName + "/resource/scripts/" + pageName + ".js temp/" + pageName + ".js;",
         "cp ../Projects/" + projectName + "/pages/" + pageName + ".ejs temp/" + pageName + ".ejs;",
-        "cp -r ../Projects/" + projectName + "/resource/images temp/images;"
+        "cp -r ../Projects/" + projectName + "/resource/img temp/img;"
     ]
 
     for (var i = 0; i < downloadPath.length; i++) {
