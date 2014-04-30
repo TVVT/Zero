@@ -77,3 +77,35 @@ footer{
 .manager-page-list .iframe-wrapper:hover{
 	box-shadow: 0 0 30px rgba(0,0,0,0.2);
 }
+.git-repo {
+}
+.icon-github {
+    color:#fff;
+    height: 100%;
+    width: 60px;
+    margin-left: 20px;
+}
+
+.git-repo-address {
+    position: relative;
+    top:-3px;
+    font-size: 12px;
+    background-color:#999;
+    border-radius: 2px;
+    padding: 2px;
+    border: none;
+    outline: none;
+    width: 220px;
+}
+.git-repo-address:hover {
+    background-color: #f2f2f2;
+    -webkit-animation:bggrowth .5s;
+}
+@-webkit-keyframes bggrowth {
+    0% {
+        background-color: #999;
+    }
+    100% {
+        background-color: #f2f2f2;
+    }
+}

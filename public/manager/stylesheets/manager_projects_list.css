@@ -1,0 +1,42 @@
+header {
+    border-bottom: 1px solid #666;
+}
+.manager_projects_list {
+    height: 100%;
+    overflow: scroll;
+    flex-flow:wrap;
+    background: #333;
+    position: relative;
+    text-align: center;
+}
+.project-wrapper {
+    display: inline-block;
+    width: 153px;
+    height: 113px;
+    background-color: #cfd8e9;
+    border-color: #8fa6d1;
+    margin: 60px;
+    position: relative;
+}
+.project-wrapper .folder{
+    width: 153px;
+    height: 113px;
+    background-image: url(../images/folder.png);
+    background-size: 153px auto;
+    position: absolute;
+    z-index: 0;
+}
+
+.project-wrapper a{
+    width: 153px;
+    height: 113px;
+    display: block;
+    color: #8fa6d1;
+    text-align: center;
+    line-height: 113px;
+    text-decoration: none;
+    position: absolute;
+    z-index: 100;
+    font-size: 20px;
+    font-weight: bold;
+}

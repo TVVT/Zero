@@ -9,8 +9,9 @@
 </head>
 <body page-name="<%=pageName %>" project-name="<%=projectName%>">
     <header>
-        <h1>1UI</h1>
+        <a href="/"><h1>1UI</h1></a>
         <ul id="nav">
+            <a href="/<%=projectName%>/pages"><li class="icon-back"><i>返回</i></li></a>
             <a href="<%=managerUrl %>/pages/download/<%=pageName %>"><li class="icon-download" id="showModules"><i>下载模块</i></li></a>
             <li class="icon-qrcode" id="showQrCode"><i>二维码</i></li>
             <!-- <li class="icon-browser" id="showSource"><i>查看源码</i></li> -->
@@ -19,11 +20,8 @@
             <!-- <li class="icon-info2" id="pageInfo"><i>显示信息</i></li> -->
             <!-- <li class="icon-info2" id="git"><i>Git</i></li> -->
             <li><a href="<%=managerUrl %>/pages/preview/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
+
         </ul>
-      <!--   <div class="git-repo">
-            <label class="icon-github"></label>
-            <input type="text" value="git@192.168.112.94:/home/git/work/Projects.git <%=projectName%>" class="git-repo-address">
-        </div> -->
     </header>
 
     <div class="manager-content">

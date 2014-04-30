@@ -219,34 +219,4 @@ input[type=submit] {
         opacity: 1;
     }
 }
-.git-repo {
-}
-.icon-github {
-    color:#fff;
-    height: 100%;
-    width: 60px;
-    margin-left: 20px;
-    line-height: 44px;
-}
 
-.git-repo-address {
-    font-size: 12px;
-    background-color:#999;
-    border-radius: 2px;
-    padding: 2px;
-    border: none;
-    outline: none;
-    width: 220px;
-}
-.git-repo-address:hover {
-    background-color: #f2f2f2;
-    -webkit-animation:bggrowth .5s;
-}
-@-webkit-keyframes bggrowth {
-    0% {
-        background-color: #999;
-    }
-    100% {
-        background-color: #f2f2f2;
-    }
-}

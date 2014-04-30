@@ -1,6 +1,7 @@
 var express = require('express');
 var uis = require('./routes/uis');
-var pages = require('./routes/pages')
+var pages = require('./routes/pages');
+var projects = require('./routes/projects');
 var http = require('http');
 var path = require('path');
 var _static = require('./routes/static');
@@ -29,6 +30,9 @@ app.use(app.router);
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
+
+//项目首页
+app.get('/',projects.index);
 
 //用户提交的反馈信息
 app.post('/feedBack',pages.feedBack);

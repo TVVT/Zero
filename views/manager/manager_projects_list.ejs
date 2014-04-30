@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>1号店UIManager-所有项目</title>
+    <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
+    <link rel="stylesheet" href="/manager/stylesheets/base.css">
+    <link rel="stylesheet" href="/manager/stylesheets/manager_projects_list.css">
+</head>
+<body>
+    <header>
+        <a href="/"><h1>1UI</h1></a>
+        <ul>
+            <!-- <li class="icon-download"><i>下载模块</i></li> -->
+            <!-- <li class="icon-mobile"><i>二维码</i></li> -->
+            <!-- <li class="icon-browser showSource"><i>查看源码</i></li> -->
+        </ul>
+    </header>
+    <div class="manager_projects_list">
+        <% projects.forEach(function(project,index){%>
+            <div class="project-wrapper">
+                <div class="folder">
+                </div>
+                <a href="<%=link%>/<%=project%>/pages"><%=project%></a>
+            </div>
+        <%})%>
+    </div>
+    <footer>&copy; TvvT 2014.</footer>
+    <script src="/manager/scripts/jquery/jquery.min.js"></script>
+</body>
+</html>
