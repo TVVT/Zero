@@ -101,6 +101,19 @@ footer{
     background-color: #f2f2f2;
     -webkit-animation:bggrowth .5s;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    
+}
+
+::-webkit-scrollbar-corner {
+    /*background: #000;*/
+}
+
 @-webkit-keyframes bggrowth {
     0% {
         background-color: #999;

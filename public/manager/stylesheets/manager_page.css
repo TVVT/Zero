@@ -240,6 +240,19 @@ input[type=submit] {
     text-align: center;
 }
 
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    
+}
+
+::-webkit-scrollbar-corner {
+    /*background: #000;*/
+}
+
 @-webkit-keyframes growth {
     0% {
         opacity: 0;
