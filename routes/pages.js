@@ -134,9 +134,12 @@ exports.page = function(req, res) {
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
                         renderData.content = html;
-                        pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
-                        var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
-
+                        var source = '';
+                        if (pageConfig.layout) {
+                            source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
+                        } else {
+                            source = getHtmls(['public/layouts/layout.ejs'],renderData)[0];
+                        }
                         renderData.modules = modules;
                         renderData.pageSource = source;
 
