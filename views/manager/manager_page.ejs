@@ -9,10 +9,10 @@
 </head>
 <body page-name="<%=pageName %>" project-name="<%=projectName%>">
     <header>
-        <a href="/"><h1>1UI</h1></a>
+        <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
         <ul id="nav">
-            <a href="/<%=projectName%>/pages"><li class="icon-back"><i>返回</i></li></a>
-            <a href="<%=managerUrl %>/pages/download/<%=pageName %>"><li class="icon-download" id="showModules"><i>下载模块</i></li></a>
+            <li class="icon-back"><a href="/<%=projectName%>/pages"><i>返回</i></a></li>
+            <li class="icon-download" id="showModules"><a href="<%=managerUrl %>/pages/download/<%=pageName %>"><i>下载模块</i></a></li>
             <li class="icon-qrcode" id="showQrCode"><i>二维码</i></li>
             <!-- <li class="icon-browser" id="showSource"><i>查看源码</i></li> -->
             <!-- <li class="icon-camera"><i>快照</i></li> -->
@@ -20,20 +20,32 @@
             <!-- <li class="icon-info2" id="pageInfo"><i>显示信息</i></li> -->
             <!-- <li class="icon-info2" id="git"><i>Git</i></li> -->
             <li><a href="<%=managerUrl %>/pages/preview/<%=pageName %>" class="icon-earth" target="_origin_view"><i>打开链接</i></a></li>
-
         </ul>
     </header>
 
     <div class="manager-content">
-        <div class="manager-page-modules">
-           
-        </div>
 
+     <!--    <div class="manager-page-tags">
+            <div class="tag" data-size="320x356">iphone4 safari</div>
+        </div> -->
         <div class="manager-page-show">
+
+            <div class="tags">
+                <ul>
+                    <li data-size="320x326">iPhone4 浏览器</li>
+                    <li data-size="320x480">iPhone4 内嵌</li>
+                    <li data-size="320x459">iPhone5 浏览器</li>
+                    <li data-size="320x568">iPhone5 内嵌</li>        
+                    <li data-size="540x960">Samsung Galaxy Note 3</li>        
+                </ul>
+            </div>
+
             <!-- 引入html文件 -->
             <div id="iframe-wrapper">
                 <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=projectName %>/pages/preview/<%=pageName%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
             </div>
+
+
         </div>
 
         <!-- 查看源码 -->
@@ -63,9 +75,6 @@
             <div><label>邮箱：</label><span class="manager-page-attr-email"><%=moduleConfig.email||"未知"%></span></div>
         </div>
 
-<!--         <div class="git-info">
-            <div><label>Git地址：</label><span class="manager-page-attr-name">git@192.168.112.94:/home/git/work/Projects.git <%=projectName%> </span></div>
-        </div> -->
     </div>
 
     <footer>&copy; TvvT 2014.</footer>

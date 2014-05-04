@@ -30,13 +30,24 @@ header{
     border-bottom: 1px solid #fff;
 }
 
+header > a{
+    padding: 0 10px;
+} 
+
 header h1{
-    padding: 0 20px;
-    border-right: 1px solid #444;
+    /*padding: 0 20px;*/
+    /*border-right: 1px solid #444;*/
     color: #f9f9f9;
     font-size: 24px;
     font-weight: normal;
+    display: inline-block;
 }
+
+header sub{
+    color: #f9f9f9;
+    font-size: 10px;
+}
+
 
 header ul{
     display: flex;
@@ -56,8 +67,8 @@ header li{
     transition:all 0.3s;
 }
 
-header li:hover{
-    /*color: #5cb521;*/
+header li:first-child{
+    border-left: 1px solid #444;
 }
 
 header li:before{
