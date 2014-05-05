@@ -12,7 +12,7 @@
         <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
         <ul id="nav">
             <li class="icon-back"><a href="/<%=projectName%>/pages"><i>返回</i></a></li>
-            <li class="icon-download" id="showModules"><a href="<%=managerUrl %>/pages/download/<%=pageName %>"><i>下载模块</i></a></li>
+            <li class="icon-download" id="showModules"><a href="<%=managerUrl %>/pages/download/<%=pageName %>"><i>下载</i></a></li>
             <li class="icon-qrcode" id="showQrCode"><i>二维码</i></li>
             <!-- <li class="icon-browser" id="showSource"><i>查看源码</i></li> -->
             <!-- <li class="icon-camera"><i>快照</i></li> -->
@@ -65,7 +65,7 @@
                 
             
         <div class="manager-page-qrcode">
-           <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://chart.apis.google.com/chart?cht=qr&chl=<%=managerUrl %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
+           <img qrCode="<%=randonNum%>" id="qrCodeImg" src="http://localhost:3000/qr?url=<%=managerUrl %>/pages/preview/<%=pageName %>?clientId=<%=randonNum%>&chs=200x200" alt="">
             <div class="page-feedback"></div> 
         </div>
         
