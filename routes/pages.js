@@ -87,7 +87,7 @@ exports.feedBack = function(req, res) {
 
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
-
+    // res.setHeader("Set-Cookie",['token',utils.getRandomMd5()]);
     //进行浏览器检测   
     if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
@@ -138,7 +138,7 @@ exports.page = function(req, res) {
                         if (pageConfig.layout) {
                             source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
                         } else {
-                            source = getHtmls(['public/layouts/layout.ejs'],renderData)[0];
+                            source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
                         }
                         renderData.modules = modules;
                         renderData.pageSource = source;
@@ -161,10 +161,13 @@ exports.pagePreview = function(req, res) {
 
     if (clientId) {
         var userAgent = req.headers['user-agent'];
-        ws.send(clientId, JSON.stringify({
+        ws.send(clientId,1, JSON.stringify({
             'status': 'ready',
             'user-agent': userAgent
         }));
+        // ws.send(clientId+'m',JSON.stringify({
+        //     'status': 'ready111'
+        // }))
     };
     var pageName = req.params.name,
         projectName = req.params.projectName,
@@ -200,6 +203,12 @@ exports.pagePreview = function(req, res) {
             } catch (e) {
                 console.error(e);
             }
+
+            if (clientId) {
+                content += "<script src=" + link + "/projects/public/scripts/manager_page_preview.js></script>"
+
+            };
+
             renderData.content = content;
             pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
             var html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
@@ -294,6 +303,28 @@ exports.downloadPackage = function(req, res) {
         });
     } catch (e) {
         console.error(e);
+    }
+}
+
+exports.changeCurPage = function(req, res) {
+    var cid = req.body.cid,
+        curPage = req.body.curPage;
+    ws.send(cid,2, JSON.stringify({
+        'curPage': curPage
+    }));
+    res.send('1');
+}
+
+exports.checkWs = function(req, res) {
+    var cid = req.body.cid;
+    if (ws.wsGroup[cid]) {
+        res.send({
+            hasWs:true
+        })
+    }else{
+        res.send({
+            hasWs:false
+        })
     }
 }
 

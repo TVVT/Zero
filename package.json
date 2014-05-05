@@ -11,6 +11,8 @@
     "ws":"*",
     "mongodb":"*",
     "formidable":"*",
-    "underscore":"*"
+    "underscore":"*",
+    "cookie-parser":"*",
+    "express-session":"*"
   }
 }
