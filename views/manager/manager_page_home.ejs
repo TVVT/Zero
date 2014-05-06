@@ -10,13 +10,11 @@
 <body>
     <header>
         <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
-        <ul>
-        <div class="git-repo">
-            <label class="icon-github"></label>
-            <input type="text" value="http://192.168.112.94/tvvt/project.git <%=project%>" class="git-repo-address">
-        </div>
+        <ul id="nav">
+            <li><a href="http://192.168.112.94/tvvt/project" class="icon-github" target="_gitlab"><i>gitLab</i></a></li>
         </ul>
     </header>
+
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
             <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>">
