@@ -4,6 +4,7 @@ var express = require('express'),
 var uis = require('./routes/uis');
 var pages = require('./routes/pages');
 var projects = require('./routes/projects');
+var service = require('./routes/service');
 var http = require('http');
 var path = require('path');
 var _static = require('./routes/static');
@@ -11,7 +12,6 @@ var util = require('./utils/utils'),
     port = require('./settings').port;
 
 var app = express();
-
 
 // all environments
 app.set('port', process.env.PORT || port);
@@ -54,6 +54,9 @@ app.get('/:projectName/pages/:name', pages.page);
 app.get('/:projectName/pages/preview/:name', pages.pagePreview);
 //下载页面
 app.get('/:projectName/pages/download/:name', pages.downloadPackage);
+
+app.get('/qr', service.qr);
+
 
 //读取public下面的静态文件
 app.get('/projects/*', _static.getFile);

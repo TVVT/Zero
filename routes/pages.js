@@ -115,6 +115,7 @@ exports.page = function(req, res) {
                     baseUrl: link + '/projects/' + projectName,
                     publicUrl: link + '/projects/public',
                     managerUrl: link + '/' + projectName,
+                    link:link,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
@@ -190,6 +191,7 @@ exports.pagePreview = function(req, res) {
                 baseUrl: link + '/projects/' + projectName,
                 publicUrl: link + '/projects/public',
                 managerUrl: link + '/' + projectName,
+                link:link,
                 moduleConfig: pageConfig,
                 pageName: pageName
             }
@@ -261,6 +263,7 @@ exports.downloadPackage = function(req, res) {
         baseUrl: link + '/projects/' + projectName,
         publicUrl: link + '/projects/public',
         managerUrl: link + '/' + projectName,
+        link:link,
         moduleConfig: pageConfig,
         pageName: pageName
     }

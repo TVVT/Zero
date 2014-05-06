@@ -22,6 +22,9 @@ exports.index = function(req, res) {
     var dir = fs.readdirSync(realPath);
     dir = _.without(dir, 
     	".bowerrc",
+        ".DS_Store",
+        "node_modules",
+        "npm-debug.log",
         ".git",
         ".gitignore", "package.json",
         "public",

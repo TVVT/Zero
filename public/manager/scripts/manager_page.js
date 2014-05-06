@@ -15,8 +15,9 @@ $(function() {
             },
             success: function(data) {
                 if (data.hasWs) {
-                    var s = 'http://192.168.112.57:3000/shake/pages/preview/' + curPage;
-                    $('#qrCodeImg').attr('src', 'http://chart.apis.google.com/chart?cht=qr&chl=' + s + '?clientId=' + localStorage.cid + '&chs=200x200');
+                    var src = $('#qrCodeImg').attr('src');
+                    src = src.slice(0,src.lastIndexOf('=')+1) + localStorage.cid;
+                    $('#qrCodeImg').attr('src',src);
                 } else {
                     localStorage.cid = $('#qrCodeImg').attr('qrCode');
                 }

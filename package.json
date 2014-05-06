@@ -13,6 +13,7 @@
     "formidable":"*",
     "underscore":"*",
     "cookie-parser":"*",
-    "express-session":"*"
+    "express-session":"*",
+    "qr-image" : "*"
   }
 }
