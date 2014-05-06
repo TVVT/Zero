@@ -12,6 +12,8 @@
     "mongodb":"*",
     "formidable":"*",
     "underscore":"*",
+    "cookie-parser":"*",
+    "express-session":"*",
     "qr-image" : "*"
   }
 }
