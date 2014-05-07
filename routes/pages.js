@@ -29,7 +29,7 @@ exports.list = function(req, res) {
     var projectName = req.params.projectName;
     var managerPageListPath = managerPath + 'manager_page_home.ejs';
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
-    var fileNames = utils.getDirFileNames(realPath, true, '.ejs'); //获得所有page
+    var fileNames = utils.getDirFileNames(realPath, true, '.ejs');
 
     var renderData = {
         project: projectName,
@@ -87,14 +87,15 @@ exports.feedBack = function(req, res) {
 
 //由于Projects是express的默认views文件夹 因此无需对res设置header
 exports.page = function(req, res) {
-    // res.setHeader("Set-Cookie",['token',utils.getRandomMd5()]);
+
+
     //进行浏览器检测   
     if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
         res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
     } else {
         var pageName = req.params.name,
-            projectName = req.params.projectName;
-
+            projectName = req.params.projectName,
+            pageList = utils.getProjectPages(projectName);
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
                 res.send("404...");
@@ -115,7 +116,7 @@ exports.page = function(req, res) {
                     baseUrl: link + '/projects/' + projectName,
                     publicUrl: link + '/projects/public',
                     managerUrl: link + '/' + projectName,
-                    link:link,
+                    link: link,
                     moduleConfig: pageConfig,
                     projectName: projectName,
                     pageName: pageName,
@@ -123,6 +124,13 @@ exports.page = function(req, res) {
                     randonNum: utils.getRandomMd5()
                 }
                 utils.extend(renderData, pageData);
+                var nextPage = getNextPage(pageList,pageName),
+                    prevPage = getPrevPage(pageList,pageName);
+                    renderData.nextPageUrl = nextPage?link + '/' + projectName + '/pages/' + nextPage:nextPage;
+                    renderData.prevPageUrl = prevPage?link + '/' + projectName + '/pages/' + prevPage:prevPage;
+
+                console.log(renderData)
+
                 var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
                     if (err) {
@@ -162,7 +170,7 @@ exports.pagePreview = function(req, res) {
 
     if (clientId) {
         var userAgent = req.headers['user-agent'];
-        ws.send(clientId,1, JSON.stringify({
+        ws.send(clientId, 1, JSON.stringify({
             'status': 'ready',
             'user-agent': userAgent
         }));
@@ -191,7 +199,7 @@ exports.pagePreview = function(req, res) {
                 baseUrl: link + '/projects/' + projectName,
                 publicUrl: link + '/projects/public',
                 managerUrl: link + '/' + projectName,
-                link:link,
+                link: link,
                 moduleConfig: pageConfig,
                 pageName: pageName
             }
@@ -263,7 +271,7 @@ exports.downloadPackage = function(req, res) {
         baseUrl: link + '/projects/' + projectName,
         publicUrl: link + '/projects/public',
         managerUrl: link + '/' + projectName,
-        link:link,
+        link: link,
         moduleConfig: pageConfig,
         pageName: pageName
     }
@@ -312,7 +320,7 @@ exports.downloadPackage = function(req, res) {
 exports.changeCurPage = function(req, res) {
     var cid = req.body.cid,
         curPage = req.body.curPage;
-    ws.send(cid,2, JSON.stringify({
+    ws.send(cid, 2, JSON.stringify({
         'curPage': curPage
     }));
     res.send('1');
@@ -322,11 +330,11 @@ exports.checkWs = function(req, res) {
     var cid = req.body.cid;
     if (ws.wsGroup[cid]) {
         res.send({
-            hasWs:true
+            hasWs: true
         })
-    }else{
+    } else {
         res.send({
-            hasWs:false
+            hasWs: false
         })
     }
 }
@@ -411,4 +419,38 @@ function getModules(fs) {
         modules.push($2);
     });
     return modules;
+}
+
+function getNextPage(pageList, curPage) {
+    var nextPage = false;
+    pageList.every(function(page, index) {
+        if (page == curPage) {
+            if (++index > pageList.length) {
+                nextPage = false;
+            } else {
+                nextPage = pageList[index];
+            }
+            return false;
+        }else{
+            return true;
+        }
+    })
+    return nextPage;
+}
+
+function getPrevPage(pageList, curPage) {
+    var prevPage = false;
+    pageList.every(function(page, index) {
+        if (page == curPage) {
+            if (--index < 0) {
+                prevPage = false;
+            } else {
+                prevPage = pageList[index];
+            }
+            return false;
+        }else{
+            return true;
+        }
+    })
+    return prevPage;
 }

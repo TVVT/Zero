@@ -23,7 +23,7 @@ exports.mimes_types = {
     "xml": "text/xml"
 };
 
-exports.requireUncache = function(module){
+exports.requireUncache = function(module) {
     delete require.cache[require.resolve(module)]
     return require(module)
 }
@@ -71,7 +71,7 @@ exports.checkFileExist = function(projectName, pageName, callback) {
                             // return callback(true);
                         })
                     });
-                }else{
+                } else {
                     // return callback(true);
                 }
             })
@@ -85,7 +85,7 @@ exports.checkFileExist = function(projectName, pageName, callback) {
                             // return callback(true);
                         })
                     });
-                }else{
+                } else {
                     // return callback(true);
                 }
             })
@@ -98,13 +98,13 @@ exports.checkFileExist = function(projectName, pageName, callback) {
  * [继承]
  * @return 让o1继承o2
  */
-exports.extend = function(o1,o2){
-    if(typeof o1 === 'object' && typeof o2 === 'object'){
-        for(o in o2){
+exports.extend = function(o1, o2) {
+    if (typeof o1 === 'object' && typeof o2 === 'object') {
+        for (o in o2) {
             o1[o] = o2[o];
         }
         return true;
-    }else{
+    } else {
         console.error("extend类型异常")
     }
 }
@@ -137,6 +137,18 @@ exports.getDirFileNames = function(filePath, isModule, extName) {
                 fileNames.push(path.basename(files[i]));
             }
         }
+    }
+    return fileNames;
+}
+
+exports.getProjectPages = function(projectName) {
+    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
+    var files = fs.readdirSync(realPath);
+    var fileNames = [];
+    for (var i = 0; i < files.length; i++) {
+            if (path.extname(files[i]) === '.ejs') {
+                fileNames.push(path.basename(files[i], '.ejs'));
+            }
     }
     return fileNames;
 }
