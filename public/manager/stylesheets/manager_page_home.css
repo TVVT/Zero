@@ -77,14 +77,6 @@ footer{
 .manager-page-list .iframe-wrapper:hover{
 	box-shadow: 0 0 30px rgba(0,0,0,0.2);
 }
-.git-repo {
-}
-.icon-github {
-    color:#fff;
-    height: 100%;
-    width: 60px;
-    margin-left: 20px;
-}
 
 .git-repo-address {
     position: relative;

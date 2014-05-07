@@ -2,7 +2,9 @@
     display: flex;
     flex:1;
     position: relative;
+    overflow: auto;
 }
+
 .manager-content .manager-ui-info {
     width: 300px;
     display: none;
@@ -18,7 +20,7 @@
     transition:all 0.5s;
     background: #fff;
     overflow: hidden;
-    margin:10px auto 0;
+    margin:10px auto;
 }
 
 #iframe-wrapper:hover {
@@ -26,8 +28,8 @@
 }
 
 .manager-content .manager-page-show .tags{
-    width: 320px;
-    margin: 20px auto;
+    width: 640px;
+    margin: 10px auto;
 }
 
 .manager-content .manager-page-show .tags li{
