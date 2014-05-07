@@ -129,8 +129,6 @@ exports.page = function(req, res) {
                     renderData.nextPageUrl = nextPage?link + '/' + projectName + '/pages/' + nextPage:nextPage;
                     renderData.prevPageUrl = prevPage?link + '/' + projectName + '/pages/' + prevPage:prevPage;
 
-                console.log(renderData)
-
                 var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
                     if (err) {
