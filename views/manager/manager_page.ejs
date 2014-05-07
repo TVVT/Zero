@@ -37,10 +37,17 @@
             </div>
 
             <!-- 引入html文件 -->
-            <div id="iframe-wrapper">
-                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=projectName %>/pages/preview/<%=pageName%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
-            </div>
+            <div id="iframe-wrapper">                    
+                <%if(prevPageUrl){%>
+                    <a href="<%=prevPageUrl%>" class="left icon-arrow-left7"></a>
+                <%}%>
 
+                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=projectName %>/pages/preview/<%=pageName%>" frameborder="0" style="height:100%;overflow:auto;"></iframe>
+                
+                <%if(nextPageUrl){%>
+                    <a href="<%=nextPageUrl%>" class="right icon-uniE6D9"></a>
+                <%}%>
+            </div>
 
         </div>
 
