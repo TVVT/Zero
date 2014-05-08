@@ -31,6 +31,13 @@ exports.list = function(req, res) {
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
     var fileNames = utils.getDirFileNames(realPath, true, '.ejs');
 
+    // 时间排序
+    fileNames.sort(function(a, b) {
+
+        return fs.statSync(realPath + b + '.ejs').mtime.getTime() - 
+              fs.statSync(realPath + a + '.ejs').mtime.getTime();
+    });
+
     var renderData = {
         project: projectName,
         pages: fileNames
