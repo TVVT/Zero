@@ -150,6 +150,12 @@ exports.getProjectPages = function(projectName) {
                 fileNames.push(path.basename(files[i], '.ejs'));
             }
     }
+
+    fileNames.sort(function(a, b) {
+        return fs.statSync(realPath + b + '.ejs').mtime.getTime() - 
+              fs.statSync(realPath + a + '.ejs').mtime.getTime();
+    });
+
     return fileNames;
 }
 
