@@ -29,6 +29,14 @@ exports.index = function(req, res) {
         ".gitignore", "package.json",
         "public",
         "gulpfile.js");
+
+    //  时间排序。
+    
+    dir.sort(function(a, b) {
+       return fs.statSync(realPath + b).mtime.getTime() - 
+              fs.statSync(realPath + a).mtime.getTime();
+    });
+
     var renderData = {
     	projects:dir,
         link:link

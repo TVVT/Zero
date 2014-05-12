@@ -31,6 +31,13 @@ exports.list = function(req, res) {
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
     var fileNames = utils.getDirFileNames(realPath, true, '.ejs');
 
+    // 时间排序
+    fileNames.sort(function(a, b) {
+
+        return fs.statSync(realPath + b + '.ejs').mtime.getTime() - 
+              fs.statSync(realPath + a + '.ejs').mtime.getTime();
+    });
+
     var renderData = {
         project: projectName,
         pages: fileNames
@@ -95,6 +102,10 @@ exports.page = function(req, res) {
         var pageName = req.params.name,
             projectName = req.params.projectName,
             pageList = utils.getProjectPages(projectName);
+
+
+
+
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
                 res.send("404...");
