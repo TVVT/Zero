@@ -161,3 +161,10 @@ exports.getRandomMd5 = function() {
         date = new Date();
     return md5.update((date.getTime() + Math.ceil(Math.random() * 1000)).toString()).digest('hex');
 }
+
+//tvvt的rander 返回html string
+exports.tvvtRender = function(template,data,next){
+    
+}
+
+
