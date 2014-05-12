@@ -14,6 +14,7 @@
     "underscore":"*",
     "cookie-parser":"*",
     "express-session":"*",
-    "qr-image" : "*"
+    "qr-image" : "*",
+    "eventproxy":"*"
   }
 }

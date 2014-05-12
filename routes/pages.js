@@ -9,7 +9,8 @@ var ejs = require('ejs'),
     os = require('os'),
     formidable = require('formidable'),
     exec = require('child_process').exec,
-    settings = require('../settings.json');
+    settings = require('../settings.json'),
+    tvvtRender = require('../utils/tvvtRender');
 
 var ifaces = os.networkInterfaces();
 var ipAddress = 'localhost';
@@ -150,6 +151,7 @@ exports.page = function(req, res) {
 
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
+                        html = tvvtRender(projectName,html);
                         renderData.content = html;
                         var source = '';
                         if (pageConfig.layout) {
@@ -218,6 +220,7 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
+                content = tvvtRender(projectName,content);
             } catch (e) {
                 console.error(e);
             }

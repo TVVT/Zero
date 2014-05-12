@@ -146,14 +146,14 @@ exports.getProjectPages = function(projectName) {
     var files = fs.readdirSync(realPath);
     var fileNames = [];
     for (var i = 0; i < files.length; i++) {
-            if (path.extname(files[i]) === '.ejs') {
-                fileNames.push(path.basename(files[i], '.ejs'));
-            }
+        if (path.extname(files[i]) === '.ejs') {
+            fileNames.push(path.basename(files[i], '.ejs'));
+        }
     }
 
     fileNames.sort(function(a, b) {
-        return fs.statSync(realPath + b + '.ejs').mtime.getTime() - 
-              fs.statSync(realPath + a + '.ejs').mtime.getTime();
+        return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
+            fs.statSync(realPath + a + '.ejs').mtime.getTime();
     });
 
     return fileNames;
@@ -166,11 +166,6 @@ exports.getRandomMd5 = function() {
     var md5 = crypto.createHash('md5'),
         date = new Date();
     return md5.update((date.getTime() + Math.ceil(Math.random() * 1000)).toString()).digest('hex');
-}
-
-//tvvt的rander 返回html string
-exports.tvvtRender = function(template,data,next){
-    
 }
 
 
