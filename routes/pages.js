@@ -10,7 +10,8 @@ var ejs = require('ejs'),
     formidable = require('formidable'),
     exec = require('child_process').exec,
     settings = require('../settings.json'),
-    tvvtRender = require('../utils/tvvtRender');
+    tvvtRender = require('../utils/tvvtRender'),
+    request = require('request');
 
 var ifaces = os.networkInterfaces();
 var ipAddress = 'localhost';
@@ -35,8 +36,8 @@ exports.list = function(req, res) {
     // 时间排序
     fileNames.sort(function(a, b) {
 
-        return fs.statSync(realPath + b + '.ejs').mtime.getTime() - 
-              fs.statSync(realPath + a + '.ejs').mtime.getTime();
+        return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
+            fs.statSync(realPath + a + '.ejs').mtime.getTime();
     });
 
     var renderData = {
@@ -53,42 +54,22 @@ exports.feedBack = function(req, res) {
     form.parse(req, function(err, fields, files) {
         if (err) return res.end('formidable failed...');
         var data = fields;
-        var feedBack = data.feedback ? data.feedback : 'null';
-        var date = new Date(),
-            dateId = date.getTime(),
-            time = date.getFullYear() + '/' + date.getMonth() + '/' + date.getDay() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-        var insertData = dateId + ',' + time + ',' + data.projectName + ',' + data.pageName + ',' + data.clientInfo + ',' + data.isOK + ',' + feedBack + ';\n'
-
-        var infoPath = path.join(__dirname, '../../Projects/' + data.projectName + '/info');
-        fs.exists(infoPath, function(exists) {
-            if (!exists) {
-                //如果没有这个文件 那么创建一个
-                fs.open(infoPath, "w", 0644, function(e, fd) {
-                    if (e) console.log(e);
-                    fs.write(fd, insertData, 0, 'utf8', function(e) {
-                        if (e) console.log(e);
-                        fs.closeSync(fd);
-                    })
-                });
-            } else {
-                //如果有的话 那么写入文件
-                fs.open(infoPath, "a+", 0644, function(e, fd) {
-                    if (e) console.log(e);
-                    fs.readFile(infoPath, 'utf8', function(err, file) {
-                        if (err) console.log(err);
-                        else {
-                            insertData = insertData + file.toString();
-                            fs.write(fd, insertData, 0, 'utf8', function(e) {
-                                if (e) console.log(e);
-                                fs.closeSync(fd);
-                            })
-                        }
-                    })
-                });
+        var feedBack = data.feedback ? data.feedback : '';
+        if (data.isOK) {
+            var bugUrl = 'http://192.168.112.94:4000/zeroBugReceiver';
+            var bugData = {
+                bugdetail: feedBack,
+                browserinfo: data.clientInfo,
+                weburl: link + '/' + data.projectName + '/pages/' + data.pageName
             }
-        });
+            request.post(bugUrl, {
+                form: bugData
+            }, function(err, response, body) {
+                console.log(body);
+            });
+        };
         res.set('Access-Control-Allow-Origin', '*');
-        res.send("ok");
+        res.send('ok');
     });
 }
 
@@ -135,10 +116,10 @@ exports.page = function(req, res) {
                     randonNum: utils.getRandomMd5()
                 }
                 utils.extend(renderData, pageData);
-                var nextPage = getNextPage(pageList,pageName),
-                    prevPage = getPrevPage(pageList,pageName);
-                    renderData.nextPageUrl = nextPage?link + '/' + projectName + '/pages/' + nextPage:nextPage;
-                    renderData.prevPageUrl = prevPage?link + '/' + projectName + '/pages/' + prevPage:prevPage;
+                var nextPage = getNextPage(pageList, pageName),
+                    prevPage = getPrevPage(pageList, pageName);
+                renderData.nextPageUrl = nextPage ? link + '/' + projectName + '/pages/' + nextPage : nextPage;
+                renderData.prevPageUrl = prevPage ? link + '/' + projectName + '/pages/' + prevPage : prevPage;
 
                 var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
@@ -151,7 +132,7 @@ exports.page = function(req, res) {
 
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
-                        html = tvvtRender(projectName,html);
+                        html = tvvtRender(projectName, html);
                         renderData.content = html;
                         var source = '';
                         if (pageConfig.layout) {
@@ -219,7 +200,7 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
-                content = tvvtRender(projectName,content);
+                content = tvvtRender(projectName, content);
             } catch (e) {
                 console.error(e);
             }
@@ -440,7 +421,7 @@ function getNextPage(pageList, curPage) {
                 nextPage = pageList[index];
             }
             return false;
-        }else{
+        } else {
             return true;
         }
     })
@@ -457,7 +438,7 @@ function getPrevPage(pageList, curPage) {
                 prevPage = pageList[index];
             }
             return false;
-        }else{
+        } else {
             return true;
         }
     })

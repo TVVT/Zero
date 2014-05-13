@@ -15,6 +15,7 @@
     "cookie-parser":"*",
     "express-session":"*",
     "qr-image" : "*",
-    "eventproxy":"*"
+    "eventproxy":"*",
+    "request":"*"
   }
 }
