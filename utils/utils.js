@@ -29,7 +29,7 @@ exports.requireUncache = function(module) {
 }
 
 exports.readFile = function(filePath, charset, callback) {
-    path.exists(filePath, function(exists) {
+    fs.exists(filePath, function(exists) {
         if (!exists) {
             return callback("文件不存在！");
         } else {

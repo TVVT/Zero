@@ -49,9 +49,10 @@ app.get('/:projectName/components/:componentName', uis.showComponent);
 app.get('/:projectName/components/download/:name', uis.uiDownload);
 app.get('/components/:name/:id', uis.uiById);
 
+app.get('/:projectName/pages/preview/:name', pages.pagePreview);
 app.get('/:projectName/pages', pages.list);
 app.get('/:projectName/pages/:name', pages.page);
-app.get('/:projectName/pages/preview/:name', pages.pagePreview);
+
 //下载页面
 app.get('/:projectName/pages/download/:name', pages.downloadPackage);
 

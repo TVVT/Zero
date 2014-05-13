@@ -174,7 +174,6 @@ exports.page = function(req, res) {
 }
 
 exports.pagePreview = function(req, res) {
-
     var clientId = req.query.clientId;
     //如果有clientId 那么连接webSocket
 
@@ -227,7 +226,6 @@ exports.pagePreview = function(req, res) {
 
             if (clientId) {
                 content += "<script src=" + link + "/projects/public/scripts/manager_page_preview.js></script>"
-
             };
 
             renderData.content = content;

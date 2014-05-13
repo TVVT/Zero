@@ -7,7 +7,7 @@ var fs = require('fs'),
 exports.getFile = function(req, res) {
 	var fileName = req.params[0],
 		realPath = path.join(__dirname,'../../Projects/' + fileName);
-	path.exists(realPath, function(exists) {
+	fs.exists(realPath, function(exists) {
 		if (!exists) {
 			res.send("This request URL " + fileName + " was not found on this server.");
 		} else {
