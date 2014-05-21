@@ -10,19 +10,27 @@ module.exports = function(project, html) {
 
 function render(project, html) {
     function regxReplace(project, html) {
-        var renderData = {};
+        var renderData = {},
+            data;
         return html.replace(regx, function($1, $2, $3, $4) {
             if ($4.length>0) {
                 //加载指定的数据
-                dataPath = path.join(__dirname, '../../tata/' + project + '/' + $4 + '.json');
+                if(/\-\{.*\}\-/.test($4)){
+                    $4.replace(/^\-(.*)\-$/,function($1,$2){
+                        data = JSON.parse($2);
+                    })
+                }else{
+                    dataPath = path.join(__dirname, '../../tata/' + project + '/' + $4 + '.json');
+                    data = require(dataPath);
+                }
+                
             }else{
                 //如果没有第二个参数 默认加载默认数据
                 dataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.json');
+                data = require(dataPath);
             }
             realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.ejs');
-            
             var file = fs.readFileSync(realPath, "utf-8");
-            var data = require(dataPath);
             renderData.filename = realPath;
             renderData.data = data;
             if (regx.test(file)) {
