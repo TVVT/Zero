@@ -5,7 +5,6 @@ var webSocketServer = require('ws').Server,
     }),
     wsGroup = {}; //ws连接池
 
-
 //建立webSocket服务器
 wss.on('connection', function(ws) {
     console.log("connected!");

@@ -268,6 +268,7 @@ exports.downloadPackage = function(req, res) {
     utils.extend(renderData, pageData);
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
+    html = tvvtRender(projectName, content);
     renderData.content = html;
     pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
     var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0],
