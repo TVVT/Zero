@@ -2,7 +2,7 @@ var ejs = require('ejs'),
     path = require('path'),
     ep = require('eventproxy'),
     fs = require('fs');
-var regx = /([\{\{]{1}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}[\}\}]{1})/ig;
+var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig;
 //tvvt的rander 返回html string
 module.exports = function(project, html) {
     return render(project, html)
