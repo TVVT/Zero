@@ -287,9 +287,7 @@ exports.downloadPackage = function(req, res) {
 
 
     //压缩 并删除原文件 之后再创建temp文件夹
-    cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;";
-
-    console.log('cmd : ' ,cmd);
+    cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";
 
     try {
         exec(cmd, function(err, stdout, stderr) {
