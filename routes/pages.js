@@ -224,6 +224,7 @@ exports.downloadPackage = function(req, res) {
     var projectName = req.params.projectName,
         pageName = req.params.name,
         modules,
+        content,
         cmd = "mkdir ./temp/components;",
         renderData = {};
 
@@ -268,7 +269,7 @@ exports.downloadPackage = function(req, res) {
     utils.extend(renderData, pageData);
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
-    html = tvvtRender(projectName, content);
+    html = tvvtRender(projectName, html);
     renderData.content = html;
     pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
     var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0],
@@ -283,8 +284,12 @@ exports.downloadPackage = function(req, res) {
     });
     fs.openSync(htmlPath, 'w', '0777');
     fs.writeFileSync(htmlPath, source, 'utf-8');
+
+
     //压缩 并删除原文件 之后再创建temp文件夹
-    cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";
+    cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;";
+
+    console.log('cmd : ' ,cmd);
 
     try {
         exec(cmd, function(err, stdout, stderr) {
