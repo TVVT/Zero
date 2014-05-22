@@ -21,13 +21,13 @@ function render(project, html) {
                     })
                 }else{
                     dataPath = path.join(__dirname, '../../tata/' + project + '/' + $4 + '.json');
-                    data = require(dataPath);
+                    data = requireUncache(dataPath);
                 }
                 
             }else{
                 //如果没有第二个参数 默认加载默认数据
                 dataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.json');
-                data = require(dataPath);
+                data = requireUncache(dataPath);
             }
             realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.ejs');
             var file = fs.readFileSync(realPath, "utf-8");
@@ -40,4 +40,10 @@ function render(project, html) {
         });
     }
     return regxReplace(project, html);
+}
+
+
+function requireUncache(module) {
+    delete require.cache[require.resolve(module)]
+    return require(module)
 }
