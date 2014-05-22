@@ -224,6 +224,7 @@ exports.downloadPackage = function(req, res) {
     var projectName = req.params.projectName,
         pageName = req.params.name,
         modules,
+        content,
         cmd = "mkdir ./temp/components;",
         renderData = {};
 
@@ -283,6 +284,8 @@ exports.downloadPackage = function(req, res) {
     });
     fs.openSync(htmlPath, 'w', '0777');
     fs.writeFileSync(htmlPath, source, 'utf-8');
+
+
     //压缩 并删除原文件 之后再创建temp文件夹
     cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";
 
