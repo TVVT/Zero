@@ -4,7 +4,8 @@ var ejs = require('ejs'),
     os = require('os'),
     fs = require('fs'),
     settings = require('../settings.json');
-var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig;
+var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
+    regxHasData = /.*\<\%.*\%\>.*/;
 var ifaces = os.networkInterfaces();
 var ipAddress = 'localhost';
 
@@ -28,7 +29,8 @@ function render(project, html) {
             publicUrl: link + '/projects/public',
             managerUrl: link + '/' + project,
             link: link
-        },data;
+        }, data;
+        var passData = arguments[2];
         return html.replace(regx, function($1, $2, $3, $4) {
             if ($4.length > 0) {
                 //加载指定的数据
@@ -48,10 +50,19 @@ function render(project, html) {
             }
             realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.ejs');
             var file = fs.readFileSync(realPath, "utf-8");
+            if (passData != undefined) {
+                for (var o in passData) {
+                    data[o] = passData[o];
+                }
+            }
             renderData.filename = realPath;
             renderData.data = data;
             if (regx.test(file)) {
-                file = regxReplace(project, file);
+                if (regxHasData.test(file)) {
+                    file = regxReplace(project, file, data);
+                } else {
+                    file = regxReplace(project, file);
+                }
             }
             return ejs.render(file, renderData);
         });

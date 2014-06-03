@@ -85,9 +85,6 @@ exports.page = function(req, res) {
             projectName = req.params.projectName,
             pageList = utils.getProjectPages(projectName);
 
-
-
-
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
                 res.send("404...");
@@ -129,7 +126,6 @@ exports.page = function(req, res) {
                         modules = getModules(file);
                         var pageSourcePath = [];
                         pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
-
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
                         html = tvvtRender(projectName, html);
@@ -142,9 +138,7 @@ exports.page = function(req, res) {
                         }
                         renderData.modules = modules;
                         renderData.pageSource = source;
-
                         renderData.ipAddress = ipAddress;
-
                         var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
                         res.render(managerPagePath, renderData);
                     }
