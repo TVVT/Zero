@@ -1,3 +1,5 @@
+// this file maybe no needed
+
 (function(window) {
 	console.log(window.location.href)
 	var host = window.location.hostname;
