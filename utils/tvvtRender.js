@@ -18,11 +18,11 @@ for (var dev in ifaces) {
 }
 var link = 'http://' + ipAddress + ':' + settings.port;
 //tvvt的rander 返回html string
-module.exports = function(project, html) {
-    return render(project, html)
+module.exports = function(project, html,pageData) {
+    return render(project, html,pageData)
 }
 
-function render(project, html) {
+function render(project, html,pageData) {
     function regxReplace(project, html) {
         var renderData = {
             baseUrl: link + '/projects/' + project,
@@ -40,7 +40,11 @@ function render(project, html) {
                     })
                 } else {
                     dataPath = path.join(__dirname, '../../tata/' + project + '/' + $4 + '.json');
-                    data = requireUncache(dataPath);
+                    if(fs.existsSync(dataPath)){
+                        data = requireUncache(dataPath);
+                    }else{
+                        data = pageData[$4];
+                    }
                 }
 
             } else {

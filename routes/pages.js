@@ -128,7 +128,7 @@ exports.page = function(req, res) {
                         pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
-                        html = tvvtRender(projectName, html);
+                        html = tvvtRender(projectName, html,pageData);
                         renderData.content = html;
                         var source = '';
                         if (pageConfig.layout) {
@@ -194,7 +194,7 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
-                content = tvvtRender(projectName, content);
+                content = tvvtRender(projectName, content,pageData);
             } catch (e) {
                 console.error(e);
             }
@@ -263,7 +263,7 @@ exports.downloadPackage = function(req, res) {
     utils.extend(renderData, pageData);
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
-    html = tvvtRender(projectName, html);
+    html = tvvtRender(projectName, html,pageData);
     renderData.content = html;
     pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
     var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0],
