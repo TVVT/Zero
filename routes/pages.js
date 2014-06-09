@@ -158,9 +158,6 @@ exports.pagePreview = function(req, res) {
             'status': 'ready',
             'user-agent': userAgent
         }));
-        // ws.send(clientId+'m',JSON.stringify({
-        //     'status': 'ready111'
-        // }))
     };
     var pageName = req.params.name,
         projectName = req.params.projectName,
@@ -208,7 +205,7 @@ exports.pagePreview = function(req, res) {
             var html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
-            res.send(html);
+            res.end(html);
         }
     })
 }

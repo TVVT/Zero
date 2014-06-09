@@ -7,9 +7,7 @@ var webSocketServer = require('ws').Server,
 
 //建立webSocket服务器
 wss.on('connection', function(ws) {
-    console.log("connected!");
     ws.on('message', function(message) {
-        console.log(message)
         var msg = JSON.parse(message);
         if (msg.isClient) {
             if (wsGroup[msg.cid]) {
@@ -34,11 +32,14 @@ wss.on('close', function(data) {
 
 //type 1代表是server 2代表客户端
 exports.send = function(cid, type, data) {
-    console.log(cid, type, data)
     if (wsGroup[cid]) {
         if (type == 1) {
             wsGroup[cid] = wsGroup[cid] || {};
-            wsGroup[cid].server.send(data);
+            try{
+                wsGroup[cid].server.send(data);
+            }catch(e){
+                console.log(e);
+            }
         } else {
             if (wsGroup[cid].group) {
                 wsGroup[cid].group.forEach(function(ws, index) {
