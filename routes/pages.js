@@ -128,7 +128,7 @@ exports.page = function(req, res) {
                         pageSourcePath.push(projectName + '/pages/' + pageName + '.ejs');
                         renderData.filename = realPath;
                         var html = ejs.render(file, renderData);
-                        html = tvvtRender(projectName, html,pageData);
+                        html = tvvtRender(projectName, html, pageData);
                         renderData.content = html;
                         var source = '';
                         if (pageConfig.layout) {
@@ -191,7 +191,7 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
-                content = tvvtRender(projectName, content,pageData);
+                content = tvvtRender(projectName, content, pageData);
             } catch (e) {
                 console.error(e);
             }
@@ -201,8 +201,12 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
-            pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
-            var html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
+            var html = '';
+            if (pageConfig.layout) {
+                html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
+            } else {
+                html = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
+            }
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
             res.end(html);
@@ -260,11 +264,15 @@ exports.downloadPackage = function(req, res) {
     utils.extend(renderData, pageData);
     renderData.filename = realPath;
     var html = ejs.render(file, renderData);
-    html = tvvtRender(projectName, html,pageData);
+    html = tvvtRender(projectName, html, pageData);
     renderData.content = html;
-    pageConfig.layout = pageConfig.layout ? pageConfig.layout : 'layout.ejs';
-    var source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0],
-        htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
+    var source = '';
+    if (pageConfig.layout) {
+        source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
+    } else {
+        source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
+    }
+    var htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /^[http:\/\/]{1}.+\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
         if ($1 === 'images') {
