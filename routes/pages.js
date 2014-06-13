@@ -130,12 +130,7 @@ exports.page = function(req, res) {
                         var html = ejs.render(file, renderData);
                         html = tvvtRender(projectName, html, pageData);
                         renderData.content = html;
-                        var source = '';
-                        if (pageConfig.layout) {
-                            source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
-                        } else {
-                            source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
-                        }
+                        var source = includeLayout(projectName,pageConfig,renderData);
                         renderData.modules = modules;
                         renderData.pageSource = source;
                         renderData.ipAddress = ipAddress;
@@ -201,12 +196,7 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
-            var html = '';
-            if (pageConfig.layout) {
-                html = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
-            } else {
-                html = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
-            }
+            var html = includeLayout(projectName,pageConfig,renderData);
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
             res.end(html);
@@ -266,12 +256,7 @@ exports.downloadPackage = function(req, res) {
     var html = ejs.render(file, renderData);
     html = tvvtRender(projectName, html, pageData);
     renderData.content = html;
-    var source = '';
-    if (pageConfig.layout) {
-        source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
-    } else {
-        source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
-    }
+    var source = includeLayout(projectName,pageConfig,renderData);
     var htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /^[http:\/\/]{1}.+\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
@@ -446,4 +431,16 @@ function getPrevPage(pageList, curPage) {
         }
     })
     return prevPage;
+}
+
+function includeLayout(projectName,pageConfig,renderData) {
+    var source = '';
+    if (pageConfig.layout) {
+        source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
+    } else if (fs.existsSync(path.join(__dirname, '../../Projects/' + projectName + '/layouts/layout.ejs'))) {
+        source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
+    } else {
+        source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];
+    }
+    return source;
 }
