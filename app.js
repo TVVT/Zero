@@ -57,6 +57,7 @@ app.get('/:projectName/pages/:name', pages.page);
 app.get('/:projectName/pages/download/:name', pages.downloadPackage);
 
 app.get('/qr', service.qr);
+app.get('/tags',service.tags);
 
 
 //读取public下面的静态文件

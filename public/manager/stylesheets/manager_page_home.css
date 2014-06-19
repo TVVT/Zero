@@ -114,3 +114,18 @@ footer{
         background-color: #f2f2f2;
     }
 }
+
+/*Tags区域*/
+.manager-page-tags{
+    position: fixed;
+    width: 120px;
+    right: 20px;
+    top: 60px;
+}
+
+.manager-page-tags .tag{
+    display: block;
+    color: #f2f2f2;
+    border-radius: 4px;
+    text-decoration: none;
+}

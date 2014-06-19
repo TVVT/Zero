@@ -2,52 +2,59 @@
 
 $(function() {
 
-	//coverflow效果 默认第二个是正面照～～～
-	var json = {
-		perspective: 500,
-		rotateX: 0,
-		rotateY: 0,
-		rotateZ: 0,
-		scaleX: 1,
-		scaleY: 1,
-		scaleZ: 1,
-		translateX: 0,
-		translateY: 0,
-		translateZ: 0
-	}
+    var iframeWrappers = document.querySelectorAll('.iframe-wrapper');
+    var left = 0,
+        prevP = 0,
+        tagData;
 
-	var iframeWrappers = document.querySelectorAll('.iframe-wrapper'),
-		list = document.querySelector(".manager-page-list");
-	var left = 0,
-		prevP = 0;
-	
-	// $(iframeWrappers).each(function(index) {
-	// 	var _this = $(iframeWrappers)[index];
-	// 	json.rotateY = index * 25;
-	// 	left = index * 340;
-	// 	_this.style['left'] = left + "px";
-	// 	// _this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
-	// })
-	
-	$('.iframe-wrapper').on('click',function(){
-		if($(this).attr('data-href')){
-			window.location.href = $(this).attr('data-href');
-		}
-	});
+    $('.iframe-wrapper').on('click', function() {
+        if ($(this).attr('data-href')) {
+            window.location.href = $(this).attr('data-href');
+        }
+    });
 
+    var href = window.location.href,
+        group = href.split('/'),
+        projectName = group[group.length - 2],
+        $tagListBox = $('.manager-page-tags'),
+        pageList = $('.manager-page-list').children();
 
-	$(list).scroll(function() {
-		var stepWidth = Math.ceil((list.scrollWidth -$(this).scrollLeft() )/ (iframeWrappers.length));
-		console.log(stepWidth)
-		if (Math.ceil($(this).scrollLeft() / stepWidth) != prevP) {
-			prevP = Math.ceil($(this).scrollLeft() / stepWidth);
-			// $(iframeWrappers).each(function(index) {
-			// 	var _this = $(iframeWrappers)[index];
-			// 	json.rotateY = -25*prevP + index * 25;
-			// 	_this.style['-webkit-transform'] = "matrix3d(" + toMatrix3D(json) + ")";
-			// })
-		}
-	})
+    $.ajax({
+        url: '/tags',
+        method: 'GET',
+        data: {
+            'projectName': projectName
+        },
+        success: function(data) {
+        	console.log(data)
+            tagData = data;
+            data.tags.forEach(function(value, index) {
+                var a = $('<a class="tag" data-name="' + data[value] + '" href="#' + value + '">' + value + '</a>')
+                $tagListBox.append(a);
+                a.on('click', function() {
+                    pageList.hide();
+                    a.attr('data-name').split(',').forEach(function(pageName, index) {
+                        pageList.each(function(index) {
+                            if ($(pageList[index]).attr('data-name') === pageName) {
+                                $(pageList[index]).show();
+                            };
+                        })
+                    })
+                })
+            })
 
-	// $(list).scrollTo(20)
+            if (window.location.hash) {
+                var tagName = window.location.hash.substring(1);
+                pageList.hide();
+                tagData[tagName].forEach(function(pageName, index) {
+                    pageList.each(function(index) {
+                        if ($(pageList[index]).attr('data-name') === pageName) {
+                            $(pageList[index]).show();
+                        };
+                    })
+                })
+            }
+
+        }
+    })
 });
