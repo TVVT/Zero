@@ -131,7 +131,7 @@ footer{
 .manager-page-tags .tag{
     display: block;
     padding:0 5px;
-    border-bottom:1px solid rgba(255,255,255,0.3);
+    border-bottom:1px solid rgba(255,255,255,0.1);
     color:#ede8e2;
     line-height:30px;
     text-decoration:none;
