@@ -13,6 +13,7 @@ footer{
 	height: 100%;
 	overflow: scroll;
 	flex-flow:wrap;
+    padding:10px 0;
 	background: #333;
 	position: relative;
 
@@ -23,7 +24,7 @@ footer{
 	width: 320px;
 	height: 480px;
     display: inline-block;
-    margin: 20px;
+    margin: 10px;
     transition:-webkit-transform 0.5s;
     /*-webkit-transform: rotateY(-60deg) ;*/
     position: relative;
@@ -118,14 +119,20 @@ footer{
 /*Tags区域*/
 .manager-page-tags{
     position: fixed;
-    width: 120px;
-    right: 20px;
-    top: 60px;
+    right:0;
+    top:40px;
+    width:110px;
+    height:100%;
+    padding:10px 5px;
+    border-bottom:20px solid #333;
+    background-color:rgba(7,84,144,0.3);
 }
 
 .manager-page-tags .tag{
     display: block;
-    color: #f2f2f2;
-    border-radius: 4px;
-    text-decoration: none;
+    padding:0 5px;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    color:#ede8e2;
+    line-height:30px;
+    text-decoration:none;
 }
