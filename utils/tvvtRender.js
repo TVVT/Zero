@@ -43,7 +43,7 @@ function render(project, html,pageData) {
                     if(fs.existsSync(dataPath)){
                         data = requireUncache(dataPath);
                     }else{
-                        data = pageData[$4];
+                        data = pageData;
                     }
                 }
 

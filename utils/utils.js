@@ -141,6 +141,7 @@ exports.getDirFileNames = function(filePath, isModule, extName) {
     return fileNames;
 }
 
+//返回项目的页面数组
 exports.getProjectPages = function(projectName) {
     var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
     var files = fs.readdirSync(realPath);
@@ -154,6 +155,25 @@ exports.getProjectPages = function(projectName) {
     fileNames.sort(function(a, b) {
         return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
             fs.statSync(realPath + a + '.ejs').mtime.getTime();
+    });
+
+    return fileNames;
+}
+
+//返回项目的组建数组
+exports.getProjectUis = function(projectName) {
+    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/components/');
+    var files = fs.readdirSync(realPath);
+    var fileNames = [];
+    for (var i = 0; i < files.length; i++) {
+        if (path.extname(files[i]) === '.json') {
+            fileNames.push(path.basename(files[i], '.json'));
+        }
+    }
+
+    fileNames.sort(function(a, b) {
+        return fs.statSync(realPath + b + '.json').mtime.getTime() -
+            fs.statSync(realPath + a + '.json').mtime.getTime();
     });
 
     return fileNames;

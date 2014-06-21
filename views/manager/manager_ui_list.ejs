@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Zero-<%=project%>-ui</title>
+    <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
+    <link rel="stylesheet" href="/manager/stylesheets/base.css">
+    <script src="/projects/public/scripts/lib/less/less-1.7.1.min.js"></script>
+    <script src="/manager/scripts/jquery/jquery.min.js"></script>
+    <script>
+        var projectLess = [],lessStr,readyStatus=[];
+        projectLess.push("<%=link%>/projects/public/less/base.less");
+        projectLess.push("<%=link%>/projects/public/less/common.less");
+        <% uiList.forEach(function(less,index){%>
+            projectLess.push("<%=link%>/projects/<%=project%>/resource/less/components/<%=less%>.less")
+        <% }) %>
+        projectLess.forEach(function(url,index){
+            readyStatus.push(index);
+            $.ajax({
+                method:"GET",
+                url:url,
+                success:function(data){
+                    readyStatus.pop();
+                    lessStr+=data;
+                    if (readyStatus.length === 0) {
+                        lessStr = lessStr.replace(/@import[^;]*;{1}/ig,'');
+                        new (less.Parser)().parse(lessStr,function(e,data){
+                            var style = document.creatElement('style');
+                            style.innerHtml = data.toCSS();
+                        })
+                    };
+                }
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <header>
+        <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
+        <ul id="nav">
+            <li><a href="http://192.168.112.94/tvvt/project" class="icon-github" target="_gitlab"><i>gitLab</i></a></li>
+        </ul>
+    </header>
+    <div class="manager-ui-list">
+        
+    </div>
+    <footer>&copy; TvvT 2014.</footer>
+    <script src="/manager/scripts/manager_ui_list.js"></script>
+</body>
+</html>
