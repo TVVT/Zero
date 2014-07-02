@@ -1,8 +1,6 @@
 // manager_page_home.js
 
 $(function() {
-
-    var iframeWrappers = document.querySelectorAll('.iframe-wrapper');
     var left = 0,
         prevP = 0,
         tagData;
@@ -28,20 +26,24 @@ $(function() {
         success: function(data) {
         	console.log(data)
             tagData = data;
-            data.tags.forEach(function(value, index) {
-                var a = $('<a class="tag" data-name="' + data[value] + '" href="#' + value + '">' + value + '</a>')
-                $tagListBox.append(a);
-                a.on('click', function() {
-                    pageList.hide();
-                    a.attr('data-name').split(',').forEach(function(pageName, index) {
-                        pageList.each(function(index) {
-                            if ($(pageList[index]).attr('data-name') === pageName) {
-                                $(pageList[index]).show();
-                            };
+
+            if(data.tags ){
+                data.tags.forEach(function(value, index) {
+                    var a = $('<a class="tag" data-name="' + data[value] + '" href="#' + value + '">' + value + '</a>')
+                    $tagListBox.append(a);
+                    a.on('click', function() {
+                        pageList.hide();
+                        a.attr('data-name').split(',').forEach(function(pageName, index) {
+                            pageList.each(function(index) {
+                                if ($(pageList[index]).attr('data-name') === pageName) {
+                                    $(pageList[index]).show();
+                                };
+                            })
                         })
                     })
-                })
-            })
+                });
+            }
+
 
             if (window.location.hash) {
                 var tagName = window.location.hash.substring(1);
