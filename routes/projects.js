@@ -29,6 +29,7 @@ exports.index = function(req, res) {
         ".gitignore", "package.json",
         "public",
         "config.json",
+        "sublime_projects",
         "gulpfile.js");
 
     //  时间排序。
