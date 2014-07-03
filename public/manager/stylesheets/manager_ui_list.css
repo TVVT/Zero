@@ -1,0 +1,8 @@
+.mananger_ui_list_wrapper{
+	position: relative;
+	width: 320px;
+	height: 640px;
+	overflow: hidden;
+	margin-left: 20px;
+	float: left;
+}

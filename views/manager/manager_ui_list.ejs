@@ -6,14 +6,20 @@
     <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
     <link rel="stylesheet" href="/manager/stylesheets/base.css">
     <script src="/projects/public/scripts/lib/less/less-1.7.1.min.js"></script>
-    <script src="/manager/scripts/jquery/jquery.min.js"></script>
+    <script src="/manager/scripts/jquery-2.1.1.min.js"></script>
+    <script src="/manager/scripts/ejs.js"></script>
+    <link rel="stylesheet" href="/manager/stylesheets/manager_ui_list.css">
     <script>
-        var projectLess = [],lessStr,readyStatus=[];
+        var projectLess = [],lessStr,readyStatus=[],list = [],link,projectName;
+        link = "<%=link%>";
+        projectName = "<%=project%>";
         projectLess.push("<%=link%>/projects/public/less/base.less");
         projectLess.push("<%=link%>/projects/public/less/common.less");
         <% uiList.forEach(function(less,index){%>
-            projectLess.push("<%=link%>/projects/<%=project%>/resource/less/components/<%=less%>.less")
+            projectLess.push("<%=link%>/projects/<%=project%>/resource/less/components/<%=less%>.less");
+            list.push("<%=less%>");
         <% }) %>
+
         projectLess.forEach(function(url,index){
             readyStatus.push(index);
             $.ajax({
@@ -25,8 +31,9 @@
                     if (readyStatus.length === 0) {
                         lessStr = lessStr.replace(/@import[^;]*;{1}/ig,'');
                         new (less.Parser)().parse(lessStr,function(e,data){
-                            var style = document.creatElement('style');
-                            style.innerHtml = data.toCSS();
+                            var sty = document.createElement('style');
+                            sty.innerHTML = data.toCSS();
+                            document.head.appendChild(sty);
                         })
                     };
                 }
