@@ -3,6 +3,7 @@ var express = require('express'),
     session = require('express-session');
 var uis = require('./routes/uis');
 var pages = require('./routes/pages');
+var tool = require('./routes/tool');
 var projects = require('./routes/projects');
 var service = require('./routes/service');
 var http = require('http');
@@ -51,12 +52,15 @@ app.get('/:projectName/pages/:name', pages.page);
 //模块列表
 app.get('/ui/getList',uis.getList);
 app.get('/ui/:projectName',uis.list);
+app.get('/ui/:projectName/:ui',uis.ui);
 
 //下载页面
 app.get('/:projectName/pages/download/:name', pages.downloadPackage);
 
 app.get('/qr', service.qr);
 app.get('/tags',service.tags);
+app.get('/imagebed',tool.imagebed);
+app.post('/imagebed/uploadImage',tool.getImages);
 
 
 //读取public下面的静态文件

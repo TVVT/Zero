@@ -1,0 +1,36 @@
+body{
+	text-align: center;
+}
+h1.title{
+	
+}
+
+form.form{
+	margin-top: 40px;
+}
+
+form.form input.file{
+	height: 60px;
+	width: 160px;
+	display: none;
+}
+
+a.normal{
+	cursor: pointer;
+	display: block;
+	margin: 20px auto;
+	width: 160px;
+	height: 60px;
+	border-radius: 6px;
+	background-image: -webkit-linear-gradient(top, #49f, #36f);
+    background-image:-ms-linear-gradient(top, #49f, #36f);
+    background-image: linear-gradient(top, #49f, #36f);
+    line-height: 60px;
+    font-size: 18px;
+    color: #f3f3f3;
+}
+a.normal:hover{
+	background-image: -webkit-linear-gradient(top, #36f, #49f);
+    background-image:-ms-linear-gradient(top, #36f, #49f);
+    background-image: linear-gradient(top, #36f, #49f);
+};

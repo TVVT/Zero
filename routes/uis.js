@@ -35,6 +35,19 @@ exports.list = function(req, res) {
     }
 }
 
+exports.ui = function(req,res){
+    var projectName = req.params.project;
+    var uiName = req.params.ui;
+
+    var renderData = {
+        project:projectName,
+        uiName:uiName,
+        link:link
+    }
+    var managerPagePath = path.join(__dirname, '../views/manager/manager_ui.ejs');
+    res.render(managerPagePath,renderData);
+}
+
 exports.getList = function(req, res) {
     var projectName = req.query.projectName,
         uiList = utils.getProjectUis(projectName);

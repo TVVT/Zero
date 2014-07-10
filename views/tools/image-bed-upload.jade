@@ -1,0 +1,13 @@
+doctype html
+html
+	head
+		title= title
+		link(href='/manager/stylesheets/base.css' rel='stylesheet' type='text/css')
+		link(href='/tools/stylesheets/index.css' rel='stylesheet' type='text/css')
+	body
+		h1.title Images Here
+		form.form(enctype="multipart/form-data" method="post" name="fileinfo")
+			input.file(type="file" name="file" multiple="multiple")
+		a.select.normal 选 择
+		a.upload.normal 上 传
+	script(src='/tools/scripts/imagebed_upload.js')

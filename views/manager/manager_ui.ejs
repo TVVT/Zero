@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title><%=project%>-<%=uiName%></title>
+    <meta name="viewport" content="minimal-ui,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <script>
+        var projectLess = [],lessStr,readyStatus=[],list = [],link,projectName;
+        link = "<%=link%>";
+        projectName = "<%=project%>";
+        projectLess.push("<%=link%>/projects/public/less/base.less");
+        projectLess.push("<%=link%>/projects/public/less/common.less");
+        projectLess.push("<%=link%>/<%=project%>/resource/less/components/<%=uiName%>.less");
+
+        console.log(projectLess)
+
+        // projectLess.forEach(function(url,index){
+        //     readyStatus.push(index);
+        //     $.ajax({
+        //         method:"GET",
+        //         url:url,
+        //         success:function(data){
+        //             readyStatus.pop();
+        //             lessStr+=data;
+        //             if (readyStatus.length === 0) {
+        //                 lessStr = lessStr.replace(/@import[^;]*;{1}/ig,'');
+        //                 new (less.Parser)().parse(lessStr,function(e,data){
+        //                     var sty = document.createElement('style');
+        //                     sty.innerHTML = data.toCSS();
+        //                     document.head.appendChild(sty);
+        //                 })
+        //             };
+        //         }
+        //     })
+        // })
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

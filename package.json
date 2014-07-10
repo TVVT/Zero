@@ -16,6 +16,7 @@
     "express-session":"*",
     "qr-image" : "*",
     "eventproxy":"*",
-    "request":"*"
+    "request":"*",
+    "jade":"*"
   }
 }
