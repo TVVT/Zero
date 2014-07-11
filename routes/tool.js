@@ -30,22 +30,26 @@ exports.getImages = function(req, res) {
     form.parse(req, function(err, fields, files) {
         if (err) return res.end('formidable failed...')
         res.set('Access-Control-Allow-Origin', '*');
-        res.send(files);
-        // if (files.file && files.file.name != "" && files.file.size > 0) {
-        //     var targetPath = path.join(__dirname,'../public/imageBed/'+getRandromTime(files.file.name));
-        //     fs.rename(files.file.path, targetPath, function(err) {
-        //         if (err) throw err;
-        //         res.send({
-        //             'res_code':'1',
-        //             'file':targetPath
-        //         });
-        //     });
-        // } else {
-        //     res.send({
-        //         'res_code':'0',
-        //         'res_msg':'空文件or错误!'
-        //     });
-        // }
+        // res.send(files);
+        if (files.file && files.file.name != "" && files.file.size > 0) {
+            var name = getRandromTime(files.file.name);
+            var targetPath = path.join(__dirname,'../public/imageBed/'+ name);
+            var url = '/imageBed/'+name;
+            
+            fs.rename(files.file.path, targetPath, function(err) {
+                if (err) throw err;
+                res.send({
+                    'res_code':'1',
+                    'file':targetPath,
+                    'url' : url
+                });
+            });
+        } else {
+            res.send({
+                'res_code':'0',
+                'res_msg':'空文件or错误!'
+            });
+        }
     });
 }
 
