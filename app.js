@@ -68,7 +68,7 @@ app.get('/projects/*', _static.getFile);
 
 // 404 TODO
 app.get('*', function(req, res) {
-    res.send("404...")
+    res.status(404).send("404...")
 });
 
 
