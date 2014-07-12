@@ -3,19 +3,13 @@ var fs = require('fs'),
     os = require('os'),
     _ = require('underscore'),
     settings = require('../settings'),
+    utils = require('../utils/utils'),
     managerPath = path.join(__dirname, '../views/manager/');
 
-var ifaces = os.networkInterfaces();
-var ipAddress = 'localhost';
-
-for (var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-        if (details.family == 'IPv4' && !details.internal) {
-            ipAddress = details.address;
-        }
-    });
-}
-var link = 'http://' + ipAddress + ':' + settings.port;
+var link;
+link = utils.getIP(function(ip) {
+    link = ip;
+});
 
 exports.index = function(req, res) {
     var realPath = path.join(__dirname, '../../Projects/');

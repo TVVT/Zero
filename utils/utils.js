@@ -1,5 +1,7 @@
 var fs = require('fs'),
     crypto = require('crypto'),
+    os = require('os'),
+    settings = require('../settings.json'),
     path = require('path');
 
 exports.mimes_types = {
@@ -188,4 +190,33 @@ exports.getRandomMd5 = function() {
     return md5.update((date.getTime() + Math.ceil(Math.random() * 1000)).toString()).digest('hex');
 }
 
+exports.getIP = function(next) {
+    var self = this;
+    if (!this.interval) {
+        this.interval = setInterval(function() {
+            self.ip = getIpAddress();
+            next(self.ip);
+        }, 60000)
+    }
+    if (this.ip) {
+        return this.ip;
+    } else {
+        this.ip = getIpAddress();
+        return this.ip;
+    }
+}
 
+
+function getIpAddress() {
+    var ifaces = os.networkInterfaces();
+    var ipAddress = 'localhost';
+    for (var dev in ifaces) {
+        ifaces[dev].forEach(function(details) {
+            if (details.family == 'IPv4' && !details.internal) {
+                ipAddress = details.address;
+            }
+        });
+    }
+    var link = 'http://' + ipAddress + ':' + settings.port;
+    return link;
+}

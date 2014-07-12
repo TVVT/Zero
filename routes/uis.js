@@ -4,19 +4,12 @@ var ejs = require('ejs'),
     utils = require('../utils/utils.js'),
     os = require('os'),
     settings = require('../settings.json'),
+    utils = require('../utils/utils'),
     managerPath = path.join(__dirname, '../views/manager/');
-
-var ifaces = os.networkInterfaces();
-var ipAddress = 'localhost';
-
-for (var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-        if (details.family == 'IPv4' && !details.internal) {
-            ipAddress = details.address;
-        }
-    });
-}
-var link = 'http://' + ipAddress + ':' + settings.port;
+var link;
+link = utils.getIP(function(ip) {
+    link = ip;
+});
 
 exports.list = function(req, res) {
     //进行浏览器检测   

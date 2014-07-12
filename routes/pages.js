@@ -13,17 +13,10 @@ var ejs = require('ejs'),
     tvvtRender = require('../utils/tvvtRender'),
     request = require('request');
 
-var ifaces = os.networkInterfaces();
-var ipAddress = 'localhost';
-
-for (var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-        if (details.family == 'IPv4' && !details.internal) {
-            ipAddress = details.address;
-        }
-    });
-}
-var link = 'http://' + ipAddress + ':' + settings.port;
+var link;
+link = utils.getIP(function(ip) {
+    link = ip;
+});
 
 
 
@@ -130,7 +123,7 @@ exports.page = function(req, res) {
                         var html = ejs.render(file, renderData);
                         html = tvvtRender(projectName, html, pageData);
                         renderData.content = html;
-                        var source = includeLayout(projectName,pageConfig,renderData);
+                        var source = includeLayout(projectName, pageConfig, renderData);
                         renderData.modules = modules;
                         renderData.pageSource = source;
                         renderData.ipAddress = ipAddress;
@@ -196,7 +189,7 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
-            var html = includeLayout(projectName,pageConfig,renderData);
+            var html = includeLayout(projectName, pageConfig, renderData);
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
             res.end(html);
@@ -256,7 +249,7 @@ exports.downloadPackage = function(req, res) {
     var html = ejs.render(file, renderData);
     html = tvvtRender(projectName, html, pageData);
     renderData.content = html;
-    var source = includeLayout(projectName,pageConfig,renderData);
+    var source = includeLayout(projectName, pageConfig, renderData);
     var htmlPath = path.join(__dirname, '../temp/' + pageName + '.html');
     var regx = /^[http:\/\/]{1}.+\/projects\/.+\/resource\/(scripts|css|script|images)\//ig;
     source = source.replace(regx, function($0, $1) {
@@ -433,7 +426,7 @@ function getPrevPage(pageList, curPage) {
     return prevPage;
 }
 
-function includeLayout(projectName,pageConfig,renderData) {
+function includeLayout(projectName, pageConfig, renderData) {
     var source = '';
     if (pageConfig.layout) {
         source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];

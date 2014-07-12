@@ -3,19 +3,13 @@ var fs = require('fs'),
     os = require('os'),
     jade = require('jade'),
     formidable = require('formidable'),
+    utils = require('../utils/utils'),
     settings = require('../settings.json');
 
-var ifaces = os.networkInterfaces();
-var ipAddress = 'localhost';
-
-for (var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-        if (details.family == 'IPv4' && !details.internal) {
-            ipAddress = details.address;
-        }
-    });
-}
-var link = 'http://' + ipAddress + ':' + settings.port;
+var link;
+link = utils.getIP(function(ip) {
+    link = ip;
+});
 
 exports.imagebed = function(req, res) {
     var renderData = {

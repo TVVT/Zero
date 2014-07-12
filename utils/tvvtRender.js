@@ -3,20 +3,14 @@ var ejs = require('ejs'),
     ep = require('eventproxy'),
     os = require('os'),
     fs = require('fs'),
+    utils = require('../utils/utils'),
     settings = require('../settings.json');
 var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
     regxHasData = /.*\<\%.*\%\>.*/;
-var ifaces = os.networkInterfaces();
-var ipAddress = 'localhost';
-
-for (var dev in ifaces) {
-    ifaces[dev].forEach(function(details) {
-        if (details.family == 'IPv4' && !details.internal) {
-            ipAddress = details.address;
-        }
-    });
-}
-var link = 'http://' + ipAddress + ':' + settings.port;
+var link;
+link = utils.getIP(function(ip) {
+    link = ip;
+});
 //tvvt的rander 返回html string
 module.exports = function(project, html,pageData) {
     return render(project, html,pageData)
