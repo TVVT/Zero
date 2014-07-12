@@ -191,12 +191,18 @@ exports.getRandomMd5 = function() {
 }
 
 exports.getIP = function(next) {
+    if(!this.ipcb){
+        this.ipcb = [];
+        this.ipcb.push(next);
+    }else{
+        this.ipcb.push(next);
+    }
     var self = this;
     if (!this.interval) {
         this.interval = setInterval(function() {
             self.ip = getIpAddress();
-            next(self.ip);
-        }, 60000)
+            self.ipBroadcast(self.ip);
+        }, 1000)
     }
     if (this.ip) {
         return this.ip;
@@ -206,6 +212,11 @@ exports.getIP = function(next) {
     }
 }
 
+exports.ipBroadcast = function(ip){
+    this.ipcb.forEach(function(cb,index){
+        cb(ip);
+    })
+}
 
 function getIpAddress() {
     var ifaces = os.networkInterfaces();

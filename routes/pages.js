@@ -18,8 +18,6 @@ link = utils.getIP(function(ip) {
     link = ip;
 });
 
-
-
 exports.list = function(req, res) {
     var projectName = req.params.projectName;
     var managerPageListPath = managerPath + 'manager_page_home.ejs';
@@ -126,7 +124,6 @@ exports.page = function(req, res) {
                         var source = includeLayout(projectName, pageConfig, renderData);
                         renderData.modules = modules;
                         renderData.pageSource = source;
-                        renderData.ipAddress = ipAddress;
                         var managerPagePath = path.join(__dirname, '../views/manager/manager_page.ejs');
                         res.render(managerPagePath, renderData);
                     }
