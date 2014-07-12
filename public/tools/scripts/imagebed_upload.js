@@ -1,13 +1,15 @@
 ;
 (function() {
     var upload = document.querySelector('.upload');
-    var select = document.querySelector('.select');
+    var select = document.querySelector('.fab');
     var inputFile = document.querySelector('.file')
     var form = document.querySelector('.form');
     var oReq = new XMLHttpRequest();
+    var dialog = document.querySelector('#dialog');
 
-    upload.addEventListener('click', uploadFunction, false);
     select.addEventListener('click', selectFunction,false);
+
+    inputFile.addEventListener('change',uploadFunction,false);
 
     oReq.onreadystatechange = function() {
         if (oReq.readyState == 4 && oReq.status == 200) {
@@ -15,7 +17,10 @@
             input.classList.add('url_place');
             input.disabled = true;
             input.value = JSON.parse(oReq.responseText).file;
-            document.body.appendChild(input);
+
+            
+            
+            dialog.toggle();
         }
     }
 
