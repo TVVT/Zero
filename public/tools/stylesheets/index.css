@@ -67,5 +67,12 @@ a.normal:hover {
 	position: relative;
 	font-size: 80px;
 }
-.dialog.inner.hide{
+#dialog img{
+	width: 300px;
+	height: auto;
+}
+
+#url{
+	margin-top: 20px;
+	font-family: Mirco YaHei;
 }

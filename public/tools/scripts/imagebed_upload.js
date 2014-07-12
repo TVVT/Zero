@@ -6,6 +6,8 @@
     var form = document.querySelector('.form');
     var oReq = new XMLHttpRequest();
     var dialog = document.querySelector('#dialog');
+    var imagesBox = document.querySelector('#dialog .images');
+    var urlPlace = document.querySelector('#url');
 
     select.addEventListener('click', selectFunction,false);
 
@@ -13,15 +15,24 @@
 
     oReq.onreadystatechange = function() {
         if (oReq.readyState == 4 && oReq.status == 200) {
-            var input = document.createElement('input');
-            input.classList.add('url_place');
-            input.disabled = true;
-            input.value = JSON.parse(oReq.responseText).file;
-
-            
-            
-            dialog.toggle();
+        	responseFunction(JSON.parse(oReq.responseText));
         }
+    }
+
+    function responseFunction(object){
+    	if (object.res_code && Number(object.res_code) === 1) {
+    		//成功
+    		var url = object.url;
+    		var img = document.createElement('img');
+    		img.src = url;
+    		imagesBox.appendChild(img);
+    		urlPlace.value = img.src;
+    		dialog.toggle();
+    	}else{
+    		//失败
+
+    	}
+    	
     }
 
     function uploadFunction(e) {

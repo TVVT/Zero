@@ -13,9 +13,7 @@ html
 		div.fab
 			span.add +
 			paper-ripple.circle.recenteringTouch(fit)
-		paper-dialog#dialog(heading='Title for dialog' transition='paper-transition-center' opened='false' style='display:none')
-			div.dialog.inner.hide
-				p texttexttexttexttexttexttext
-				p texttexttexttexttexttexttext
-				p texttexttexttexttexttexttext
+		paper-dialog#dialog(heading='Your Images' transition='paper-transition-center' opened='false' style='display:none')
+			div.images
+			paper-input#url(label='Image Url' floatingLabel)
 	script(src='/tools/scripts/imagebed_upload.js')
