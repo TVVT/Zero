@@ -1,7 +1,8 @@
 // TODO 长连接的关闭和清理
+var wsPort = require('./settings.json').wsPort;
 var webSocketServer = require('ws').Server,
     wss = wss ? wss : new webSocketServer({
-        port: 8081
+        port: wsPort
     }),
     wsGroup = {}; //ws连接池
 
