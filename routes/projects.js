@@ -27,11 +27,17 @@ exports.index = function(req, res) {
         "gulpfile.js");
 
     //  时间排序。
+    // console.log(dir);
 
-    dir.sort(function(a, b) {
-        return fs.statSync(realPath + b).mtime.getTime() -
-            fs.statSync(realPath + a).mtime.getTime();
-    });
+    // dir.sort(function(a, b) {
+    //     return a - b;
+    //     // return fs.statSync(realPath + b).mtime.getTime() -
+    //     //     fs.statSync(realPath + a).mtime.getTime();
+    // });
+
+    // console.log(dir)
+
+
 
     var renderData = {
         projects: dir,
