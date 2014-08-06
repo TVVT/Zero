@@ -206,11 +206,13 @@ header {
     background-color:#fafafa;
     width: 30px;
     height: 30px;
+    line-height: 30px;
     border-radius: 50%;
-    transform: rotate(45deg);
     position: absolute;
     right: 30px;
     top:10px;
+    text-decoration: none;
+    text-align: center;
 }
 .iframeContent iframe {
     width: 100%;
