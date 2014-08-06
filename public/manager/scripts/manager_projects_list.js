@@ -21,6 +21,7 @@ $(function() {
         iframeContent.addClass('show');
     });
     iframeContent.on('click', '.close', function() {
+    	alert("aaaaaaa");
         iframeContent.removeClass('show');
     });
 
