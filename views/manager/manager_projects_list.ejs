@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
     <link rel="stylesheet" href="/manager/stylesheets/base.css">
     <link rel="stylesheet" href="/manager/stylesheets/manager_projects_list.css">
+    <script src="/manager/scripts/jquery-2.1.1.min.js"></script>
 </head>
 <body>
     <header>
@@ -20,11 +21,33 @@
         <% projects.forEach(function(project,index){%>
             <div class="project-wrapper">
                 <div class="folder">
+                <img src="http://d7.yihaodianimg.com/N00/M0B/43/C3/CgQCtlLXpRWABmYgAAKfGFRXweU24300_450x450.jpg" data-url="<%=link%>/<%=project%>/pages" >
+                <!--<input type="hidden" value="<%=link%>/<%=project%>/pages" >-->
                 </div>
-                <a href="<%=link%>/<%=project%>/pages"><%=project%></a>
+                <!--<a class="listp" href="<%=link%>/<%=project%>/pages">-->
+                <div class="listp">
+                <span class="collect">
+                    收藏
+                </span>
+                <span>
+                <%=project%>
+                </span>
+                <span>
+                    最新修改时间：2014-08-08
+                </span>
+                <a href="http://www.baidu.com" target="_blank" >交互地址(请点这里)</a>
+                <a href="javascript:;" target="_parent">视觉地址(请点这里)</a>
+                </div>
+                <!--</a>-->
             </div>
         <%})%>
     </div>
+    <div class="iframeContent">
+        <span class="icon"></span>
+        <a class="close" href="javascript:;">+</a>
+        <iframe src="" ></iframe>
+    </div>
     <footer>&copy; TvvT 2014.</footer>
+     <script type="text/javascript" src="/manager/scripts/manager_projects_list.js"></script>
 </body>
 </html>

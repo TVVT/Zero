@@ -1,37 +1,41 @@
-header{
-	border-bottom: 1px solid #666;
+header {
+    //background-color: #fff;
+    background-color: #f3f3f3;
+    background-image: -moz-linear-gradient(#f9f9f9, #f3f3f3);
+    background-image: -webkit-linear-gradient(#f9f9f9, #f3f3f3);
+    background-image: linear-gradient(#f9f9f9, #f3f3f3);
+    background-repeat: repeat-x;
+    border-bottom: 1px solid #e5e5e5;
 }
-
-footer{
-	color: #fff;
-	text-shadow:none;
+footer {
+    color: #fff;
+    text-shadow: none;
 }
-
-.manager-page-list{
-	/*padding: 0 30px;*/
-	/*flex:1;*/
-	height: 100%;
-	overflow: scroll;
-	flex-flow:wrap;
-    padding:10px 0;
-	background: #333;
-	position: relative;
-
+.manager-page-list {
+    /*padding: 0 30px;*/
+    /*flex:1;*/
+    height: 100%;
+    overflow: scroll;
+    flex-flow: wrap;
+    padding: 10px 0;
+    //background: #fafafa;
+    background-color: #fff;
+    position: relative;
     text-align: center;
 }
-
-.manager-page-list .iframe-wrapper{
-	width: 320px;
-	height: 480px;
+.manager-page-list .iframe-wrapper {
+    width: 320px;
+    height: 480px;
     display: inline-block;
     margin: 10px;
-    transition:-webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
     /*-webkit-transform: rotateY(-60deg) ;*/
     position: relative;
     cursor: pointer;
+    border: 1px solid #eeeeee;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
 }
-
-.manager-page-list .iframe-wrapper:after{
+.manager-page-list .iframe-wrapper:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -39,51 +43,42 @@ footer{
     top: 0;
     left: 0;
     cursor: pointer;
-    background: rgba(0,0,0,0);
-    transition:background 0.5s;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s;
     text-align: center;
     font-size: 14px;
     line-height: 480px;
     color: #fff;
 }
-
-.manager-page-list .iframe-wrapper:hover:after{
-    content:  attr(data-name);
-    background: rgba(0,0,0,0.65);
+.manager-page-list .iframe-wrapper:hover:after {
+    content: attr(data-name);
+    background: rgba(0, 0, 0, 0.65);
 }
-
-
-.manager-page-list .iframe-wrapper iframe{
+.manager-page-list .iframe-wrapper iframe {
     background: #fff;
     /*-webkit-box-reflect: below 5px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(.5, transparent), to(rgba(3,3,3,.1)));*/
     /*-webkit-transform: rotateY(0deg);*/
 }
-
-.manager-page-list .iframe-wrapper iframe{
+.manager-page-list .iframe-wrapper iframe {
     display: block;
     width: 100%;
     height: 100%;
     overflow: auto;
 }
-
-.manager-page-list .iframe-wrapper.left iframe{
-    -webkit-transform: translate(-100%,0) rotateY(60deg);
+.manager-page-list .iframe-wrapper.left iframe {
+    -webkit-transform: translate(-100%, 0) rotateY(60deg);
 }
-
-.manager-page-list .iframe-wrapper.right iframe{
-    -webkit-transform: translate(100%,0) rotateY(-60deg);
+.manager-page-list .iframe-wrapper.right iframe {
+    -webkit-transform: translate(100%, 0) rotateY(-60deg);
 }
-
-
-.manager-page-list .iframe-wrapper:hover{
-	box-shadow: 0 0 30px rgba(0,0,0,0.2);
+.manager-page-list .iframe-wrapper:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
-
 .git-repo-address {
     position: relative;
-    top:-3px;
+    top: -3px;
     font-size: 12px;
-    background-color:#999;
+    background-color: #999;
     border-radius: 2px;
     padding: 2px;
     border: none;
@@ -92,21 +87,14 @@ footer{
 }
 .git-repo-address:hover {
     background-color: #f2f2f2;
-    -webkit-animation:bggrowth .5s;
+    -webkit-animation: bggrowth .5s;
 }
-
 ::-webkit-scrollbar {
     display: none;
 }
-
-::-webkit-scrollbar-thumb {
-    
-}
-
-::-webkit-scrollbar-corner {
+::-webkit-scrollbar-thumb {}::-webkit-scrollbar-corner {
     /*background: #000;*/
 }
-
 @-webkit-keyframes bggrowth {
     0% {
         background-color: #999;
@@ -115,28 +103,26 @@ footer{
         background-color: #f2f2f2;
     }
 }
-
 /*Tags区域*/
-.manager-page-tags{
-    position: fixed;
-    right:0;
-    top:40px;
-    width:110px;
-    height:100%;
-    padding:10px 5px;
-    border-bottom:20px solid #333;
-    background-color:rgba(7,84,144,0.3);
-}
 
-.manager-page-tags:empty{
+.manager-page-tags {
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 110px;
+    height: 100%;
+    padding: 10px 5px;
+    border-bottom: 20px solid #333;
+    background-color: rgba(7, 84, 144, 0.3);
+}
+.manager-page-tags:empty {
     display: none;
 }
-
-.manager-page-tags .tag{
+.manager-page-tags .tag {
     display: block;
-    padding:0 5px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    color:#ede8e2;
-    line-height:30px;
-    text-decoration:none;
+    padding: 0 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ede8e2;
+    line-height: 30px;
+    text-decoration: none;
 }
