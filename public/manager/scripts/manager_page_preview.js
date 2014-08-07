@@ -5,7 +5,7 @@
 	var host = window.location.hostname;
     var ws = new WebSocket('ws://' + host + ':8081');
     var href = window.location.href;
-        var cid = href.slice(href.lastIndexOf('=')+1,href.length)+'m';
+    var cid = href.slice(href.lastIndexOf('=')+1,href.length)+'m';
     ws.onopen = function(e) {
         ws.send(JSON.stringify({
             cid: cid

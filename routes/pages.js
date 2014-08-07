@@ -136,7 +136,6 @@ exports.page = function(req, res) {
 exports.pagePreview = function(req, res) {
     var clientId = req.query.clientId;
     //如果有clientId 那么连接webSocket
-
     if (clientId) {
         var userAgent = req.headers['user-agent'];
         ws.send(clientId, 1, JSON.stringify({
