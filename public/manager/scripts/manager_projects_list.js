@@ -17,12 +17,13 @@ $(function() {
         var a = $(this).attr('data-url'),
             ifr = iframeContent.find('iframe');
 
-        ifr.attr('src', a);
+        ifr.attr('src', a).css({'height':iframeContent.height()+'px'});
+        if(iframeContent.hasClass('show')){
+        	return;
+        }
+        console.log('aaaaaa');
         iframeContent.addClass('show');
-    });
-    iframeContent.on('click', '.close', function() {
-    	alert("aaaaaaa");
-        iframeContent.removeClass('show');
+        collect.addClass('show');
     });
 
 });
