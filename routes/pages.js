@@ -69,9 +69,8 @@ exports.feedBack = function(req, res) {
 exports.page = function(req, res) {
 
     //进行浏览器检测   
-    if (req.headers['user-agent'].indexOf("Chrome") == -1 || req.headers['user-agent'].match(/Chrome\/(\d+)\./)[1] < 30) {
-        res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
-    } else {
+    var userAgent = req.headers['user-agent'];
+    if (userAgent.indexOf("Chrome") > -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30 || userAgent.indexOf("Safari") && userAgent.match(/Version\/(\d+)\./)[1] >= 8 ) {
         var pageName = req.params.name,
             projectName = req.params.projectName,
             pageList = utils.getProjectPages(projectName);
@@ -130,6 +129,8 @@ exports.page = function(req, res) {
                 });
             }
         });
+    }else{
+        res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
     }
 }
 
