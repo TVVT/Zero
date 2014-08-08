@@ -24,6 +24,7 @@ header{
     height: 44px;
     line-height: 44px;
     background: rgba(0,0,0,0.8);
+    display: -webkit-flex;
     display: flex;
     color: #fff;
     -webkit-user-select:none;
@@ -52,6 +53,7 @@ header sub{
 
 
 header ul{
+    display: -webkit-flex;
     display: flex;
     height: 44px;
 }
