@@ -90,37 +90,48 @@ header {
     left: 0;
 }
 .project-wrapper .listp .collect {
-    min-width: 10px;
-    height: 20px;
+    /*min-width: 10px;
     border-radius: 20px;
     background-color: #ff0000;
     color: #fff;
-    font-size: 12px;
+    font-size: 12px;*/
+    background-image: url(../images/tvvt.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    
     display: block;
     position: absolute;
     z-index: 101;
     right: 5px;
     top: 5px;
-    line-height: 20px;
     text-align: center;
-    padding: 0 5px;
     cursor: pointer;
+    transition: all 300ms ease-in-out;
+    transform:rotateY(0deg);
+}
+.project-wrapper .listp .collect.sed{
+    -webkit-filter: grayscale(1);
+    transform:rotateY(180deg);
 }
 .project-wrapper .listp>span:nth-child(2) {
     position: absolute;
     left: 0;
     top: 30px;
     display: inline-block;
-    height: 20px;
-    line-height: 20px;
+    height: 30px;
+    line-height: 30px;
     padding-left: 50%;
     width: 100%;
     box-sizing: border-box;
+    font-weight: bold;
+    font-size: 16px;
 }
 .project-wrapper .listp>span:nth-child(3) {
     position: absolute;
     left: 0;
-    top: 50px;
+    top: 60px;
     display: inline-block;
     height: 20px;
     line-height: 20px;
@@ -144,10 +155,10 @@ header {
     text-decoration: none;
 }
 .project-wrapper .listp>a:nth-of-type(1) {
-    top: 70px;
+    top: 80px;
 }
 .project-wrapper .listp>a:nth-of-type(2) {
-    top: 90px;
+    top: 100px;
 }
 .project-wrapper:hover {
     color: #f14583;

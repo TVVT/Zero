@@ -37,6 +37,5 @@ exports.index = function(req, res) {
         projects: dir,
         link: link
     }
-
     res.render(managerPath + 'manager_projects_list.ejs', renderData);
 }

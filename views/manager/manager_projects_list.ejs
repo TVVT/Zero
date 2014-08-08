@@ -6,12 +6,21 @@
     <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
     <link rel="stylesheet" href="/manager/stylesheets/base.css">
     <link rel="stylesheet" href="/manager/stylesheets/manager_projects_list.css">
+    <script type="text/javascript">
+    var rendDate={
+        link:'<%=link%>'
+    };
+    if(location.hostname==='localhost'){
+        window.location.href=rendDate.link;
+    }
+    </script>
     <script src="/manager/scripts/jquery-2.1.1.min.js"></script>
 </head>
 <body>
     <header>
         <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
-        <ul>
+        <ul id="nav">
+            <li class="icon-collect">我的收藏</li>
             <!-- <li class="icon-download"><i>下载模块</i></li> -->
             <!-- <li class="icon-mobile"><i>二维码</i></li> -->
             <!-- <li class="icon-browser showSource"><i>查看源码</i></li> -->
@@ -19,16 +28,15 @@
     </header>
     <div class="manager_box">
         <div class="manager_projects_list">
+
             <% projects.forEach(function(project,index){%>
                 <div class="project-wrapper">
                     <div class="folder">
                     <img src="http://d7.yihaodianimg.com/N00/M0B/43/C3/CgQCtlLXpRWABmYgAAKfGFRXweU24300_450x450.jpg" data-url="<%=link%>/<%=project%>/pages" >
-                    <!--<input type="hidden" value="<%=link%>/<%=project%>/pages" >-->
                     </div>
                     <!--<a class="listp" href="<%=link%>/<%=project%>/pages">-->
                     <div class="listp">
-                    <span class="collect">
-                        收藏
+                    <span id="<%=project%>" class="collect" title="收藏" >
                     </span>
                     <span>
                     <%=project%>
@@ -48,6 +56,6 @@
         </div>
     </div>
     <footer>&copy; TvvT 2014.</footer>
-     <script type="text/javascript" src="/manager/scripts/manager_projects_list.js"></script>
+    <script type="text/javascript" src="/manager/scripts/manager_projects_list.js"></script>
 </body>
 </html>

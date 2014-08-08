@@ -14,6 +14,11 @@ var util = require('./utils/utils'),
 
 var app = express();
 
+var link;
+link = util.getIP(function(ip) {
+    link = ip;
+});
+
 // all environments
 app.set('port', process.env.PORT || port);
 app.set('views', path.join(__dirname, '../Projects'));

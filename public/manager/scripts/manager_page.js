@@ -6,6 +6,7 @@ $(function() {
     var href = window.location.href;
     var curPage = href.slice(href.lastIndexOf('/') + 1, href.length);
     var url = 'http://' + host + ':3000/feedBack';
+
     if (localStorage.cid) {
         $.ajax({
             type: "POST",
