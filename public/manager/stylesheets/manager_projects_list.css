@@ -13,8 +13,7 @@
 
 html, body {
     height: 100%;
-    background-color: #fff;
-}
+    background-color: #fff;}
 header {
     background-color: #f3f3f3;
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
@@ -25,18 +24,21 @@ header {
     flex:1;
     display:flex;
 }
-.manager_projects_list {
+.manager_projects_list,.collectContent {
     width: 100%;
     //height: 100%;
     height:auto;
-    overflow: scroll;
+    overflow: auto;
     flex-flow: wrap;
     background-color: #fff;
     position: relative;
+    z-index: 1;
     text-align: center;
     padding-top: 8px;
+    transition: width 500ms ease-in-out;
 }
 .manager_projects_list.show{
+    transition: width 500ms ease-in-out;
     width: 370px;
 }
 .project-wrapper {
@@ -57,9 +59,10 @@ header {
     padding: 10px;
     margin: 5px 5px 5px 10px;
     box-sizing: border-box;
-    transition: box-shadow 200ms ease-in;
+    transition: box-shadow 200ms ease-in,left 0.5s,top 0.5s;
     transform: box-shadow;
 }
+
 .project-wrapper .folder {
     max-height: 150px;
     margin-right: 0;
@@ -90,11 +93,6 @@ header {
     left: 0;
 }
 .project-wrapper .listp .collect {
-    /*min-width: 10px;
-    border-radius: 20px;
-    background-color: #ff0000;
-    color: #fff;
-    font-size: 12px;*/
     background-image: url(../images/tvvt.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,11 +106,12 @@ header {
     top: 5px;
     text-align: center;
     cursor: pointer;
-    transition: all 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
     transform:rotateY(0deg);
+    -webkit-filter: grayscale(1);
 }
 .project-wrapper .listp .collect.sed{
-    -webkit-filter: grayscale(1);
+    -webkit-filter: none;
     transform:rotateY(180deg);
 }
 .project-wrapper .listp>span:nth-child(2) {
@@ -177,10 +176,25 @@ header {
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-color: #fff;
     padding: 5px;
-    transition: all 300ms ease-in-out;
-    box-sizing:border-box;
+    transition: transform 500ms ease-in-out;
+    //box-sizing:border-box;
     margin:10px 0 10px 10px;
     transform: translate3d(120%, 0, 0);
+    overflow: hidden;
+}
+.iframeContent i{
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    right:10px;
+    top:10px;
+    border:1px #e5e5e5 solid;
+    cursor: pointer;
 }
 .iframeContent.show{
     transform: translate3d(0, 0, 0);
@@ -190,4 +204,30 @@ header {
     height: 100%;
     border: none;
     flex:1;
+}
+
+.fixedLayer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 950;
+    margin-top:45px;
+}
+
+.fixedLayer.show{
+    display: block;
+}
+
+.fixedLayer .project-wrapper {
+    position: absolute;
+    box-shadow: 0 0 50px rgba(0,0,0,.7);
+}
+.manager_projects_list .zhan{
+    display: none;
+}
+.manager_projects_list .zhan.show{
+    display: inline-block;
 }

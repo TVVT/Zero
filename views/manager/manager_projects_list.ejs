@@ -10,9 +10,9 @@
     var rendDate={
         link:'<%=link%>'
     };
-    /*if(location.hostname==='localhost'){
+    if(location.hostname==='localhost'){
         window.location.href=rendDate.link;
-    }*/
+    }
     </script>
     <script src="/manager/scripts/jquery-2.1.1.min.js"></script>
 </head>
@@ -20,15 +20,16 @@
     <header>
         <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
         <ul id="nav">
-            <li class="icon-collect"><i>我的收藏</i></li>
+            <!--<li class="icon-collect"><i>我的收藏</i></li>-->
             <!-- <li class="icon-download"><i>下载模块</i></li> -->
             <!-- <li class="icon-mobile"><i>二维码</i></li> -->
             <!-- <li class="icon-browser showSource"><i>查看源码</i></li> -->
         </ul>
     </header>
+
     <div class="manager_box">
         <div class="manager_projects_list">
-
+            <div class="project-wrapper zhan"></div>
             <% projects.forEach(function(project,index){%>
                 <div class="project-wrapper">
                     <div class="folder">
@@ -52,9 +53,16 @@
             <%})%>
         </div>
         <div class="iframeContent">
+            <i>X</i>
             <iframe src="" ></iframe>
         </div>
     </div>
+    
+    <div class="fixedLayer">
+        
+    </div>
+
+
     <footer>&copy; TvvT 2014.</footer>
     <script type="text/javascript" src="/manager/scripts/manager_projects_list.js"></script>
 </body>
