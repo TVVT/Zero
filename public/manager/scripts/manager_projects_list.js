@@ -5,6 +5,9 @@ $(function() {
         projectList = new Array();
 
     (function() {
+    	if(!localStorage.getItem('projectList')){
+    		return;
+    	}
         var le = localStorage.getItem('projectList').split(','),
             i = 0;
         while (i < le.length) {
