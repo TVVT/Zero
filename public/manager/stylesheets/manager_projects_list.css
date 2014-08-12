@@ -1,20 +1,62 @@
 html, body {
     height: 100%;
-    background-color: #fff;}
+    background-color: #fff;
+}
 header {
     background-color: #f3f3f3;
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-repeat: repeat-x;
     border-bottom: 1px solid #e5e5e5;
 }
-.manager_box{
-    flex:1;
-    display:flex;
-    padding:10px 0;
+header .input-append {
+    flex: 1;
+    white-space: nowrap;
+    display: flex;
 }
-.manager_projects_list,.collectContent {
+header .input-append .input-mini {
+    flex:1;
+    cursor: auto;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    
+    border-radius: 4px 0 0 4px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 4px 6px;
+    color: #555;
+
+    transition: border linear .2s, box-shadow linear .2s;
+}
+header .input-append .input-mini:focus{
+    outline: none;
+    border-color:rgba(82,168,236,0.8);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+}
+header .input-append .add-on {
+    border-radius: 0 4px 4px 0;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    padding:4px 5px;
+    min-width: 30px;
+    margin:0 10px 0 0;
+}
+.manager_box {
+    flex: 1;
+    display: flex;
+    padding: 10px 0;
+}
+.manager_projects_list, .collectContent {
     width: 100%;
-    height:auto;
+    height: auto;
     overflow: auto;
     flex-flow: wrap;
     background-color: #fff;
@@ -23,7 +65,7 @@ header {
     text-align: center;
     transition: width 500ms ease-in-out;
 }
-.manager_projects_list.show{
+.manager_projects_list.show {
     transition: width 500ms ease-in-out;
     width: 370px;
 }
@@ -45,10 +87,9 @@ header {
     padding: 10px;
     margin: 0 5px 5px 10px;
     box-sizing: border-box;
-    transition: box-shadow 200ms ease-in,left 0.5s,top 0.5s;
+    transition: box-shadow 200ms ease-in, left 0.5s, top 0.5s;
     transform: box-shadow;
 }
-
 .project-wrapper .folder {
     max-height: 150px;
     margin-right: 0;
@@ -84,7 +125,6 @@ header {
     background-size: cover;
     width: 30px;
     height: 30px;
-    
     display: block;
     position: absolute;
     z-index: 101;
@@ -93,12 +133,12 @@ header {
     text-align: center;
     cursor: pointer;
     transition: transform 300ms ease-in-out;
-    transform:rotateY(0deg);
+    transform: rotateY(0deg);
     -webkit-filter: grayscale(1);
 }
-.project-wrapper .listp .collect.sed{
+.project-wrapper .listp .collect.sed {
     -webkit-filter: none;
-    transform:rotateY(180deg);
+    transform: rotateY(180deg);
 }
 .project-wrapper .listp>span:nth-child(2) {
     position: absolute;
@@ -151,10 +191,9 @@ header {
     transform: box-shadow;
 }
 .iframeContent {
-    flex:1;
+    flex: 1;
     width: 100%;
     position: relative;
-
     border: 1px solid #e5e5e5;
     border-right: none;
     border-radius: 3px 0 0 3px;
@@ -165,7 +204,7 @@ header {
     transform: translate3d(100%, 0, 0);
     overflow: hidden;
 }
-.iframeContent i{
+.iframeContent i {
     font-size: 12px;
     display: block;
     position: absolute;
@@ -174,23 +213,22 @@ header {
     line-height: 30px;
     text-align: center;
     border-radius: 50%;
-    right:10px;
-    top:10px;
-    border:1px #e5e5e5 solid;
+    right: 10px;
+    top: 10px;
+    border: 1px #e5e5e5 solid;
     cursor: pointer;
 }
-.iframeContent.show{
+.iframeContent.show {
     transform: translate3d(0, 0, 0);
 }
 .iframeContent iframe {
     width: 100%;
     height: 100%;
     border: none;
-    flex:1;
-    margin:5px;
+    flex: 1;
+    margin: 5px;
 }
-
-.fixedLayer{
+.fixedLayer {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -198,20 +236,18 @@ header {
     top: 0;
     left: 0;
     z-index: 950;
-    margin-top:45px;
+    margin-top: 45px;
 }
-
-.fixedLayer.show{
+.fixedLayer.show {
     display: block;
 }
-
 .fixedLayer .project-wrapper {
     position: absolute;
-    box-shadow: 0 0 50px rgba(0,0,0,.7);
+    box-shadow: 0 0 50px rgba(0, 0, 0, .7);
 }
-.manager_projects_list .zhan{
+.manager_projects_list .zhan {
     display: none;
 }
-.manager_projects_list .zhan.show{
+.manager_projects_list .zhan.show {
     display: inline-block;
 }
