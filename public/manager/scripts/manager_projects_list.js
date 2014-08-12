@@ -92,7 +92,6 @@ $(function() {
                 'left': l,
                 'top': t
             });
-
             parentDom.css({
                 'left': l,
                 'top': t
@@ -105,12 +104,15 @@ $(function() {
             }, 1000, function() {
 
                 parentDom.css({
-                    left: 0,
+                    left: l,
                     top: 0
                 });
                 collect.find('.zhan').removeClass('show');
                 setTimeout(function() {
-
+                	parentDom.css({
+                    left: 0,
+                    top: 0
+                });
                     parentDom.find('.collect').addClass('sed');
                     $('.fixedLayer').removeClass('show');
                     parentDom.prependTo($('.manager_projects_list'));

@@ -247,6 +247,7 @@ header .input-append .add-on {
 }
 .manager_projects_list .zhan {
     display: none;
+    margin:0 auto 5px auto;
 }
 .manager_projects_list .zhan.show {
     display: inline-block;
