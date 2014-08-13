@@ -5,9 +5,9 @@ $(function() {
         projectList = new Array();
 
     (function() {
-    	if(!localStorage.getItem('projectList')){
-    		return;
-    	}
+        if (!localStorage.getItem('projectList')) {
+            return;
+        }
         var le = localStorage.getItem('projectList').split(','),
             i = 0;
         while (i < le.length) {
@@ -21,7 +21,7 @@ $(function() {
         for (var i = 0; i < projectList.length; i++) {
             for (var j = 0; j < le.length; j++) {
                 if (projectList[i] == le[j].id) {
-                	$(le[j]).addClass('sed')
+                    $(le[j]).addClass('sed')
                     $(le[j]).parents('.project-wrapper').prependTo(collect);
                 }
             }
@@ -67,8 +67,6 @@ $(function() {
         event.preventDefault();
         var id = $(this).attr('id'),
             parentDom = $(this).parents('.project-wrapper'),
-            ind = $(this).index(),
-            zhan = collect.find('.zhan'),
             l = parentDom.offset().left,
             t = parentDom.offset().top - 45;
 
@@ -80,18 +78,18 @@ $(function() {
         //debugger
         if ($(this).hasClass('sed')) {
             $(this).removeClass('sed');
-            parentDom.stop().animate({'opacity':0},1000,function(){
-            	collect.append(parentDom);
-            	parentDom.animate({'opacity':1},500);
+            parentDom.stop().animate({
+                'opacity': 0
+            }, 1000, function() {
+                collect.append(parentDom);
+                parentDom.animate({
+                    'opacity': 1
+                }, 500);
             });
             projectList.remove(id);
-           
+
         } else {
-            collect.find('.zhan').insertBefore(parentDom);
-            collect.find('.zhan').addClass('show').css({
-                'left': l,
-                'top': t
-            });
+			parentDom.clone().addClass('zhan').insertBefore(parentDom);
             parentDom.css({
                 'left': l,
                 'top': t
@@ -104,15 +102,16 @@ $(function() {
             }, 1000, function() {
 
                 parentDom.css({
-                    left: l,
+                    left: 35,
                     top: 0
                 });
-                collect.find('.zhan').removeClass('show');
+                collect.find('.zhan').remove();
+                
                 setTimeout(function() {
-                	parentDom.css({
-                    left: 0,
-                    top: 0
-                });
+                    parentDom.css({
+                        left: 0,
+                        top: 0
+                    });
                     parentDom.find('.collect').addClass('sed');
                     $('.fixedLayer').removeClass('show');
                     parentDom.prependTo($('.manager_projects_list'));

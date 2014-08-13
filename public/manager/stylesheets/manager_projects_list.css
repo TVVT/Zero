@@ -17,16 +17,19 @@ header .input-append .input-mini {
     flex:1;
     cursor: auto;
     border: 1px solid #ccc;
+    border-right: none;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     
     border-radius: 4px 0 0 4px;
-    height: 20px;
+    height: 28px;
     line-height: 20px;
     display: inline-block;
-    padding: 4px 6px;
+    padding: 0 6px;
     color: #555;
 
     transition: border linear .2s, box-shadow linear .2s;
+    overflow: hidden;
+    box-sizing:border-box;
 }
 header .input-append .input-mini:focus{
     outline: none;
@@ -42,12 +45,13 @@ header .input-append .add-on {
     font-size: 14px;
     color: #333;
     white-space: nowrap;
-    height: 20px;
-    line-height: 20px;
+    height: 28px;
+    line-height: 28px;
     display: inline-block;
-    padding:4px 5px;
+    padding:0 5px;
     min-width: 30px;
     margin:0 10px 0 0;
+    box-sizing:border-box;
 }
 .manager_box {
     flex: 1;
@@ -244,11 +248,4 @@ header .input-append .add-on {
 .fixedLayer .project-wrapper {
     position: absolute;
     box-shadow: 0 0 50px rgba(0, 0, 0, .7);
-}
-.manager_projects_list .zhan {
-    display: none;
-    margin:0 auto 5px auto;
-}
-.manager_projects_list .zhan.show {
-    display: inline-block;
 }
