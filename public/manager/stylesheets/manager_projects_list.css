@@ -22,14 +22,14 @@ header .input-append .input-mini {
     
     border-radius: 4px 0 0 4px;
     height: 28px;
-    line-height: 20px;
+
     display: inline-block;
     padding: 0 6px;
     color: #555;
 
     transition: border linear .2s, box-shadow linear .2s;
     overflow: hidden;
-    box-sizing:border-box;
+    box-sizing:content-box;
 }
 header .input-append .input-mini:focus{
     outline: none;
@@ -37,6 +37,7 @@ header .input-append .input-mini:focus{
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
 }
 header .input-append .add-on {
+    display: block;
     border-radius: 0 4px 4px 0;
     background-color: #eee;
     border: 1px solid #ccc;
@@ -51,7 +52,6 @@ header .input-append .add-on {
     padding:0 5px;
     min-width: 30px;
     margin:0 10px 0 0;
-    box-sizing:border-box;
 }
 .manager_box {
     flex: 1;
