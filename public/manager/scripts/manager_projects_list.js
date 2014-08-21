@@ -148,4 +148,7 @@ $(function() {
         collect.removeClass('show');
     });
 
+    collect.on('click', 'i', function() {
+        collect.addClass('hide');
+    });
 });

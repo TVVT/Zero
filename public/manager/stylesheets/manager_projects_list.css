@@ -7,6 +7,13 @@ header {
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-repeat: repeat-x;
     border-bottom: 1px solid #e5e5e5;
+
+    -ms-flex-align:center;
+    -webkit-box-align:center;
+    box-align:center;
+
+    -webkit-align-items:center;
+    align-items:center;
 }
 header .input-append {
     flex: 1;
@@ -69,9 +76,26 @@ header .input-append .add-on {
     text-align: center;
     transition: width 500ms ease-in-out;
 }
+.manager_projects_list i {
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    left: 10px;
+    top: 0px;
+    border: 1px #e5e5e5 solid;
+    cursor: pointer;
+    z-index: 3;
+}
 .manager_projects_list.show {
-    transition: width 500ms ease-in-out;
     width: 370px;
+}
+.manager_projects_list.hide {
+    display: none;
 }
 .project-wrapper {
     position: relative;
