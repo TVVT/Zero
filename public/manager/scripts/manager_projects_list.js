@@ -1,6 +1,7 @@
 $(function() {
     var collect = $('.manager_projects_list'),
         iframeContent = $('.iframeContent'),
+        manager_close = $('.manager_close'),
         isLocalStorage = window.localStorage ? true : false,
         projectList = new Array();
 
@@ -89,7 +90,7 @@ $(function() {
             projectList.remove(id);
 
         } else {
-			parentDom.clone().addClass('zhan').insertBefore(parentDom);
+            parentDom.clone().addClass('zhan').insertBefore(parentDom);
             parentDom.css({
                 'left': l,
                 'top': t
@@ -106,7 +107,7 @@ $(function() {
                     top: 0
                 });
                 collect.find('.zhan').remove();
-                
+
                 setTimeout(function() {
                     parentDom.css({
                         left: 0,
@@ -144,11 +145,21 @@ $(function() {
     });
 
     iframeContent.on('click', 'i', function() {
-        iframeContent.removeClass('show');
-        collect.removeClass('show');
+        if (collect.hasClass('show')) {
+            iframeContent.removeClass('show');
+            collect.removeClass('show').removeClass('hide');
+            iframeContent.find('iframe').attr('src','');
+        } 
     });
 
-    collect.on('click', 'i', function() {
-        collect.addClass('hide');
+    manager_close.on('click', 'i', function() {
+        if(iframeContent.find('iframe').attr('src')===''){
+            return;
+        }
+        if(collect.hasClass('hide')){
+            collect.removeClass('hide');
+        }else{
+            collect.addClass('hide');
+        }
     });
 });

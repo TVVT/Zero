@@ -64,8 +64,9 @@ header .input-append .add-on {
     flex: 1;
     display: flex;
     padding: 10px 0;
+    transition: width 500ms ease;
 }
-.manager_projects_list, .collectContent {
+.manager_projects_list {
     width: 100%;
     height: auto;
     overflow: auto;
@@ -74,22 +75,6 @@ header .input-append .add-on {
     position: relative;
     z-index: 1;
     text-align: center;
-    transition: width 500ms ease-in-out;
-}
-.manager_projects_list i {
-    font-size: 12px;
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 50%;
-    left: 10px;
-    top: 0px;
-    border: 1px #e5e5e5 solid;
-    cursor: pointer;
-    z-index: 3;
 }
 .manager_projects_list.show {
     width: 370px;
@@ -115,8 +100,7 @@ header .input-append .add-on {
     padding: 10px;
     margin: 0 5px 5px 10px;
     box-sizing: border-box;
-    transition: box-shadow 200ms ease-in, left 0.5s, top 0.5s;
-    transform: box-shadow;
+    transition: box-shadow 200ms ease;
 }
 .project-wrapper .folder {
     max-height: 150px;
@@ -160,7 +144,7 @@ header .input-append .add-on {
     top: 5px;
     text-align: center;
     cursor: pointer;
-    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease;
     transform: rotateY(0deg);
     -webkit-filter: grayscale(1);
 }
@@ -218,6 +202,26 @@ header .input-append .add-on {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     transform: box-shadow;
 }
+.manager_close{
+    position: relative;
+    width: 40px;
+    text-align: center;
+}
+.manager_close i {
+    font-size: 12px;
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    left: 0px;
+    top: 0px;
+    border: 1px #e5e5e5 solid;
+    cursor: pointer;
+    z-index: 3;
+}
 .iframeContent {
     flex: 1;
     width: 100%;
@@ -228,8 +232,8 @@ header .input-append .add-on {
     box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.1);
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-color: #fff;
-    transition: transform 500ms ease-in-out;
-    transform: translate3d(100%, 0, 0);
+    transition: transform 500ms ease;
+    transform: translate(100%, 0);
     overflow: hidden;
 }
 .iframeContent i {
@@ -247,7 +251,7 @@ header .input-append .add-on {
     cursor: pointer;
 }
 .iframeContent.show {
-    transform: translate3d(0, 0, 0);
+    transform: translate(0, 0);
 }
 .iframeContent iframe {
     width: 100%;
