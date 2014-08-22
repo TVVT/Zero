@@ -7,41 +7,39 @@ header {
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-repeat: repeat-x;
     border-bottom: 1px solid #e5e5e5;
-
-    -ms-flex-align:center;
-    -webkit-box-align:center;
-    box-align:center;
-
-    -webkit-align-items:center;
-    align-items:center;
+    box-align: center;
+    align-items: center;
 }
 header .input-append {
     flex: 1;
     white-space: nowrap;
     display: flex;
+    position: relative;
+    margin-right: 10px;
 }
 header .input-append .input-mini {
-    flex:1;
+    flex: 1;
     cursor: auto;
     border: 1px solid #ccc;
     //border-right: none;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     border-radius: 4px;
     height: 28px;
-
     display: inline-block;
     padding: 0 6px;
     color: #555;
-
     transition: border linear .2s, box-shadow linear .2s;
     overflow: hidden;
-    box-sizing:content-box;
-    margin-right: 10px;
+    box-sizing: content-box;
 }
-header .input-append .input-mini:focus{
+header .input-append .input-mini:focus {
     outline: none;
-    border-color:rgba(82,168,236,0.8);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+    /*border-color:rgba(82,168,236,0.8);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);*/
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-color: rgba(182, 184, 185, 0.8);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(128, 130, 131, 0.6);
 }
 header .input-append .add-on {
     display: block;
@@ -56,9 +54,50 @@ header .input-append .add-on {
     height: 28px;
     line-height: 28px;
     display: inline-block;
-    padding:0 5px;
+    padding: 0 5px;
     min-width: 30px;
-    margin:0 10px 0 0;
+    margin: 0 10px 0 0;
+}
+header .input-append section {
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    top: 30px;
+    width: 100%;
+    background-color: rgba(64, 64, 64, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+header .input-append section:empty {
+    display: none;
+}
+header .input-append section a {
+    height: 40px;
+    text-decoration: none;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px rgba(77, 77, 77, 1) solid;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+header .input-append section a:after {
+    content: '';
+    border-bottom: 1px rgba(54, 54, 54, 1) solid;
+}
+header .input-append section a >span {
+    color: rgba(200, 200, 200, 1);
+    line-height: 20px;
+    display: block;
+    flex: 1;
+}
+header .input-append section a >span:nth-of-type(2) {
+    color: #fff;
+    font-size: 12px;
 }
 .manager_box {
     flex: 1;
@@ -91,6 +130,7 @@ header .input-append .add-on {
     color: #666;
     width: 47%;
     min-width: 340px;
+    min-height: 170px;
     overflow: hidden;
     background-color: #ffffff;
     background-image: linear-gradient(#fff, #f5f5f5);
@@ -202,7 +242,7 @@ header .input-append .add-on {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     transform: box-shadow;
 }
-.manager_close{
+.manager_close {
     position: relative;
     width: 40px;
     text-align: center;
@@ -218,9 +258,12 @@ header .input-append .add-on {
     border-radius: 50%;
     left: 0px;
     top: 0px;
-    border: 1px #e5e5e5 solid;
+    //border: 1px #e5e5e5 solid;
     cursor: pointer;
     z-index: 3;
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
+    background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
+    color: #999;
 }
 .iframeContent {
     flex: 1;
@@ -233,7 +276,7 @@ header .input-append .add-on {
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-color: #fff;
     transition: transform 500ms ease;
-    transform: translate3d(100%, 0 , 0);
+    transform: translate3d(100%, 0, 0);
     overflow: hidden;
 }
 .iframeContent i {
@@ -247,8 +290,11 @@ header .input-append .add-on {
     border-radius: 50%;
     right: 10px;
     top: 10px;
-    border: 1px #e5e5e5 solid;
+    //border: 1px #e5e5e5 solid;
     cursor: pointer;
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
+    background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
+    color: #999;
 }
 .iframeContent.show {
     transform: translate3d(0, 0, 0);
