@@ -1,4 +1,5 @@
 node_modules/
+public/imageBed/
 err.log
 nohup.out
 out.log
