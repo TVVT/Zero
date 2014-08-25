@@ -26,7 +26,7 @@ exports.list = function(req, res) {
 
     // 时间排序
     fileNames.sort(function(a, b) {
-        console.log(a,b);
+        // console.log(a,b);
         // return a - b;
          return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
              fs.statSync(realPath + a + '.ejs').mtime.getTime();
