@@ -17,6 +17,11 @@ $(function() {
         $tagListBox = $('.manager-page-tags'),
         pageList = $('.manager-page-list').children();
 
+        if(window.location.search.indexOf('page_home')>-1){
+            $('header').addClass('show');
+        }else{
+            $('header').removeClass('show');
+        }
     $.ajax({
         url: '/tags',
         method: 'GET',
@@ -43,8 +48,6 @@ $(function() {
                     })
                 });
             }
-
-
             if (window.location.hash) {
                 var tagName = window.location.hash.substring(1);
                 pageList.hide();
@@ -56,7 +59,6 @@ $(function() {
                     })
                 })
             }
-
         }
     })
 });

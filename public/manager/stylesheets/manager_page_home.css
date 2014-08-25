@@ -6,6 +6,11 @@ header {
     background-image: linear-gradient(#f9f9f9, #f3f3f3);
     background-repeat: repeat-x;
     border-bottom: 1px solid #e5e5e5;
+    transition: transform 500ms ease;
+    margin-top: -44px;
+}
+header.show{
+    margin-top: 0;
 }
 footer {
     color: #fff;

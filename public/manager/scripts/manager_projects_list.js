@@ -1,11 +1,22 @@
+/**
+ * [manager_projects_list 功能控制]
+ * @return {[type]} [description]
+ */
 $(function() {
-    var collect = $('.manager_projects_list'),
-        iframeContent = $('.iframeContent'),
-        manager_close = $('.manager_close'),
-        isLocalStorage = window.localStorage ? true : false,
-        projectList = new Array();
-    var iframeUrl;
-
+    /**
+     * [collect 参数初始化]
+     * @type {[type]}
+     */
+    var collect = $('.manager_projects_list'),//整个列表对象
+        iframeContent = $('.iframeContent'),//右边出来的iframe
+        manager_close = $('.manager_close'),//关闭按钮
+        isLocalStorage = window.localStorage ? true : false,//是否支持localStorage
+        projectList = new Array(),//声明一个商品空数组对象
+        iframeUrl;//iframe src 的过渡变量
+    /**
+     * [列表存储]
+     * @return {[type]} [description]
+     */
     (function() {
         if (!localStorage.getItem('projectList')) {
             return;
@@ -17,7 +28,10 @@ $(function() {
             i++;
         }
     })();
-
+    /**
+     * [收藏图标样式控制]
+     * @return {[type]} [description]
+     */
     (function() {
         var le = collect.find('.project-wrapper .collect');
         for (var i = 0; i < projectList.length; i++) {
@@ -29,7 +43,6 @@ $(function() {
             }
         };
     })();
-
     /**
      * [避免重复]
      * @param  {[type]}  id [传入的ＩＤ]
@@ -46,14 +59,21 @@ $(function() {
         }    
         return true;
     }
-    //查找索引
+    /**
+     * [查找索引]
+     * @param  {[type]} val [对象]
+     * @return {[type]}     [数字]
+     */
     Array.prototype.indexOf = function(val) {
         for (var i = 0; i < projectList.length; i++) {
             if (projectList[i] == val) return i;
         }
         return -1;
     };
-    //remove
+    /**
+     * [删除指定的对象]
+     * @param  {[type]} val [对象]
+     */
     Array.prototype.remove = function(val) {
         var index = projectList.indexOf(val);
         if (index > -1) {
@@ -126,13 +146,10 @@ $(function() {
             localStorage.setItem('projectList', projectList);
         }
     });
-
     /**
      * [openIframeContent 打开弹出]
      * @param  {[String]} url [iframe 的 url]
      */
-
-
     function openIframeContent(url) {
         var ifr = iframeContent.find('iframe');
 
@@ -161,7 +178,6 @@ $(function() {
             IframeUrlFun(ifr);
         }
     }
-
     /**
      * [内容页的控制]
      * @param  {[type]} event [description]
@@ -172,12 +188,17 @@ $(function() {
         iframeUrl = url;
         openIframeContent(url);
     });
-    
+    /**
+     * [监听动车结束]
+     * @return {[type]} [description]
+     */
     iframeContent[0].addEventListener('webkitTransitionEnd', IframeShow, function() {
         IframeShow();
     }, false);
-
-
+    /**
+     * [左边关闭按钮的控制]
+     * @return {[type]} [description]
+     */
     iframeContent.on('click', 'i', function() {
         if (collect.hasClass('show')) {
             iframeContent.removeClass('show');
@@ -185,7 +206,10 @@ $(function() {
             iframeContent.find('iframe').attr('src', '');
         }
     });
-
+    /**
+     * [右边关闭按钮的控制]
+     * @return {[type]} [description]
+     */
     manager_close.on('click', 'i', function() {
         if (iframeContent.find('iframe').attr('src') === '') {
             return;
@@ -196,4 +220,21 @@ $(function() {
             collect.addClass('hide');
         }
     });
+    /**
+     * [搜索文件]
+     * @return {[type]} [description]
+     */
+    (function(){
+        var searchFile={};
+        searchFile.init=function(){
+            searchFile.ininAllFileName();
+        };
+        /**
+         * [ininAllFileName 加载所有文件名]
+         * @return {[type]} [description]
+         */
+        searchFile.ininAllFileName=function(){
+
+        };
+    })();
 });

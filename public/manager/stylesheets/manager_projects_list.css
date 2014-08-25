@@ -64,11 +64,20 @@ header .input-append section {
     left: 0;
     top: 30px;
     width: 100%;
-    background-color: rgba(64, 64, 64, 1);
+    //background-color: rgba(64, 64, 64, 1);
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
     box-sizing: border-box;
+
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    border: 1px solid #ccc;
+    border-top: none;
+    overflow: auto;
+}
+header .input-append article{
+    height: 350px;
 }
 header .input-append section:empty {
     display: none;
@@ -79,25 +88,33 @@ header .input-append section a {
     display: block;
     display: flex;
     flex-direction: column;
-    border-bottom: 1px rgba(77, 77, 77, 1) solid;
+    //border-bottom: 1px rgba(77, 77, 77, 1) solid;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 14px;
+    border-bottom: 1px #f9f9f9 solid;
 }
 header .input-append section a:after {
     content: '';
-    border-bottom: 1px rgba(54, 54, 54, 1) solid;
+    //border-bottom: 1px rgba(54, 54, 54, 1) solid;
+    border-bottom: 1px #EEE9E9 solid;
 }
 header .input-append section a >span {
-    color: rgba(200, 200, 200, 1);
+    color: #222;
     line-height: 20px;
     display: block;
     flex: 1;
 }
 header .input-append section a >span:nth-of-type(2) {
-    color: #fff;
+    color: #333;
     font-size: 12px;
+}
+header .input-append section a:last-of-type{
+    box-shadow: none;
+}
+header .input-append section a:last-of-type::after{
+    border-bottom: none;
 }
 .manager_box {
     flex: 1;
