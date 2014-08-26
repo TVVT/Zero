@@ -1,6 +1,10 @@
 html, body {
     height: 100%;
     background-color: #fff;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: none;
+    -webkit-touch-callout: none;
+    -webkit-font-smoothing: antialiased;
 }
 header {
     background-color: #f3f3f3;
@@ -15,27 +19,30 @@ header .input-append {
     white-space: nowrap;
     display: flex;
     position: relative;
+    z-index: 4;
     margin-right: 10px;
+    height: 30px;
 }
 header .input-append .input-mini {
     flex: 1;
     cursor: auto;
     border: 1px solid #ccc;
-    //border-right: none;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     border-radius: 4px;
-    height: 28px;
+    height: 30px;
     display: inline-block;
     padding: 0 6px;
     color: #555;
     transition: border linear .2s, box-shadow linear .2s;
     overflow: hidden;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 header .input-append .input-mini:focus {
     outline: none;
-    /*border-color:rgba(82,168,236,0.8);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);*/
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     border-color: rgba(182, 184, 185, 0.8);
@@ -60,24 +67,42 @@ header .input-append .add-on {
 }
 header .input-append section {
     position: absolute;
-    z-index: 9999;
+    z-index: -1;
     left: 0;
     top: 30px;
     width: 100%;
-    //background-color: rgba(64, 64, 64, 1);
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
     box-sizing: border-box;
-
     box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.3);
     border: 1px solid #ccc;
     border-top: none;
     overflow: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity ease .3s;
 }
-header .input-append article{
-    height: 350px;
+header .input-append section.show {
+    z-index: 9999;
+    display: block;
+    opacity: 1;
+}
+header blockquote {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+}
+header blockquote.show {
+    display: block;
+}
+header .input-append article {
+    max-height: 350px;
 }
 header .input-append section:empty {
     display: none;
@@ -88,16 +113,18 @@ header .input-append section a {
     display: block;
     display: flex;
     flex-direction: column;
-    //border-bottom: 1px rgba(77, 77, 77, 1) solid;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 14px;
     border-bottom: 1px #f9f9f9 solid;
 }
+header .input-append section a:hover {
+    background-color: #f3f0f0;
+    border-bottom: 1px #f3f0f0 solid;
+}
 header .input-append section a:after {
     content: '';
-    //border-bottom: 1px rgba(54, 54, 54, 1) solid;
     border-bottom: 1px #EEE9E9 solid;
 }
 header .input-append section a >span {
@@ -105,15 +132,16 @@ header .input-append section a >span {
     line-height: 20px;
     display: block;
     flex: 1;
+    padding: 0 10px;
 }
 header .input-append section a >span:nth-of-type(2) {
     color: #333;
     font-size: 12px;
 }
-header .input-append section a:last-of-type{
+header .input-append section a:last-of-type {
     box-shadow: none;
 }
-header .input-append section a:last-of-type::after{
+header .input-append section a:last-of-type::after {
     border-bottom: none;
 }
 .manager_box {
@@ -131,6 +159,7 @@ header .input-append section a:last-of-type::after{
     position: relative;
     z-index: 1;
     text-align: center;
+    font-size: 0;
 }
 .manager_projects_list.show {
     width: 370px;
@@ -155,7 +184,7 @@ header .input-append section a:last-of-type::after{
     border-radius: 3px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    margin: 0 5px 5px 10px;
+    margin: 10px 5px 5px 10px;
     box-sizing: border-box;
     transition: box-shadow 200ms ease;
 }
@@ -257,30 +286,94 @@ header .input-append section a:last-of-type::after{
 .project-wrapper:hover {
     color: #f14583;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    transform: box-shadow;
+}
+.project-wrapper.selected{
+    color: #f14583;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
 .manager_close {
-    position: relative;
+    position: absolute;
     width: 40px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align:center;
+    box-align:center;
+    -webkit-align-items:center;
+    align-items:center;
+    transition:transform 500ms ease;
+    transform:translate3D(100%,0,0);
+}
+.manager_close.show{
+    transform:translate3D(0,0,0);
+    position: relative;
 }
 .manager_close i {
-    font-size: 12px;
+    flex:1;
+    font-size: 24px;
     display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    //position: absolute;
+    width: 25px;
+    //height: 30px;
+    //line-height: 30px;
     text-align: center;
-    border-radius: 50%;
-    left: 0px;
-    top: 0px;
-    //border: 1px #e5e5e5 solid;
+    border-radius: 15px 15px 0 0;
+    //left: 0px;
+    //top: 0px;
     cursor: pointer;
-    z-index: 3;
+    //z-index: 3;
     box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
     background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
-    color: #999;
+    color: #ccc;
+    transition: height 500ms linear;
+    //margin:0 0 0 7px;
+}
+.manager_close i:nth-of-type(2){
+    border-radius: 0 0 15px 15px;
+}
+.icon_list:before {
+    content: '';
+    height: 2px;
+    background-color: #333;
+    width: 16px;
+    margin: 8px 0 0 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+}
+.icon_list:after {
+    content: '';
+    height: 2px;
+    background-color: #333;
+    width: 16px;
+    margin: 12px 0 0 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+}
+.icon_list >span::before{
+    content: '';
+    height: 2px;
+    background-color: #333;
+    width: 16px;
+    margin: 16px 0 0 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+}
+.icon_list >span::after{
+    content: '';
+    height: 2px;
+    background-color: #333;
+    width: 16px;
+    margin: 20px 0 0 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+}
+.manager_close i.selected {
+    height: 100%;
+    line-height: 100%;
 }
 .iframeContent {
     flex: 1;
@@ -307,7 +400,6 @@ header .input-append section a:last-of-type::after{
     border-radius: 50%;
     right: 10px;
     top: 10px;
-    //border: 1px #e5e5e5 solid;
     cursor: pointer;
     box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
     background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);

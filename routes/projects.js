@@ -11,7 +11,9 @@ link = utils.getIP(function(ip) {
     link = ip;
 });
 
-var file_every = new Array();
+var file_every = new Array(),
+    dataCache = null,
+    flag = false;
 
 exports.index = function(req, res) {
     var realPath = path.join(__dirname, '../../Projects/');
@@ -33,12 +35,8 @@ exports.index = function(req, res) {
         return fs.statSync(realPath + b).mtime.getTime() -
             fs.statSync(realPath + a).mtime.getTime();
     });
-
-    var renderData = {
-            projects: dir,
-            link: link
-        }
-        //得到项目及项目页路径    
+    file_every = [];//清空
+    //得到项目及项目页路径    
     for (var i = 0; i < dir.length; i++) {
         file_every.push({
             "title": dir[i],
@@ -47,30 +45,59 @@ exports.index = function(req, res) {
         for (var j = 0; j < utils.getDirFileNames(realPath + dir[i] + '/pages/', true, '.ejs').length; j++) {
             file_every.push({
                 "title": utils.getDirFileNames(realPath + dir[i] + '/pages/', true, '.ejs')[j],
-                "link": 'http://192.168.1.101:3000/' + dir[i] + '/pages/' + utils.getDirFileNames(realPath + dir[i] + '/pages/', true, '.ejs')[j]
+                "link": link + '/' + dir[i] + '/pages/' + utils.getDirFileNames(realPath + dir[i] + '/pages/', true, '.ejs')[j]
             });
         }
     }
     //判断文件是否存在
-    fs.exists('project_manager.json', function(exists) {
-        console.log(exists);
-        //util.debug(exists ? "it's there" : "no passwd!");
+    var projectJsonPath = path.join(__dirname, '../public/') + '/manager/scripts/project_manager.json',
+        fileContent = '{"file_every":' + JSON.stringify(file_every) + '}',
+        flags = false;
+
+    fs.exists(projectJsonPath, function(exists) {
+        console.log('是否存在project_manager.json文件－－－－－－' + exists);
         if (exists) {
             //读取json文件
-            fs.readFile('project_manager.json', function(err, data) {
+            fs.readFile(projectJsonPath, function(err, data) {
                 if (err) throw err;
-                console.log(data);
+                flags = (data.toString() == fileContent);
+                console.log('内容是否重复' + flags);
+                if (flags) {
+                    return;
+                }
+                //写入json文件
+                fs.writeFile(projectJsonPath, fileContent, function(err) {
+                    //if (err) throw err;
+                    console.log('project_manager.json\'s data saved!');
+                });
             });
-            //写入json文件
-            fs.writeFile('project_manager.json', '{"file_every":' + JSON.stringify(file_every) + '}', function(err) {
-                if (err) throw err;
-                console.log('project_manager.json\'s data saved!');
-            });
-            /*fs.close('project_manager.json', function() {
-
-            });*/
+            /*var stat = fs.statSync('project_manager.json');
+            if (dataCache === null) {
+                dataCache = stat.mtime;
+                flag = true;
+            } else {
+                if (stat.mtime === dataCache) {
+                    flag = false;
+                } else {
+                    dataCache = stat.mtime;
+                    flag = true;
+                }
+            }
+            //console.log('flag:' + flag);
+            if (flag) {
+                //写入json文件
+                fs.writeFile('project_manager.json', '{"file_every":' + JSON.stringify(file_every) + '}', function(err) {
+                    if (err) throw err;
+                    console.log('project_manager.json\'s data saved!');
+                });
+            }*/
         }
     });
+
+    var renderData = {
+        projects: dir,
+        link: link
+    }
 
     res.render(managerPath + 'manager_projects_list.ejs', renderData);
 }

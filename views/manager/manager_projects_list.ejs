@@ -30,20 +30,19 @@
         </ul>
         <div class="input-append">
             <input class="input-mini" type="search" name="search" placeholder="search"  > 
-            <!--<span class="add-on">search</span>-->
             <section>
                 <article>
                 <% projects.forEach(function(model,index){%>
                 <a href="<%=link%>/<%=model%>/pages?page_home" target="_blank" >
-                <!--<span>manager_projects_list.css</span>
-                <span>zero/public/manager/stylesheets/manager_projects_list.css</span>-->
                 <span><%=model%></span>
                 <span><%=link%>/<%=model%>/pages</span>
                 </a>
                 <%}) %>
                 </article>
             </section>
+
         </div>
+        <blockquote></blockquote>
     </header>
 
     <div class="manager_box">
@@ -69,10 +68,17 @@
             <%})%>
         </div>
         <div class="manager_close">
-            <i>X</i>
+            <i class="icon_list">
+                <span></span>
+            </i>
+            <i class="icon_list">
+                <span></span>
+            </i>
         </div>
         <div class="iframeContent">
-            <i>X</i>
+            <!--<i class="icon_list">
+                <span></span>
+            </i>-->
             <iframe src="" ></iframe>
         </div>
     </div>

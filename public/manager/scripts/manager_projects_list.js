@@ -7,12 +7,12 @@ $(function() {
      * [collect 参数初始化]
      * @type {[type]}
      */
-    var collect = $('.manager_projects_list'),//整个列表对象
-        iframeContent = $('.iframeContent'),//右边出来的iframe
-        manager_close = $('.manager_close'),//关闭按钮
-        isLocalStorage = window.localStorage ? true : false,//是否支持localStorage
-        projectList = new Array(),//声明一个商品空数组对象
-        iframeUrl;//iframe src 的过渡变量
+    var collect = $('.manager_projects_list'), //整个列表对象
+        iframeContent = $('.iframeContent'), //右边出来的iframe
+        manager_close = $('.manager_close'), //关闭按钮
+        isLocalStorage = window.localStorage ? true : false, //是否支持localStorage
+        projectList = new Array(), //声明一个商品空数组对象
+        iframeUrl; //iframe src 的过渡变量
     /**
      * [列表存储]
      * @return {[type]} [description]
@@ -102,7 +102,7 @@ $(function() {
             $(this).removeClass('sed');
             parentDom.stop().animate({
                 'opacity': 0
-            }, 1000, function() {
+            }, 500, function() {
                 collect.append(parentDom);
                 parentDom.animate({
                     'opacity': 1
@@ -121,24 +121,25 @@ $(function() {
 
             $('.manager_projects_list').animate({
                 scrollTop: 0
-            }, 1000, function() {
-
-                parentDom.css({
-                    left: 35,
-                    top: 0
-                });
+            }, 500, function() {
                 collect.find('.zhan').remove();
-
-                setTimeout(function() {
-                    parentDom.css({
+                parentDom.animate({
+                    left: 0,
+                    top: 0
+                }, 800, function() {
+                    parentDom.animate({
                         left: 0,
                         top: 0
+                    }, 500, function() {
+                        parentDom.css({
+                            left: '',
+                            top: ''
+                        });
+                        parentDom.prependTo($('.manager_projects_list'));
+                        parentDom.find('.collect').addClass('sed');
+                        $('.fixedLayer').removeClass('show');
                     });
-                    parentDom.find('.collect').addClass('sed');
-                    $('.fixedLayer').removeClass('show');
-                    parentDom.prependTo($('.manager_projects_list'));
-                }, 1000);
-
+                });
             });
         }
 
@@ -187,6 +188,10 @@ $(function() {
         var url = $(this).attr('data-url');
         iframeUrl = url;
         openIframeContent(url);
+
+        collect.find('.project-wrapper').removeClass('selected');
+        $(this).parents('.project-wrapper').addClass('selected');
+        manager_close.addClass('show');
     });
     /**
      * [监听动车结束]
@@ -196,45 +201,148 @@ $(function() {
         IframeShow();
     }, false);
     /**
-     * [左边关闭按钮的控制]
+     * [右边关闭按钮的控制]
      * @return {[type]} [description]
      */
-    iframeContent.on('click', 'i', function() {
+    /*iframeContent.on('click', 'i', function() {
         if (collect.hasClass('show')) {
             iframeContent.removeClass('show');
             collect.removeClass('show').removeClass('hide');
             iframeContent.find('iframe').attr('src', '');
         }
+    });*/
+    manager_close.on('click', 'i:nth-of-type(2)', function() {
+        if (collect.hasClass('show')) {
+            iframeContent.removeClass('show');
+            collect.removeClass('show').removeClass('hide');
+            iframeContent.find('iframe').attr('src', '');
+            manager_close.removeClass('show');
+        }
     });
     /**
-     * [右边关闭按钮的控制]
+     * [左边关闭按钮的控制]
      * @return {[type]} [description]
      */
-    manager_close.on('click', 'i', function() {
+    manager_close.on('click', 'i:nth-of-type(1)', function() {
         if (iframeContent.find('iframe').attr('src') === '') {
             return;
         }
         if (collect.hasClass('hide')) {
             collect.removeClass('hide');
+            $(this).removeClass('selected');
         } else {
             collect.addClass('hide');
+            $(this).addClass('selected');
         }
     });
     /**
      * [搜索文件]
      * @return {[type]} [description]
      */
-    (function(){
-        var searchFile={};
-        searchFile.init=function(){
-            searchFile.ininAllFileName();
+    (function() {
+        var searchFile = {
+            input_append: $('.input-append'),
+            temp: ''
         };
         /**
          * [ininAllFileName 加载所有文件名]
          * @return {[type]} [description]
          */
-        searchFile.ininAllFileName=function(){
-
+        searchFile.ininAllFileName = function() {
+            var flag = false;
+            $.ajax({
+                type: 'GET',
+                async: false,
+                url: '/manager/scripts/project_manager.json',
+                dataType: "json",
+                success: function(resultData) {
+                    flag = resultData.file_every;
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert(errorThrown);
+                    flag = '';
+                }
+            });
+            return flag;
         };
+        /**
+         * [compreFile 匹配相似的文件]
+         * @param  {[type]} file [文件名]
+         * @return {[type]}      [文件组]
+         */
+        searchFile.compreFile = function(fileName) {
+            var arry = new Array(),
+                data = null;
+
+            if (typeof(searchFile.temp) === 'string' && searchFile.temp === '') {
+                data = searchFile.ininAllFileName();
+                searchFile.temp = data;
+            } else {
+                data = searchFile.temp;
+            }
+
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].title.indexOf(fileName) > -1) {
+                    arry.push({
+                        'title': data[i].title,
+                        'link': data[i].link
+                    });
+                }
+            }
+            return arry;
+        };
+
+        /**
+         * [input搜索框点击进入打开下拉层]
+         */
+        searchFile.input_append.on('focus', '.input-mini', function() {
+            $('header blockquote').addClass('show');
+            $(this).next('section').addClass('show');
+        });
+        $('header').on('click', 'blockquote', function() {
+            $(this).removeClass('show');
+            $('header').find('section').removeClass('show');
+        });
+        /**
+         * [插入数据时，事件控制]
+         */
+        searchFile.input_append.on('keydown', '.input-mini', function(e) {
+            var fileName = $(this).val().toString().replace(/(^\s+)|(\s+$)/g, ""), //去掉前后空格
+                htmlData = searchFile.compreFile(fileName),
+                htmlC = '',
+                linkC = 'Projects/',
+                article = $(this).next('section').find('article');
+
+            for (var i = 0; i < htmlData.length; i++) {
+                htmlC += '<a href="' + htmlData[i].link + '" target="_blank" >',
+                htmlC += '<span>' + htmlData[i].title + '</span>',
+                htmlC += '<span>' + htmlData[i].link + '</span>', //htmlData[i].link.toString().replace(/http:\/\/\d{3}\.\d{3}\.\d{1,3}\.\d{1,3}:?\d{0,}/,linkC)
+                htmlC += '</a>';
+            }
+
+            article.html('');
+            article.append(htmlC);
+
+            //enter时，跳转页面
+            var ev = e || window.event;
+            if (ev.keyCode === 13 && fileName.length > 0) {
+                document.location.href = fileName;
+                document.location.target = _blank;
+            }
+        });
+        /**
+         * [下拉层的点击事件]
+         * @return {[type]} [description]
+         */
+        searchFile.input_append.find('article').on('click', 'a', function() {
+            searchFile.input_append.find('.input-mini').val($(this).attr('href'));
+            $('header').find('blockquote').removeClass('show');
+            $('header').find('section').removeClass('show');
+        });
+
+        searchFile.init = function() {
+            searchFile.ininAllFileName();
+        };
+        searchFile.init();
     })();
 });
