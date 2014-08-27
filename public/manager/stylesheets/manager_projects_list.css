@@ -287,7 +287,7 @@ header .input-append section a:last-of-type::after {
     color: #f14583;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
 }
-.project-wrapper.selected{
+.project-wrapper.selected {
     color: #f14583;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
@@ -297,79 +297,76 @@ header .input-append section a:last-of-type::after {
     text-align: center;
     display: flex;
     flex-direction: column;
-    -webkit-box-align:center;
-    box-align:center;
-    -webkit-align-items:center;
-    align-items:center;
-    transition:transform 500ms ease;
-    transform:translate3D(100%,0,0);
+    -webkit-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    transition: transform 500ms ease;
+    transform: translate3D(100%, 0, 0);
 }
-.manager_close.show{
-    transform:translate3D(0,0,0);
+.manager_close.show {
+    transform: translate3D(0, 0, 0);
     position: relative;
 }
 .manager_close i {
-    flex:1;
+    flex: 1;
     font-size: 24px;
     display: block;
-    //position: absolute;
     width: 25px;
-    //height: 30px;
-    //line-height: 30px;
     text-align: center;
     border-radius: 15px 15px 0 0;
-    //left: 0px;
-    //top: 0px;
     cursor: pointer;
-    //z-index: 3;
-    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5);
     background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
     color: #ccc;
     transition: height 500ms linear;
-    //margin:0 0 0 7px;
+    position: relative;
 }
-.manager_close i:nth-of-type(2){
+.manager_close i:hover {
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 1px 10px 0 rgba(255, 255, 255, 0.3), 0px 0px 9px 0px rgba(0, 0, 0, 0.6) inset;
+}
+.manager_close i:nth-of-type(2) {
     border-radius: 0 0 15px 15px;
+    background-image: radial-gradient(circle at bottom center, #fff, #f9f9f9, #e5e5e5);
 }
-.icon_list:before {
-    content: '';
-    height: 2px;
-    background-color: #333;
-    width: 16px;
-    margin: 8px 0 0 0;
+@-webkit-keyframes 'trans'{
+    0%{transform:translate3D(5px,0,0)}
+    100%{transform:translate3D(-5px,0,0)}
+}
+@-webkit-keyframes 'transL'{
+    0%{transform:translate3D(-5px,0,0)}
+    100%{transform:translate3D(5px,0,0)}
+}
+.icon_list >span {
     position: absolute;
     left: 50%;
-    margin-left: -8px;
+    top: 50%;
+    margin: -10px 0 0 -17px;
+    background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
+    display: block;
+    border-left: 10px transparent solid;
+    border-top: 10px transparent solid;
+    border-right: 10px #000 solid;
+    border-bottom: 10px transparent solid;
+    -webkit-animation:trans 2s infinite;
 }
-.icon_list:after {
+.icon_list >span:after {
     content: '';
-    height: 2px;
-    background-color: #333;
-    width: 16px;
-    margin: 12px 0 0 0;
     position: absolute;
-    left: 50%;
-    margin-left: -8px;
+    border-left: 10px transparent solid;
+    border-top: 10px transparent solid;
+    border-right: 10px #000 solid;
+    border-bottom: 10px transparent solid;
+    left: -5px;
+    top: -10px;
 }
-.icon_list >span::before{
-    content: '';
-    height: 2px;
-    background-color: #333;
-    width: 16px;
-    margin: 16px 0 0 0;
-    position: absolute;
-    left: 50%;
-    margin-left: -8px;
+.icon_list:nth-of-type(2) >span {
+    margin: -10px 0 0 -6px;
+    -webkit-animation:transL 2s infinite;
 }
-.icon_list >span::after{
-    content: '';
-    height: 2px;
-    background-color: #333;
-    width: 16px;
-    margin: 20px 0 0 0;
-    position: absolute;
-    left: 50%;
-    margin-left: -8px;
+.icon_list:nth-of-type(2) >span, .icon_list:nth-of-type(2) >span:after {
+    border-right: 10px transparent solid;
+    border-left: 10px #000 solid;
 }
 .manager_close i.selected {
     height: 100%;
@@ -388,22 +385,6 @@ header .input-append section a:last-of-type::after {
     transition: transform 500ms ease;
     transform: translate3d(100%, 0, 0);
     overflow: hidden;
-}
-.iframeContent i {
-    font-size: 12px;
-    display: block;
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 50%;
-    right: 10px;
-    top: 10px;
-    cursor: pointer;
-    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5) inset, 0 -2px 5px 0 rgba(0, 0, 0, 0.3) inset, 0 3px 8px 0 rgba(0, 0, 0, 0.8);
-    background-image: radial-gradient(circle at top center, #fff, #f9f9f9, #e5e5e5);
-    color: #999;
 }
 .iframeContent.show {
     transform: translate3d(0, 0, 0);
