@@ -3,13 +3,51 @@
  * @return {[type]} [description]
  */
 $(function() {
+    function isFullScreen() {
+        return (document.fullScreenElement && document.fullScreenElement !== null) || document.mozFullScreen || document.webkitIsFullScreen;
+    }
+
+    function requestFullScreen(element) {
+        if (element.requestFullscreen)
+            element.requestFullscreen();
+        else if (element.msRequestFullscreen)
+            element.msRequestFullscreen();
+        else if (element.mozRequestFullScreen)
+            element.mozRequestFullScreen();
+        else if (element.webkitRequestFullscreen)
+            element.webkitRequestFullscreen();
+    }
+
+    function exitFullScreen() {
+        if (document.exitFullscreen)
+            document.exitFullscreen();
+        else if (document.msExitFullscreen)
+            document.msExitFullscreen();
+        else if (document.mozCancelFullScreen)
+            document.mozCancelFullScreen();
+        else if (document.webkitExitFullscreen)
+            document.webkitExitFullscreen();
+    }
+
+    function toggleFullScreen(element) {
+        if (isFullScreen())
+            exitFullScreen();
+        else
+            requestFullScreen(element || document.documentElement);
+    }
+    var $icon_list = document.querySelector('.icon_list:nth-of-type(2)');
+    var $iframeContent = document.querySelector('.iframeContent');
+    if ($icon_list && $iframeContent) {
+        $icon_list.addEventListener('click', function() {
+            toggleFullScreen($iframeContent);
+        }, false);
+    }
     /**
      * [collect 参数初始化]
      * @type {[type]}
      */
     var collect = $('.manager_projects_list'), //整个列表对象
         iframeContent = $('.iframeContent'), //右边出来的iframe
-        manager_close = $('.manager_close'), //关闭按钮
         isLocalStorage = window.localStorage ? true : false, //是否支持localStorage
         projectList = new Array(), //声明一个商品空数组对象
         iframeUrl; //iframe src 的过渡变量
@@ -37,7 +75,7 @@ $(function() {
         for (var i = 0; i < projectList.length; i++) {
             for (var j = 0; j < le.length; j++) {
                 if (projectList[i] == le[j].id) {
-                    $(le[j]).addClass('sed')
+                    $(le[j]).removeClass('icon-heart2').addClass('sed icon-heart');
                     $(le[j]).parents('.project-wrapper').prependTo(collect);
                 }
             }
@@ -98,8 +136,8 @@ $(function() {
         }
 
         //debugger
-        if ($(this).hasClass('sed')) {
-            $(this).removeClass('sed');
+        if ($(this).hasClass('icon-heart')) {
+            $(this).removeClass('icon-heart').addClass('icon-heart2');
             parentDom.stop().animate({
                 'opacity': 0
             }, 500, function() {
@@ -124,7 +162,7 @@ $(function() {
             }, 500, function() {
                 collect.find('.zhan').remove();
                 parentDom.animate({
-                    left: 0,
+                    left: 10,
                     top: 0
                 }, 800, function() {
                     parentDom.animate({
@@ -136,7 +174,7 @@ $(function() {
                             top: ''
                         });
                         parentDom.prependTo($('.manager_projects_list'));
-                        parentDom.find('.collect').addClass('sed');
+                        parentDom.find('.collect').removeClass('icon-heart2').addClass('icon-heart');
                         $('.fixedLayer').removeClass('show');
                     });
                 });
@@ -166,9 +204,7 @@ $(function() {
      * @param {[type]} obj [iframe对象]
      */
     function IframeUrlFun(obj) {
-        obj.attr('src', iframeUrl).css({
-            'height': iframeContent.height() + 'px'
-        });
+        obj.attr('src', iframeUrl);
     }
     /**
      * [IframeShow 找到iframe看有没有show，有就添加src]
@@ -191,10 +227,9 @@ $(function() {
 
         collect.find('.project-wrapper').removeClass('selected');
         $(this).parents('.project-wrapper').addClass('selected');
-        manager_close.addClass('show');
     });
     /**
-     * [监听动车结束]
+     * [监听动结束]
      * @return {[type]} [description]
      */
     iframeContent[0].addEventListener('webkitTransitionEnd', IframeShow, function() {
@@ -204,35 +239,15 @@ $(function() {
      * [右边关闭按钮的控制]
      * @return {[type]} [description]
      */
-    /*iframeContent.on('click', 'i', function() {
+    iframeContent.on('click', 'i:nth-of-type(1)', function() {
         if (collect.hasClass('show')) {
             iframeContent.removeClass('show');
             collect.removeClass('show').removeClass('hide');
             iframeContent.find('iframe').attr('src', '');
-        }
-    });*/
-    manager_close.on('click', 'i:nth-of-type(2)', function() {
-        if (collect.hasClass('show')) {
-            iframeContent.removeClass('show');
-            collect.removeClass('show').removeClass('hide');
-            iframeContent.find('iframe').attr('src', '');
-            manager_close.removeClass('show');
-        }
-    });
-    /**
-     * [左边关闭按钮的控制]
-     * @return {[type]} [description]
-     */
-    manager_close.on('click', 'i:nth-of-type(1)', function() {
-        if (iframeContent.find('iframe').attr('src') === '') {
-            return;
-        }
-        if (collect.hasClass('hide')) {
-            collect.removeClass('hide');
-            $(this).removeClass('selected');
-        } else {
-            collect.addClass('hide');
-            $(this).addClass('selected');
+            collect.find('.project-wrapper').removeClass('selected');
+            if (isFullScreen()) {
+                exitFullScreen();
+            }
         }
     });
     /**

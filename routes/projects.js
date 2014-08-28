@@ -55,16 +55,15 @@ exports.index = function(req, res) {
         flags = false;
 
     fs.exists(projectJsonPath, function(exists) {
-        console.log('是否存在project_manager.json文件－－－－－－' + exists);
         if (exists) {
             //读取json文件
             fs.readFile(projectJsonPath, function(err, data) {
                 if (err) throw err;
                 flags = (data.toString() == fileContent);
-                console.log('内容是否重复' + flags);
                 if (flags) {
                     return;
                 }
+                console.log('内容是否重复' + flags);
                 //写入json文件
                 fs.writeFile(projectJsonPath, fileContent, function(err) {
                     //if (err) throw err;
