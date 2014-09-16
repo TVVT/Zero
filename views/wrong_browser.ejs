@@ -6,8 +6,19 @@
 	<link rel="stylesheet" href="/manager/stylesheets/wrong_browser.css">
 </head>
 <body>
-	<h1>Zero需要 Google Chrome 30+的浏览器支持</h1>
-	<a class="download-chrome" href="http://www.google.cn/chrome/" target="_blank">Download Google Chrome</a>
+	<h1>
+        移动端使用webkit内核的浏览器，为了保证效果
+        <br/>
+        需要Google Chrome 30+的浏览器支持
+    </h1>
+    <a class="download-chrome" href="http://www.google.cn/chrome/" target="_blank">Download Google Chrome</a>
+    <br/>
+    或者
+    <br/>
+    <%if(jumppath){%>
+	   <a class="download-chrome" href="<%=jumppath%>">直接打开</a>
+    <%}%>
+
 </body>
 </html>
 
