@@ -44,6 +44,7 @@ if ('development' == app.get('env')) {
 
 //项目首页
 app.get('/', projects.index);
+app.get('/:projectName', projects.index);
 
 //用户提交的反馈信息
 app.post('/feedBack', pages.feedBack);

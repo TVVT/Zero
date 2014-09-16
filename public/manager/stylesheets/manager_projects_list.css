@@ -177,6 +177,7 @@ header .input-append section a:last-of-type::after {
 .manager_box {
     flex: 1;
     display: flex;
+    height: 100%;
 }
 .manager_projects_list {
     width: 100%;

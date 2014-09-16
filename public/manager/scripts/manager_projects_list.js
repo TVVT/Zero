@@ -191,7 +191,6 @@ $(function() {
      */
     function openIframeContent(url) {
         var ifr = iframeContent.find('iframe');
-
         if (!iframeContent.hasClass('show')) {
             iframeContent.addClass('show');
             collect.addClass('show');
@@ -204,6 +203,7 @@ $(function() {
      * @param {[type]} obj [iframe对象]
      */
     function IframeUrlFun(obj) {
+            iframeUrl = iframeUrl.indexOf('pages') > -1 ? iframeUrl : iframeUrl = iframeUrl+'/pages';
         obj.attr('src', iframeUrl);
     }
     /**
@@ -215,6 +215,42 @@ $(function() {
             IframeUrlFun(ifr);
         }
     }
+    var hrp = location.href,
+        pageName = location.pathname.toString().replace('\/', '') || '';
+    //有pathname，所以传pathname
+    keepState(hrp, pageName);
+    /**
+     * [keepState 保持页面状态]
+     * @param  {[type]} argument [url地址]
+     * @return {[type]}          [pathname]
+     */
+    function keepState(url, pageName) {
+        if (pageName === '') {
+            iframeContent.removeClass('show');
+            return;
+        }
+
+        collect.find('.project-wrapper').removeClass('selected');
+
+        if (pageName != '' && pageName != '1') {
+            iframeContent.addClass('show');
+            collect.addClass('show');
+            iframeUrl = url + '/pages';
+            var uObj = iframeContent.find('iframe');
+            IframeUrlFun(uObj);
+            var imgs = collect.find('img');
+            for (var i = 0; i < imgs.length; i++) {
+                if ($(imgs[i]).attr('data-url').indexOf(url) > -1) {
+                    collect.find('.project-wrapper').eq(i).addClass('selected');
+                }
+            };
+        } else {
+            var urlp = url;
+            urlp = url.indexOf('pages') > -1 ? urlp = url : urlp = url+'/pages';
+            openIframeContent(urlp);
+        }
+
+    }
     /**
      * [内容页的控制]
      * @param  {[type]} event [description]
@@ -223,10 +259,18 @@ $(function() {
     collect.on('click', 'img', function(event) {
         var url = $(this).attr('data-url');
         iframeUrl = url;
-        openIframeContent(url);
+        //因为没有pathname所以传1,懒得分离pathname了
+        keepState(url, '1');
 
-        collect.find('.project-wrapper').removeClass('selected');
         $(this).parents('.project-wrapper').addClass('selected');
+
+        function supports_history_api() {
+            return !!(window.history && history.pushState);
+        }
+        if (supports_history_api()) {
+            iframeUrl = iframeUrl.replace('/pages', '')
+            history.pushState(null, '', iframeUrl);
+        }
     });
     /**
      * [监听动结束]
