@@ -247,7 +247,6 @@ $(function() {
         } else {
             var urlp = url;
             urlp = url.indexOf('pages') > -1 ? urlp = url : urlp = url+'/pages';
-            console.log(urlp);
             openIframeContent(urlp);
         }
 
