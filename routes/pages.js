@@ -75,9 +75,8 @@ exports.page = function(req, res) {
     var pageName = req.params.name,
         projectName = req.params.projectName,
         pageList = utils.getProjectPages(projectName);
-
     
-    if (userAgent.indexOf("Chrome") > -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30 || userAgent.indexOf("Safari") && userAgent.match(/Version\/(\d+)\./)[1] >= 8 ) {
+    if ( ( userAgent.indexOf("Chrome") !== -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30) || (userAgent.indexOf("Safari") !== -1 && userAgent.match(/Version\/(\d+)\./)[1] >= 8) ) {
 
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
