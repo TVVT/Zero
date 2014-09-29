@@ -183,6 +183,8 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
+
+
                 content = tvvtRender(projectName, content, pageData);
             } catch (e) {
                 console.error(e);
@@ -193,6 +195,7 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
+
             var html = includeLayout(projectName, pageConfig, renderData);
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
