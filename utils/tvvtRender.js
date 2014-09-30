@@ -6,47 +6,57 @@ var ejs = require('ejs'),
     utils = require('../utils/utils'),
     settings = require('../settings.json');
 var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
-    regxHasData = /.*\<\%.*\%\>.*/;
+    regxHasData = /.*\<\%.*\%\>.*/,
+    mRegx = /(\w*)\/(\w*)/;
 var link;
 link = utils.getIP(function(ip) {
     link = ip;
 });
 //tvvt的rander 返回html string
-module.exports = function(project, html,pageData) {
-    return render(project, html,pageData)
+module.exports = function(project, html, pageData) {
+    return render(project, html, pageData)
 }
 
-function render(project, html,pageData) {
+function render(project, html, pageData) {
     function regxReplace(project, html) {
         var renderData = {
-            baseUrl: link + '/projects/' + project,
-            publicUrl: link + '/projects/public',
-            managerUrl: link + '/' + project,
-            link: link
-        }, data;
+                baseUrl: link + '/projects/' + project,
+                publicUrl: link + '/projects/public',
+                managerUrl: link + '/' + project,
+                link: link
+            },
+            data = {};
         var passData = arguments[2];
+
         return html.replace(regx, function($1, $2, $3, $4) {
+
+            //判断是否是本项目模块
+            if ($3.indexOf('/') > -1) {
+                //走public下的ejs
+                var rResult = $3.match(mRegx);
+                var mProject = rResult[1];
+                var mModule = rResult[2];
+                dataPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '.json');
+                realPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '.ejs');
+            } else {
+                dataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.json');
+                realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.ejs');
+            }
+
+            //获取数据
             if ($4.length > 0) {
-                //加载指定的数据
                 if (/\-\{.*\}\-/.test($4)) {
                     $4.replace(/^\-(.*)\-$/, function($1, $2) {
                         data = JSON.parse($2);
                     })
-                } else {
-                    dataPath = path.join(__dirname, '../../tata/' + project + '/' + $4 + '.json');
-                    if(fs.existsSync(dataPath)){
-                        data = requireUncache(dataPath);
-                    }else{
-                        data = pageData[$4];
-                    }
+                }else{
+                    data = pageData[$4];
                 }
-
-            } else {
-                //如果没有第二个参数 默认加载默认数据
-                dataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.json');
+                
+            }else{
                 data = requireUncache(dataPath);
             }
-            realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + $3 + '.ejs');
+
             var file = fs.readFileSync(realPath, "utf-8");
             if (passData != undefined) {
                 for (var o in passData) {
