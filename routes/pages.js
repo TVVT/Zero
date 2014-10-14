@@ -75,9 +75,8 @@ exports.page = function(req, res) {
     var pageName = req.params.name,
         projectName = req.params.projectName,
         pageList = utils.getProjectPages(projectName);
-
     
-    if (userAgent.indexOf("Chrome") > -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30 || userAgent.indexOf("Safari") && userAgent.match(/Version\/(\d+)\./)[1] >= 8 ) {
+    if ( ( userAgent.indexOf("Chrome") !== -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30) || (userAgent.indexOf("Safari") !== -1 && userAgent.match(/Version\/(\d+)\./)[1] >= 8) ) {
 
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
@@ -184,6 +183,8 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
+
+
                 content = tvvtRender(projectName, content, pageData);
             } catch (e) {
                 console.error(e);
@@ -194,6 +195,7 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
+
             var html = includeLayout(projectName, pageConfig, renderData);
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');
