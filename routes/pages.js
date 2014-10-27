@@ -26,9 +26,10 @@ exports.list = function(req, res) {
 
     // 时间排序
     fileNames.sort(function(a, b) {
-
-        return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
-            fs.statSync(realPath + a + '.ejs').mtime.getTime();
+        // console.log(a,b);
+        // return a - b;
+         return fs.statSync(realPath + b + '.ejs').mtime.getTime() -
+             fs.statSync(realPath + a + '.ejs').mtime.getTime();
     });
 
     var renderData = {
@@ -70,14 +71,16 @@ exports.page = function(req, res) {
 
     //进行浏览器检测   
     var userAgent = req.headers['user-agent'];
-    if (userAgent.indexOf("Chrome") > -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30 || userAgent.indexOf("Safari") && userAgent.match(/Version\/(\d+)\./)[1] >= 8 ) {
-        var pageName = req.params.name,
-            projectName = req.params.projectName,
-            pageList = utils.getProjectPages(projectName);
+
+    var pageName = req.params.name,
+        projectName = req.params.projectName,
+        pageList = utils.getProjectPages(projectName);
+    
+    if ( ( userAgent.indexOf("Chrome") !== -1 && userAgent.match(/Chrome\/(\d+)\./)[1] >= 30) || (userAgent.indexOf("Safari") !== -1 && userAgent.match(/Version\/(\d+)\./)[1] >= 8) ) {
 
         utils.checkFileExist(projectName, pageName, function(exists) {
             if (!exists) {
-                res.send("404...");
+                res.status(404).send("404...");
             } else {
 
                 try {
@@ -130,7 +133,11 @@ exports.page = function(req, res) {
             }
         });
     }else{
-        res.render(path.join(__dirname, '../views/wrong_browser.ejs'));
+        var jumppath = link + '/' + projectName + '/pages/preview/' + pageName;
+        var data = {
+            'jumppath' : jumppath
+        };
+        res.render(path.join(__dirname, '../views/wrong_browser.ejs') ,data);
     }
 }
 
@@ -176,6 +183,8 @@ exports.pagePreview = function(req, res) {
                 var file = fs.readFileSync(realPath, "utf-8");
                 renderData.filename = realPath;
                 content = ejs.render(file, renderData);
+
+
                 content = tvvtRender(projectName, content, pageData);
             } catch (e) {
                 console.error(e);
@@ -186,6 +195,7 @@ exports.pagePreview = function(req, res) {
             };
 
             renderData.content = content;
+
             var html = includeLayout(projectName, pageConfig, renderData);
             res.charset = 'utf-8';
             res.set('Content-Type', 'text/html');

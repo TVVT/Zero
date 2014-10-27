@@ -4,3 +4,6 @@ nohup.out
 out.log
 #TMP_Files
 *.DS_Store
+
+# image bed files
+public/imageBed/
