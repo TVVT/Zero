@@ -5,7 +5,7 @@ var ejs = require('ejs'),
     fs = require('fs'),
     utils = require('../utils/utils'),
     settings = require('../settings.json');
-var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
+var regx = /([\{]{2}\s*include\({1}\s*([\w\/]+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
     regxHasData = /.*\<\%.*\%\>.*/,
     mRegx = /(\w*)\/(\w*)/;
 var link;
