@@ -64,8 +64,8 @@ function render(project, html,pageData) {
                 var rResult = options[0].match(mRegx);
                 var mProject = rResult[1];
                 var mModule = rResult[2];
-                defaultDataPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '.json');
-                realPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '.ejs');
+                defaultDataPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.json');
+                realPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
             } else {
                 defaultDataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.json');
                 realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.ejs');
