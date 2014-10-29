@@ -63,6 +63,9 @@ app.get('/imagebed',tool.imagebed);
 app.post('/imagebed/uploadImage',tool.getImages);
 
 
+//iconfonts的入口
+app.get('/iconfonts/*',_static.getIconFonts);
+
 //读取public下面的静态文件
 app.get('/projects/*', _static.getFile);
 
