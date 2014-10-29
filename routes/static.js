@@ -30,6 +30,11 @@ exports.getFile = function(req, res) {
 
 //iconfonts服务
 exports.getIconFonts = function(req, res) {
+
+	res.header('Access-Control-Allow-Origin', 'example.com');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+	
 	var fileName = req.params[0],
 		realPath = path.join(__dirname,'../../iconfonts/' + fileName);
 	fs.exists(realPath, function(exists) {
