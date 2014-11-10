@@ -47,7 +47,28 @@ exports.getImages = function(req, res) {
     });
 }
 
+exports.request = function(req,res){
+    var ip = getClientAddress(req);
+
+    fs.appendFile( __dirname + '/request.log', ip + '\n' , function (err) {
+      if (err) throw err;
+      console.log('The "data to append" was appended to file!');
+    });
+
+    res.send(ip);
+}
+
+
 function getRandromTime(filename){
     var extName = path.extname(filename);
     return ~~(new Date().getTime()/1000)+''+~~(Math.random()*100)+extName;
 }
+
+
+function getClientAddress (req) {
+        return (req.headers['x-forwarded-for'] || '').split(',')[0] 
+        || req.connection.remoteAddress;
+};
+
+
+
