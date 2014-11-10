@@ -10,6 +10,7 @@ var link;
 link = utils.getIP(function(ip) {
     link = ip;
 });
+var PIip = "127.0.0.1";
 
 exports.imagebed = function(req, res) {
     var renderData = {
@@ -50,12 +51,18 @@ exports.getImages = function(req, res) {
 exports.request = function(req,res){
     var ip = getClientAddress(req);
 
-    fs.appendFile( __dirname + '/request.log', ip + '\n' , function (err) {
-      if (err) throw err;
-      console.log('The "data to append" was appended to file!');
-    });
+    // fs.appendFile( __dirname + '/request.log', ip + '\n' , function (err) {
+    //   if (err) throw err;
+    //   console.log('The "data to append" was appended to file!');
+    // });
+    
+    PIip = ip;   
 
     res.send(ip);
+}
+
+exports.getPIIP = function(req,res){
+    res.send(PIip);
 }
 
 
