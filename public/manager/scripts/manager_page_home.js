@@ -7,9 +7,22 @@
 
     var doc = document;
 
-    doc.querySelector('.iframe-wrapper').addEventListener('click', function() {
-        if(this.getAttribute('data-href')){
-            window.location.href = this.getAttribute('data-href');
+
+    var getPapa = function(dom,className) {
+        if(!dom || dom.nodeType !== 1){return;}
+        if(dom.className === className ){
+            return dom;
+        }else{
+            return getPapa(dom.parentNode,className);
+        }
+    }
+
+    doc.addEventListener('click', function(e) {
+        var target = e.target;
+        var papa = getPapa(target,'iframe-wrapper');
+        if(!papa){return;}
+        if(papa.getAttribute('data-href')){
+            window.location.href = target.getAttribute('data-href');
         }
     });
 
@@ -41,7 +54,7 @@
                     _if.removeAttribute('data-src');
                 }
             }
-        },200);
+        },50);
     }
 
     doc.querySelector('.manager-page-list').addEventListener('scroll',scollList);
