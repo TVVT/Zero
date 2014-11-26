@@ -38,8 +38,9 @@ footer{
     height: 100%;
     top: 0;
     left: 0;
+    z-index:10;
     cursor: pointer;
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0.75);
     transition:background 0.5s;
     text-align: center;
     font-size: 14px;
@@ -49,7 +50,40 @@ footer{
 
 .manager-page-list .iframe-wrapper:hover:after{
     content:  attr(data-name);
-    background: rgba(0,0,0,0.65);
+    background: rgba(0,0,0,0.75);
+}
+
+/*tag*/
+.manager-page-list .iframe-wrapper .mod_tags{
+    position:absolute;
+    top:50%;
+    left:50%;
+    z-index:11;
+    width:200px;
+    height:200px;
+    margin:-100px 0 0 -100px;
+}
+.manager-page-list .iframe-wrapper .mod_tags input{
+    height:18px;
+    border:none;
+    border-bottom:1px solid #ccc;
+    background:none;
+    color:#333;
+    font-size:12px;
+
+
+}
+
+.manager-page-list .iframe-wrapper .mod_tags input::-webkit-input-placeholder {
+  color:#999;
+}
+
+.manager-page-list .iframe-wrapper .mod_tags input::-moz-placeholder {
+  color:#999;  
+}
+
+.manager-page-list .iframe-wrapper .mod_tags input:-ms-input-placeholder {  
+  color:#999;  
 }
 
 

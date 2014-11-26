@@ -58,5 +58,10 @@ $(function() {
             }
 
         }
-    })
+    });
+
+    //event.preventDefault();
+    $('.mod_tags').on('click' , function(event){
+        event.stopPropagation();
+    });
 });
