@@ -72,6 +72,7 @@ app.post('/imagebed/uploadImage',tool.getImages);
 
 // 请求并打印
 app.get('/request',tool.request);
+app.get('/getPIIP',tool.getPIIP);
 
 
 //iconfonts的入口
