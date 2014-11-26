@@ -1,62 +1,99 @@
 // manager_page_home.js
 
-$(function() {
+
     var left = 0,
         prevP = 0,
         tagData;
 
-    $('.iframe-wrapper').on('click', function() {
-        if ($(this).attr('data-href')) {
-            window.location.href = $(this).attr('data-href');
+    var doc = document;
+
+    doc.querySelector('.iframe-wrapper').addEventListener('click', function() {
+        if(this.getAttribute('data-href')){
+            window.location.href = this.getAttribute('data-href');
         }
     });
 
-    var href = window.location.href,
-        group = href.split('/'),
-        projectName = group[group.length - 2],
-        $tagListBox = $('.manager-page-tags'),
-        pageList = $('.manager-page-list').children();
 
-    $.ajax({
-        url: '/tags',
-        method: 'GET',
-        data: {
-            'projectName': projectName
-        },
-        success: function(data) {
-        	console.log(data)
-            tagData = data;
+    var _list = doc.querySelector('.manager-page-list');
+    var _ifs;
 
-            if(data.tags ){
-                data.tags.forEach(function(value, index) {
-                    var a = $('<a class="tag" data-name="' + data[value] + '" href="#' + value + '">' + value + '</a>')
-                    $tagListBox.append(a);
-                    a.on('click', function() {
-                        pageList.hide();
-                        a.attr('data-name').split(',').forEach(function(pageName, index) {
-                            pageList.each(function(index) {
-                                if ($(pageList[index]).attr('data-name') === pageName) {
-                                    $(pageList[index]).show();
-                                };
-                            })
-                        })
-                    })
-                });
-            }
+    var scrollTimer;
 
-
-            if (window.location.hash) {
-                var tagName = window.location.hash.substring(1);
-                pageList.hide();
-                tagData[tagName].forEach(function(pageName, index) {
-                    pageList.each(function(index) {
-                        if ($(pageList[index]).attr('data-name') === pageName) {
-                            $(pageList[index]).show();
-                        };
-                    })
-                })
-            }
-
+    var scollList = function(){
+        if(scrollTimer){
+            clearTimeout(scrollTimer);
+            scrollTimer = null;
         }
-    })
-});
+
+        scrollTimer = setTimeout(function(){
+            var _top = _list.scrollTop;
+            var _height = _list.clientHeight;
+            var _sHeight = _list.scrollHeight; 
+
+            _ifs = _list.querySelectorAll('.iframe-wrapper[data-src]');
+
+            for(var n = 0 ; n< _ifs.length ; n++){
+                var _if = _ifs[n];
+                var _t = _if.offsetTop;
+                if(_t > _top && _t < _top + _height){
+                    var _src = _if.getAttribute('data-src');
+                    _if.querySelector('iframe').setAttribute('src',_src);
+                    _if.removeAttribute('data-src');
+                }
+            }
+        },200);
+    }
+
+    doc.querySelector('.manager-page-list').addEventListener('scroll',scollList);
+
+    scollList();
+
+    // var href = window.location.href,
+    //     group = href.split('/'),
+    //     projectName = group[group.length - 2],
+    //     $tagListBox = $('.manager-page-tags'),
+    //     pageList = $('.manager-page-list').children();
+    // $.ajax({
+    //     url: '/tags',
+    //     method: 'GET',
+    //     data: {
+    //         'projectName': projectName
+    //     },
+    //     success: function(data) {
+    //     	console.log(data)
+    //         tagData = data;
+
+    //         if(data.tags ){
+    //             data.tags.forEach(function(value, index) {
+    //                 var a = $('<a class="tag" data-name="' + data[value] + '" href="#' + value + '">' + value + '</a>')
+    //                 $tagListBox.append(a);
+    //                 a.on('click', function() {
+    //                     pageList.hide();
+    //                     a.attr('data-name').split(',').forEach(function(pageName, index) {
+    //                         pageList.each(function(index) {
+    //                             if ($(pageList[index]).attr('data-name') === pageName) {
+    //                                 $(pageList[index]).show();
+    //                             };
+    //                         })
+    //                     })
+    //                 })
+    //             });
+    //         }
+
+    //         if (window.location.hash) {
+    //             var tagName = window.location.hash.substring(1);
+    //             pageList.hide();
+    //             tagData[tagName].forEach(function(pageName, index) {
+    //                 pageList.each(function(index) {
+    //                     if ($(pageList[index]).attr('data-name') === pageName) {
+    //                         $(pageList[index]).show();
+    //                     };
+    //                 })
+    //             })
+    //         }
+
+    //     }
+    // })
+
+    
+
