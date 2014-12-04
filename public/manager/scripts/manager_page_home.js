@@ -60,8 +60,38 @@ $(function() {
         }
     });
 
-    //event.preventDefault();
-    $('.mod_tags').on('click' , function(event){
+    // zjj
+    $('.mod_tags , .select_more').on('click' , function(event){
         event.stopPropagation();
     });
+
+    /**
+     * [$modTags 添加、删除tag]
+     */
+    var $modTags = $('.mod_tags'),
+        $label = $modTags.find('label'),
+        $iconDelete = $('.icon_delete'),
+        $iconAdd = $('.icon_add'),_this;
+
+    $iconAdd.on('click' , function(e){
+        addInput(e);
+    });
+
+    $modTags.on('click' , '.icon_delete' , function(event){
+        deleteInput(event);
+
+    });
+
+    function addInput(e){
+        var _this = e.target;
+
+        $(_this).before('<label><input type="text" placeholder="关键字" /><i class="icon_delete">--</i></label>');
+    };
+
+    function deleteInput(e){
+        var _this = e.target;
+        $(_this).parents('label').remove();
+    }
+
+
 });
