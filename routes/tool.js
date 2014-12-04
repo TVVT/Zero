@@ -25,20 +25,36 @@ exports.getImages = function(req, res) {
     form.parse(req, function(err, fields, files) {
         if (err) return res.end('formidable failed...')
         res.set('Access-Control-Allow-Origin', '*');
-        // res.send(files);
+
+
         if (files.file && files.file.name != "" && files.file.size > 0) {
-            var name = getRandromTime(files.file.name);
-            var targetPath = path.join(__dirname,'../public/imageBed/'+ name);
-            var url = '/imageBed/'+name;
+            var name,targetPath,url;
+
+            console.log(fields.path);
+
+            if(fields.path){
+                targetPath = path.join(__dirname,'../public/imageBed/'+ fields.path);
+                url = '/imageBed/'+fields.path;
+
+                console.log(targetPath);
+
+            }else{
+                name = getRandromTime(files.file.name);
+                targetPath = path.join(__dirname,'../public/imageBed/'+ name);
+                url = '/imageBed/'+name;
+            }
             
-            fs.rename(files.file.path, targetPath, function(err) {
-                if (err) throw err;
-                res.send({
-                    'res_code':'1',
-                    'file':targetPath,
-                    'url' : url
-                });
+
+            fs.renameSync(files.file.path, targetPath);// function(err) {
+                // if (err) throw err;
+            res.send({
+                'res_code':'1',
+                'file':targetPath,
+                'url' : url
             });
+            //});
+
+
         } else {
             res.send({
                 'res_code':'0',

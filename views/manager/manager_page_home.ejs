@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
     <link rel="stylesheet" href="/manager/stylesheets/base.css">
     <link rel="stylesheet" href="/manager/stylesheets/manager_page_home.css">
-    <script src="/manager/scripts/jquery-2.1.1.min.js"></script>
 </head>
 <body>
     <header>
@@ -18,10 +17,11 @@
 
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
-            <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>">
+            <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>" data-src="/<%=project%>/pages/preview/<%=pages[i]%>">
                  <a class="iframe-link" href="#">
-                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" src="/<%=project %>/pages/preview/<%=pages[i]%>" frameborder="0" ></iframe>
+                <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" frameborder="0" ></iframe>
                 </a>
+                <em><%=pages[i]%></em>
             </div>
         <%}%>
     </div>
