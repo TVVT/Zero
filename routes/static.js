@@ -5,6 +5,13 @@ var fs = require('fs'),
 
 //获取public下静态文件的接口 TODO 文件缓存 避免每次都读文件
 exports.getFile = function(req, res) {
+
+
+	res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+
 	var fileName = req.params[0],
 		realPath = path.join(__dirname,'../../Projects/' + fileName);
 	fs.exists(realPath, function(exists) {
