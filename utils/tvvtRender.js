@@ -5,34 +5,34 @@ var ejs = require('ejs'),
     fs = require('fs'),
     utils = require('../utils/utils'),
     settings = require('../settings.json');
-var regx = /([\{]{2}\s*include\({1}\s*(\w+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
-    regxHasData = /.*\<\%.*\%\>.*/;
 
-var regxFix = /\{\{\s*include\((\s*((\s*\-\{.*\}\-\s*\,?)|(\w*\s*\,?\s*)){0,}\s*)\)\s*\}\}/ig,
+var regx = /([\{]{2}\s*include\({1}\s*([\w\/]+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
+    regxHasData = /.*\<\%.*\%\>.*/,
+    mRegx = /(\w*)\/(\w*)/;
+
+var regxFix = /\{\{\s*include\((\s*((\s*\-\{.*\}\-\s*\,?)|([\w\/]*\s*\,?\s*)){0,}\s*)\)\s*\}\}/ig,
     selfDataFix = /\-\{.*\}\-/g;
-
-
 
 var link;
 link = utils.getIP(function(ip) {
     link = ip;
 });
 //tvvt的rander 返回html string
-module.exports = function(project, html,pageData) {
-    return render(project, html,pageData)
+module.exports = function(project, html, pageData) {
+    return render(project, html, pageData)
 }
 
 function render(project, html,pageData) {
 
     function regxReplace(project, html) {
         var renderData = {
-            baseUrl: link + '/projects/' + project,
-            publicUrl: link + '/projects/public',
-            managerUrl: link + '/' + project,
-            link: link
-        }, data;
+                baseUrl: link + '/projects/' + project,
+                publicUrl: link + '/projects/public',
+                managerUrl: link + '/' + project,
+                link: link
+            },
+            data = {};
         var passData = arguments[2];
-
 
         return html.replace(regxFix, function($1, $2) {
 
@@ -53,10 +53,24 @@ function render(project, html,pageData) {
                 return option.trim();
             });
 
+
+
             var append = options[2] == 'true' ? true : false;
 
-            var defaultDataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.json');
-            
+            var defaultDataPath;
+
+            if (options[0].indexOf('/') > -1) {
+                //走public下的ejs
+                var rResult = options[0].match(mRegx);
+                var mProject = rResult[1];
+                var mModule = rResult[2];
+                defaultDataPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.json');
+                realPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
+            } else {
+                defaultDataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.json');
+                realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.ejs');
+            }
+
             var defaultData = requireUncache(defaultDataPath);
 
             if(selfData){
@@ -79,8 +93,6 @@ function render(project, html,pageData) {
             }else{
                 data = defaultData;
             }
-
-            realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.ejs');
 
             var file = fs.readFileSync(realPath, "utf-8");
             if (passData != undefined) {
