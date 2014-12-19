@@ -1,6 +1,7 @@
 var fs = require('fs'),
 	read = fs.readFileSync,
 	path = require('path'),
+	exec = require('child_process').exec,
 	mime = require("../utils/utils.js").mimes_types;;
 
 //获取public下静态文件的接口 TODO 文件缓存 避免每次都读文件
@@ -26,6 +27,35 @@ exports.getFile = function(req, res) {
 			});
 		}
 	});
+}
+
+//下载icon-fonts
+exports.iconDownload = function(req,res){
+	var projectName = req.params.projectName,
+        cmd;
+
+    //压缩 并删除原文件 之后再创建temp文件夹
+    cmd = "zip -r ./downloads/" + projectName + ".zip ../iconfonts/"+projectName+"/fonts";
+    try {
+        exec(cmd, function(err, stdout, stderr) {
+            if (err) {
+                console.error(err)
+                res.end("error")
+            } else {
+                var downloadLink = path.join(__dirname, "../downloads/" + projectName + ".zip")
+                res.download(downloadLink, projectName + '.zip', function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        exec("rm ./downloads/" + projectName + ".zip", function() {})
+                    }
+                });
+            }
+
+        });
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 //iconfonts服务
