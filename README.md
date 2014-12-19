@@ -33,6 +33,7 @@
 目前Zero对项目目录要求很高,需要严格按照要求的目录来建立项目,当然，我们提供了方便的方法用于快速建立项目以及页面和模块。
 
 项目目录结构如下：
+```
 -Zero
 -Projects
 	-YourProject
@@ -55,6 +56,7 @@
 			-scripts
 				-demo.js
 		-layouts
+```
 
 目录解析：
 1. 项目由pages组成,即demo.ejs
