@@ -14,7 +14,7 @@ exports.qr = function(req, res) {
         res.type('png');
         code.pipe(res);
     } else {
-        res.end(null);
+        res.end('null');
     }
 }
 
@@ -22,6 +22,6 @@ exports.tags = function(req, res) {
     var projectName = req.query.projectName;
     var configPath = path.join(__dirname, '../../Projects/config.json');
     fs.readFile(configPath,function(err,data){
-    	res.send(JSON.parse(data)[projectName]);
+    	res.send(JSON.parse(data)[projectName]+'');
     })
 }

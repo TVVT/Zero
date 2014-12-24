@@ -309,11 +309,11 @@ exports.checkWs = function(req, res) {
     if (ws.wsGroup[cid]) {
         res.send({
             hasWs: true
-        })
+        }+'')
     } else {
         res.send({
             hasWs: false
-        })
+        }+'')
     }
 }
 
