@@ -2,12 +2,15 @@ var fs = require('fs'),
 	read = fs.readFileSync,
 	path = require('path'),
 	exec = require('child_process').exec,
-	mime = require("../utils/utils.js").mimes_types;;
+	settings = require('../settings.json'),
+	mime = require("../utils/utils.js").mimes_types;
 
+var projectsFolder = settings.projectsFolder || '../Projects';
+projectsFolder = '../' + projectsFolder + '/';
 //获取public下静态文件的接口 TODO 文件缓存 避免每次都读文件
 exports.getFile = function(req, res) {
 	var fileName = req.params[0],
-		realPath = path.join(__dirname,'../../Projects/' + fileName);
+		realPath = path.join(__dirname,projectsFolder + fileName);
 	fs.exists(realPath, function(exists) {
 		if (!exists) {
 			res.send("This request URL " + fileName + " was not found on this server.");
