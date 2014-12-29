@@ -4,6 +4,8 @@ var fs = require('fs'),
     settings = require('../settings.json'),
     path = require('path');
 
+var projectsFolder = settings.projectsFolder || '../Projects';
+projectsFolder = '../' + projectsFolder + '/';
 exports.mimes_types = {
     "css": "text/css",
     "gif": "image/gif",
@@ -54,7 +56,7 @@ exports.readFile = function(filePath, charset, callback) {
  * @return {[boolean]}
  */
 exports.checkFileExist = function(projectName, pageName, callback) {
-    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName),
+    var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/' + pageName),
         realPathEjs = realPath + '.ejs',
         realPathConfig = realPath + '.config.json',
         realPathData = realPath + '.data.json';
@@ -145,7 +147,7 @@ exports.getDirFileNames = function(filePath, isModule, extName) {
 
 //返回项目的页面数组
 exports.getProjectPages = function(projectName) {
-    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
+    var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/');
     var files = fs.readdirSync(realPath);
     var fileNames = [];
     for (var i = 0; i < files.length; i++) {
@@ -164,7 +166,7 @@ exports.getProjectPages = function(projectName) {
 
 //返回项目的组建数组
 exports.getProjectUis = function(projectName) {
-    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/components/');
+    var realPath = path.join(__dirname, projectsFolder + projectName + '/components/');
     var files = fs.readdirSync(realPath);
     var fileNames = [];
     for (var i = 0; i < files.length; i++) {

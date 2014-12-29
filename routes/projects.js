@@ -6,14 +6,30 @@ var fs = require('fs'),
     utils = require('../utils/utils'),
     managerPath = path.join(__dirname, '../views/manager/');
 
+var projectsFolder = settings.projectsFolder || '../Projects';
+projectsFolder = '../' + projectsFolder + '/';
 var link;
 link = utils.getIP(function(ip) {
     link = ip;
 });
 
 exports.index = function(req, res) {
-    var realPath = path.join(__dirname, '../../Projects/');
-    var dir = fs.readdirSync(realPath);
+    var realPath = path.join(__dirname, projectsFolder);
+
+    try{
+        var dir = fs.readdirSync(realPath);
+    }catch(e){
+        console.log(e)
+
+        var data = {
+            errorInfo:e
+        }
+
+        res.render(path.join(__dirname, '../views/error.ejs'),data);
+
+        return
+    }
+
     dir = _.without(dir,
         ".bowerrc",
         ".DS_Store",

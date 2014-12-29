@@ -76,6 +76,8 @@ app.get('/getPIIP',tool.getPIIP);
 //iconfonts的入口
 app.get('/iconfonts/*',_static.getIconFonts);
 
+app.get('/:projectName/icondownload',_static.iconDownload);
+
 
 //读取public下面的静态文件
 app.get('/projects/*', _static.getFile);

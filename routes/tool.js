@@ -51,7 +51,7 @@ exports.getImages = function(req, res) {
                 'res_code':'1',
                 'file':targetPath,
                 'url' : url
-            });
+            }+'');
             //});
 
 
@@ -59,7 +59,7 @@ exports.getImages = function(req, res) {
             res.send({
                 'res_code':'0',
                 'res_msg':'空文件or错误!'
-            });
+            }+'');
         }
     });
 }
@@ -74,11 +74,11 @@ exports.request = function(req,res){
     
     PIip = ip;   
 
-    res.send(ip);
+    res.send(ip+'');
 }
 
 exports.getPIIP = function(req,res){
-    res.send(PIip);
+    res.send(PIip+'');
 }
 
 
