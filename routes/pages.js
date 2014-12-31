@@ -13,6 +13,8 @@ var ejs = require('ejs'),
     tvvtRender = require('../utils/tvvtRender'),
     request = require('request');
 
+var projectsFolder = settings.projectsFolder || '../Projects';
+projectsFolder = '../' + projectsFolder + '/';
 var link;
 link = utils.getIP(function(ip) {
     link = ip;
@@ -21,7 +23,7 @@ link = utils.getIP(function(ip) {
 exports.list = function(req, res) {
     var projectName = req.params.projectName;
     var managerPageListPath = managerPath + 'manager_page_home.ejs';
-    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/');
+    var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/');
     var fileNames = utils.getDirFileNames(realPath, true, '.ejs');
 
     // 时间排序
@@ -84,8 +86,8 @@ exports.page = function(req, res) {
             } else {
 
                 try {
-                    var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                        pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+                    var pageConfig = require(projectsFolder + projectName + '/pages/' + pageName + '.config.json'),
+                        pageData = requireUncache(projectsFolder + projectName + '/pages/' + pageName + '.data.json');
                 } catch (e) {
                     console.log(e);
                     var pageConfig = {},
@@ -111,7 +113,7 @@ exports.page = function(req, res) {
                 renderData.nextPageUrl = nextPage ? link + '/' + projectName + '/pages/' + nextPage : nextPage;
                 renderData.prevPageUrl = prevPage ? link + '/' + projectName + '/pages/' + prevPage : prevPage;
 
-                var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+                var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/' + pageName + '.ejs');
                 fs.readFile(realPath, "utf-8", function(err, file) {
                     if (err) {
                         console.log(err);
@@ -161,8 +163,8 @@ exports.pagePreview = function(req, res) {
             res.send("404...")
         } else {
             try {
-                var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-                    pageData = requireUncache('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+                var pageConfig = require(projectsFolder + projectName + '/pages/' + pageName + '.config.json'),
+                    pageData = requireUncache(projectsFolder + projectName + '/pages/' + pageName + '.data.json');
             } catch (e) {
                 console.log(e);
                 var pageConfig = {},
@@ -177,7 +179,7 @@ exports.pagePreview = function(req, res) {
                 pageName: pageName
             }
             utils.extend(renderData, pageData);
-            var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+            var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/' + pageName + '.ejs');
 
             try {
                 var file = fs.readFileSync(realPath, "utf-8");
@@ -213,21 +215,21 @@ exports.downloadPackage = function(req, res) {
         cmd = "mkdir ./temp/components;",
         renderData = {};
 
-    var realPath = path.join(__dirname, '../../Projects/' + projectName + '/pages/' + pageName + '.ejs');
+    var realPath = path.join(__dirname, projectsFolder + projectName + '/pages/' + pageName + '.ejs');
     var file = fs.readFileSync(realPath, "utf-8");
     modules = getModules(file);
 
     //copy compenents
     for (var i = 0; i < modules.length; i++) {
-        cmd += "cp ../Projects/" + projectName + "/components/" + modules[i] + ".ejs temp/components/" + modules[i] + ".ejs;"
+        cmd += "cp "+settings.projectsFolder+"/"+ projectName + "/components/" + modules[i] + ".ejs temp/components/" + modules[i] + ".ejs;"
     }
 
     //copy js css ejs
     var downloadPath = [
-        "cp ../Projects/" + projectName + "/resource/css/" + pageName + ".css temp/" + pageName + ".css;",
-        "cp ../Projects/" + projectName + "/resource/scripts/" + pageName + ".js temp/" + pageName + ".js;",
-        "cp ../Projects/" + projectName + "/pages/" + pageName + ".ejs temp/" + pageName + ".ejs;",
-        "cp -r ../Projects/" + projectName + "/resource/img temp/img;"
+        "cp "+settings.projectsFolder+"/" + projectName + "/resource/css/" + pageName + ".css temp/" + pageName + ".css;",
+        "cp "+settings.projectsFolder+"/" + projectName + "/resource/scripts/" + pageName + ".js temp/" + pageName + ".js;",
+        "cp "+settings.projectsFolder+"/" + projectName + "/pages/" + pageName + ".ejs temp/" + pageName + ".ejs;",
+        "cp -r "+settings.projectsFolder+"/" + projectName + "/resource/img temp/img;"
     ]
 
     for (var i = 0; i < downloadPath.length; i++) {
@@ -236,8 +238,8 @@ exports.downloadPackage = function(req, res) {
 
     //生成html文件
     try {
-        var pageConfig = require('../../Projects/' + projectName + '/pages/' + pageName + '.config.json'),
-            pageData = require('../../Projects/' + projectName + '/pages/' + pageName + '.data.json');
+        var pageConfig = require(projectsFolder + projectName + '/pages/' + pageName + '.config.json'),
+            pageData = require(projectsFolder + projectName + '/pages/' + pageName + '.data.json');
     } catch (e) {
         console.error(e);
         var pageConfig = {},
@@ -309,11 +311,11 @@ exports.checkWs = function(req, res) {
     if (ws.wsGroup[cid]) {
         res.send({
             hasWs: true
-        })
+        }+'')
     } else {
         res.send({
             hasWs: false
-        })
+        }+'')
     }
 }
 
@@ -355,7 +357,7 @@ function getModuleRenderData(projectName, modules) {
     var data = {};
     for (var i = 0; i < modules.length; i++) {
         try {
-            data[modules[i]] = require('../../Projects/' + projectName + '/components/' + modules[i] + '.data.json')[modules[i]];
+            data[modules[i]] = require(projectsFolder + projectName + '/components/' + modules[i] + '.data.json')[modules[i]];
         } catch (e) {
             console.log(e);
             data[modules[i]] = {};
@@ -367,7 +369,7 @@ function getModuleRenderData(projectName, modules) {
 function getHtmls(pathNames, renderData) {
     var htmls = [];
     for (var i = 0; i < pathNames.length; i++) {
-        var pathName = path.join(__dirname, '../../Projects/' + pathNames[i]);
+        var pathName = path.join(__dirname, projectsFolder + pathNames[i]);
         renderData.filename = pathName;
         var html = ejs.render(read(pathName, 'utf8'), renderData);
         htmls.push(html);
@@ -437,7 +439,7 @@ function includeLayout(projectName, pageConfig, renderData) {
     var source = '';
     if (pageConfig.layout) {
         source = getHtmls([projectName + '/layouts/' + pageConfig.layout], renderData)[0];
-    } else if (fs.existsSync(path.join(__dirname, '../../Projects/' + projectName + '/layouts/layout.ejs'))) {
+    } else if (fs.existsSync(path.join(__dirname, projectsFolder + projectName + '/layouts/layout.ejs'))) {
         source = getHtmls([projectName + '/layouts/layout.ejs'], renderData)[0];
     } else {
         source = getHtmls(['public/layouts/layout.ejs'], renderData)[0];

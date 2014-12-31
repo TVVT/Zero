@@ -6,6 +6,8 @@ var ejs = require('ejs'),
     utils = require('../utils/utils'),
     settings = require('../settings.json');
 
+var projectsFolder = settings.projectsFolder || '../Projects';
+projectsFolder = '../' + projectsFolder + '/';
 var regx = /([\{]{2}\s*include\({1}\s*([\w\/]+)\,?\s*([^\}\s]*|[\-\{]{1}.*[\}\-]{1})\){1}\s*[\}]{2})/ig,
     regxHasData = /.*\<\%.*\%\>.*/,
     mRegx = /(\w*)\/(\w*)/;
@@ -64,11 +66,11 @@ function render(project, html,pageData) {
                 var rResult = options[0].match(mRegx);
                 var mProject = rResult[1];
                 var mModule = rResult[2];
-                defaultDataPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.json');
-                realPath = path.join(__dirname, '../../Projects/' + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
+                defaultDataPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.json');
+                realPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
             } else {
-                defaultDataPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.json');
-                realPath = path.join(__dirname, '../../Projects/' + project + '/components/' + options[0] + '.ejs');
+                defaultDataPath = path.join(__dirname, projectsFolder + project + '/components/' + options[0] + '.json');
+                realPath = path.join(__dirname, projectsFolder + project + '/components/' + options[0] + '.ejs');
             }
 
             var defaultData = requireUncache(defaultDataPath);

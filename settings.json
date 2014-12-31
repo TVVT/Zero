@@ -1,5 +1,11 @@
 {
 	"baseUrl":"http://localhost",
 	"port":3000,
+<<<<<<< HEAD
 	"wsPort":8081
 }
+=======
+	"wsPort":8081,
+	"projectsFolder":"../Projects"
+}
+>>>>>>> 7c2cff8d8d822c44782b87fb7e93f01a40982d63

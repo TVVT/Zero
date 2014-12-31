@@ -1,0 +1,33 @@
+body{
+	background-color: #f5f5f5;
+	text-align: center;
+}
+
+h3{
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.title{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.code{
+	display: inline-block;
+	background-color: #dcdcdc;
+	border-radius: 4px;
+	line-height: 21px;
+	margin: 4px;
+	padding: 2px;
+}
+
+.errorInfo{
+	color: #ff3c3c;
+	font-size: 14px;
+}
+
+.tips{
+	line-height: 30px;
+	font-size: 14px;
+}
