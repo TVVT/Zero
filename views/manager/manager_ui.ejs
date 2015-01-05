@@ -15,27 +15,6 @@
         projectLess.push("<%=link%>/<%=project%>/resource/less/components/<%=uiName%>.less");
 
         console.log(projectLess)
-
-        // projectLess.forEach(function(url,index){
-        //     readyStatus.push(index);
-        //     $.ajax({
-        //         method:"GET",
-        //         url:url,
-        //         success:function(data){
-        //             readyStatus.pop();
-        //             lessStr+=data;
-        //             if (readyStatus.length === 0) {
-        //                 lessStr = lessStr.replace(/@import[^;]*;{1}/ig,'');
-        //                 new (less.Parser)().parse(lessStr,function(e,data){
-        //                     var sty = document.createElement('style');
-        //                     sty.innerHTML = data.toCSS();
-        //                     document.head.appendChild(sty);
-        //                 })
-        //             };
-        //         }
-        //     })
-        // })
-
     </script>
 </head>
 <body>

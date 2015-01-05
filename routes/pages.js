@@ -36,7 +36,8 @@ exports.list = function(req, res) {
 
     var renderData = {
         project: projectName,
-        pages: fileNames
+        pages: fileNames,
+        link : link
     }
     process.nextTick(function() {
         res.render(managerPageListPath, renderData);
@@ -268,9 +269,13 @@ exports.downloadPackage = function(req, res) {
             return './';
         }
     });
-    fs.openSync(htmlPath, 'w', '0777');
-    fs.writeFileSync(htmlPath, source, 'utf-8');
 
+    try{
+        fs.openSync(htmlPath, 'w', '0777');
+        fs.writeFileSync(htmlPath, source, 'utf-8');
+    } catch (e){
+        console.error(e);
+    }
 
     //压缩 并删除原文件 之后再创建temp文件夹
     cmd += "zip -m -r ./downloads/" + pageName + ".zip ./temp;mkdir ./temp";

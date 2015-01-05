@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Zero-<%=project%></title>
-    <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
-    <link rel="stylesheet" href="/manager/stylesheets/base.css">
-    <link rel="stylesheet" href="/manager/stylesheets/manager_page_home.css">
+    <link rel="stylesheet" href="<%=link%>/manager/fonts/yhd-icon/style.css">
+    <link rel="stylesheet" href="<%=link%>/manager/stylesheets/base.css">
+    <link rel="stylesheet" href="<%=link%>/manager/stylesheets/manager_page_home.css">
 </head>
 <body>
     <header>
         <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
         <ul id="nav">
-            <li><a href="http://192.168.112.94/tvvt/project" class="icon-github" target="_gitlab"><i>gitLab</i></a></li>
+            <li><a href="http://tvvt.yhd.cn/tvvt/project" class="icon-github" target="_gitlab"><i>gitLab</i></a></li>
         </ul>
     </header>
 
     <div class="manager-page-list">
         <% for(var i = 0;i<pages.length;i++){%>
-            <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>" data-src="/<%=project%>/pages/preview/<%=pages[i]%>">
+            <div class="iframe-wrapper" data-href="/<%=project %>/pages/<%=pages[i]%>" data-name="<%=pages[i]%>" data-src="<%=link%>/<%=project%>/pages/preview/<%=pages[i]%>">
                  <a class="iframe-link" href="#">
                 <iframe id="page-manager-iframe" name="page-manager-iframe" scrolling="yes" frameborder="0" ></iframe>
                 </a>
@@ -26,8 +26,7 @@
         <%}%>
     </div>
     <div class="manager-page-tags"></div>
-    
     <footer>&copy; TvvT 2014.</footer>
-    <script type="text/javascript" src="/manager/scripts/manager_page_home.js"></script>
+    <script type="text/javascript" src="<%=link%>/manager/scripts/manager_page_home.js"></script>
 </body>
 </html>
