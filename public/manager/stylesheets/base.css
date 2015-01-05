@@ -102,17 +102,12 @@ header li i{
     width: 100%;
     bottom: 0;
     left: 0;
-    opacity: 1;
     text-align: center;
     height: 14px;
     line-height: 14px;
     font-weight: normal;
-    opacity: 0;
 }
 
-header li:hover i{
-    opacity: 1;
-}
 
 footer{
     display: none;
