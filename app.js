@@ -27,10 +27,10 @@ app.use(express.methodOverride());
 app.use(cookieParser())
 app.use(session({ secret: 'tvvt', key: 'sid', cookie: { secure: true ,maxAge:604800000}}))
 
+
 app.use(express.static( path.join(__dirname, './public') ,{
     setHeaders: function (res, path, stat) {
-        console.log(res,path);
-        res.set('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Origin', '*');
     }
 }));
 
