@@ -71,6 +71,10 @@ app.post('/imagebed/uploadImage',tool.getImages);
 // 请求并打印
 app.get('/request',tool.request);
 app.get('/getPIIP',tool.getPIIP);
+app.get('/img/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
+app.get('/img/:width([0-9]{1,})',tool.getImg);
+app.get('/img/:bg([0-9a-zA-Z]{3,})/:fc([0-9a-zA-Z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
+app.get('/img/:bg([0-9a-zA-Z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
 
 
 //iconfonts的入口
