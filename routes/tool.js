@@ -6,6 +6,9 @@ var fs = require('fs'),
     utils = require('../utils/utils'),
     settings = require('../settings.json');
 
+var request = require("request");
+var ping = require ("net-ping");
+
 var link;
 link = utils.getIP(function(ip) {
     link = ip;
@@ -43,7 +46,7 @@ exports.getImages = function(req, res) {
                 targetPath = path.join(__dirname,'../public/imageBed/'+ name);
                 url = '/imageBed/'+name;
             }
-            
+
 
             fs.renameSync(files.file.path, targetPath);// function(err) {
                 // if (err) throw err;
@@ -71,8 +74,8 @@ exports.request = function(req,res){
     //   if (err) throw err;
     //   console.log('The "data to append" was appended to file!');
     // });
-    
-    PIip = ip;   
+
+    PIip = ip;
 
     res.send(ip+'');
 }
@@ -82,6 +85,50 @@ exports.getPIIP = function(req,res){
 }
 
 
+exports.getImg = function (req, res) {
+    if (typeof req.cookies.isImgUse == 'undefined') {
+        res.cookie('isImgUse', 0, {maxAge: 600000});
+    }
+
+
+    var ip = '192.168.112.94';
+    var url = req.url.replace('/img/', '/');
+    var p = 'http://' + ip + ':9000' + url;
+    req.headers['Host'] = req.headers.host;
+    var options = {
+        timeout: 100
+    };
+
+    if (req.cookies.isImgUse == 1) {
+        request({
+            method: req.method,
+            url: p,
+            headers: req.headers
+        }).pipe(res);
+    } else {
+        var session = ping.createSession(options);
+        session.pingHost(ip, function (error, target) {
+            session.close();
+            if (error) {
+                res.status('404');
+                res.send('');
+            }
+            else {
+                res.cookie('isImgUse', 1, {maxAge: 600000});
+                request({
+                    method: req.method,
+                    url: p,
+                    headers: req.headers
+                }).pipe(res);
+            }
+        });
+    }
+
+};
+
+
+
+
 function getRandromTime(filename){
     var extName = path.extname(filename);
     return ~~(new Date().getTime()/1000)+''+~~(Math.random()*100)+extName;
@@ -89,7 +136,7 @@ function getRandromTime(filename){
 
 
 function getClientAddress (req) {
-        return (req.headers['x-forwarded-for'] || '').split(',')[0] 
+        return (req.headers['x-forwarded-for'] || '').split(',')[0]
         || req.connection.remoteAddress;
 };
 
