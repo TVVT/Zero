@@ -17,7 +17,7 @@
     "qr-image" : "*",
     "eventproxy":"*",
     "request":"*",
-    "net-ping":"*",
+    "tcpie":"*",
     "jade":"*"
   }
 }
