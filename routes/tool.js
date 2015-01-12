@@ -7,7 +7,7 @@ var fs = require('fs'),
     settings = require('../settings.json');
 
 var request = require("request");
-var ping = require ("net-ping");
+var tcpie = require("tcpie");
 
 var link;
 link = utils.getIP(function(ip) {
@@ -95,33 +95,37 @@ exports.getImg = function (req, res) {
     var url = req.url.replace('/img/', '/');
     var p = 'http://' + ip + ':9000' + url;
     req.headers['Host'] = req.headers.host;
-    var options = {
-        timeout: 100
-    };
 
     if (req.cookies.isImgUse == 1) {
         request({
             method: req.method,
             url: p,
-            headers: req.headers
+            headers: req.headers,
+            timeout:3000
+        }).on('error', function (err) {
+            res.status('404');
+            res.send('');
         }).pipe(res);
     } else {
-        var session = ping.createSession(options);
-        session.pingHost(ip, function (error, target) {
-            session.close();
-            if (error) {
+        var pie = tcpie(ip, 9000, {count: 2, interval: 10, timeout: 500});
+        pie.on('connect', function () {
+            res.cookie('isImgUse', 1, {maxAge: 600000});
+            request({
+                method: req.method,
+                url: p,
+                headers: req.headers,
+                timeout:3000
+            }).on('error', function (err) {
                 res.status('404');
                 res.send('');
-            }
-            else {
-                res.cookie('isImgUse', 1, {maxAge: 600000});
-                request({
-                    method: req.method,
-                    url: p,
-                    headers: req.headers
-                }).pipe(res);
-            }
-        });
+            }).pipe(res);
+        }).on('error', function () {
+            res.status('404');
+            res.send('');
+        }).on('timeout',function(){
+            res.status('404');
+            res.send('');
+        }).start();
     }
 
 };
