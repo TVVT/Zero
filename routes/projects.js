@@ -38,6 +38,7 @@ exports.index = function(req, res) {
         ".git",
         ".gitignore", "package.json",
         "public",
+        "README.md",
         "config.json",
         "sublime_projects",
         "gulpfile.js");
