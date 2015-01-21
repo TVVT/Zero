@@ -17,6 +17,7 @@
     "qr-image" : "*",
     "eventproxy":"*",
     "request":"*",
+    "tcpie":"*",
     "jade":"*"
   }
 }

@@ -28,8 +28,13 @@ app.use(cookieParser())
 app.use(session({ secret: 'tvvt', key: 'sid', cookie: { secure: true ,maxAge:604800000}}))
 
 
+app.use(express.static( path.join(__dirname, './public') ,{
+    setHeaders: function (res, path, stat) {
+        res.header('Access-Control-Allow-Origin', '*');
+    }
+}));
+
 //将public配置提前
-app.use(express.static(path.join(__dirname, './public')));
 app.use(app.router);
 
 // development only
@@ -61,6 +66,21 @@ app.get('/qr', service.qr);
 app.get('/tags',service.tags);
 app.get('/imagebed',tool.imagebed);
 app.post('/imagebed/uploadImage',tool.getImages);
+
+
+// 请求并打印
+app.get('/request',tool.request);
+app.get('/getPIIP',tool.getPIIP);
+app.get('/img/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
+app.get('/img/:width([0-9]{1,})',tool.getImg);
+app.get('/img/:bg([0-9a-zA-Z]{3,})/:fc([0-9a-zA-Z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
+app.get('/img/:bg([0-9a-zA-Z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})',tool.getImg);
+
+
+//iconfonts的入口
+app.get('/iconfonts/*',_static.getIconFonts);
+
+app.get('/:projectName/icondownload',_static.iconDownload);
 
 
 //读取public下面的静态文件

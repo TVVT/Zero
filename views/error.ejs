@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/manager/stylesheets/error.css">
+    <title>Oops...</title>
+</head>
+<body>
+    <h3>Zero发生错误</h3>
+
+    <p class="title">错误原因：</p>
+
+    <p class="errorInfo"><%=errorInfo%></p>
+
+    <p class="tips">也许你需要在<span class="code">settings.json</span>中更改一下你的项目目录<br>Zero如果查找不到<span class="code">settings.json</span>中的<span class="code">projectsFolder</span>，那么我们会自动用<span class="code">'../Projects'</span>来代替<br></p>
+</body>
+</html>

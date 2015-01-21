@@ -30,7 +30,6 @@ footer{
     position: relative;
     cursor: pointer;
     overflow:hidden;
-    border-radius:5px;
     box-shadow:0 0 4px 1px #ccc;
 }
 
@@ -43,7 +42,6 @@ footer{
     left: 0;
     z-index:10;
     cursor: pointer;
-    border-radius:5px;
     background: rgba(0,0,0,0);
     transition:background 0.5s;
     text-align: center;
@@ -86,6 +84,7 @@ footer{
     padding:10px 0;
     opacity:0;
     text-align:center;
+    content:  attr(data-name);
 }
 
 .manager-page-list .iframe-wrapper .mod_tags .icon_add{

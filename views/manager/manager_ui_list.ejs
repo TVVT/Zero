@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Zero-<%=project%>-ui</title>
-    <link rel="stylesheet" href="/manager/fonts/yhd-icon/style.css">
-    <link rel="stylesheet" href="/manager/stylesheets/base.css">
-    <script src="/projects/public/scripts/lib/less/less-1.7.1.min.js"></script>
-    <script src="/manager/scripts/ejs.js"></script>
-    <link rel="stylesheet" href="/manager/stylesheets/manager_ui_list.css">
-    <script src="/manager/scripts/jquery/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="<%=link%>/manager/fonts/yhd-icon/style.css">
+    <link rel="stylesheet" href="<%=link%>/manager/stylesheets/base.css">
+    <script src="<%=link%>/projects/public/scripts/lib/less/less-1.7.1.min.js"></script>
+    <script src="<%=link%>/manager/scripts/ejs.js"></script>
+    <link rel="stylesheet" href="<%=link%>/manager/stylesheets/manager_ui_list.css">
+    <script src="<%=link%>/manager/scripts/jquery/jquery-2.1.1.min.js"></script>
     <script>
         var projectLess = [],lessStr,readyStatus=[],list = [],link,projectName;
         link = "<%=link%>";
@@ -44,15 +44,13 @@
 </head>
 <body>
     <header>
-        <a href="/"><h1>Zero</h1><sub>by TvvT</sub></a>
+        <a href="http://github.com/tvvt/"><h1>Zero</h1><sub>by TvvT</sub></a>
         <ul id="nav">
             <li><a href="http://192.168.112.94/tvvt/project" class="icon-github" target="_gitlab"><i>gitLab</i></a></li>
         </ul>
     </header>
-    <div class="manager-ui-list">
-        
-    </div>
+    <div class="manager-ui-list"></div>
     <footer>&copy; TvvT 2014.</footer>
-    <script src="/manager/scripts/manager_ui_list.js"></script>
+    <script src="<%=link%>/manager/scripts/manager_ui_list.js"></script>
 </body>
 </html>
