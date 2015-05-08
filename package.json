@@ -1,6 +1,6 @@
 {
   "name": "application-name",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "start": "node app.js"
@@ -9,7 +9,6 @@
     "express": "3.5.1",
     "ejs": "*",
     "ws":"*",
-    "mongodb":"*",
     "formidable":"*",
     "underscore":"*",
     "cookie-parser":"*",

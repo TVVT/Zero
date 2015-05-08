@@ -6,6 +6,7 @@ var pages = require('./routes/pages');
 var tool = require('./routes/tool');
 var projects = require('./routes/projects');
 var service = require('./routes/service');
+var svn = require('./routes/svn');
 var http = require('http');
 var path = require('path');
 var _static = require('./routes/static');
@@ -78,6 +79,8 @@ app.get('/img/:bg([0-9a-zA-Z]{3,})/:width([0-9]{1,})x:height([0-9]{1,})',tool.ge
 app.get('/img/:bg([0-9a-zA-Z]{3,})/:fc([0-9a-zA-Z]{3,})/:width([0-9]{1,})',tool.getImg);
 app.get('/img/:bg([0-9a-zA-Z]{3,})/:width([0-9]{1,})',tool.getImg);
 
+//svn 更新
+app.post('/svnup',svn.svnup);
 
 //iconfonts的入口
 app.get('/iconfonts/*',_static.getIconFonts);

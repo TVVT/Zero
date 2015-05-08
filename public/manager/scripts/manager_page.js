@@ -126,4 +126,15 @@ $(function() {
         $('.manager-page-show .tags li').removeClass('ac');
         $(this).addClass('ac');
     });
+
+    //更新svn
+    $('#svnup').on('click',function(){
+        $.ajax({
+            type: "POST",
+            url: 'http://' + host + ':3000/svnup',
+            success: function(data) {
+                    console.log(data);
+            }
+        })
+    })
 })
