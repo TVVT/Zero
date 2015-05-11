@@ -134,6 +134,9 @@ $(function() {
             url: 'http://' + host + ':3000/svnup',
             success: function(data) {
                     console.log(data);
+            },
+            error:function(data){
+                console.log(data.responseText);
             }
         })
     })
