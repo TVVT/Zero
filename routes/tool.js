@@ -90,7 +90,6 @@ exports.getImg = function (req, res) {
         res.cookie('isImgUse', 0, {maxAge: 600000});
     }
 
-
     var ip = '192.168.112.94';
     var url = req.url.replace('/img/', '/');
     var p = 'http://' + ip + ':9000' + url;
@@ -103,31 +102,33 @@ exports.getImg = function (req, res) {
             headers: req.headers,
             timeout:3000
         }).on('error', function (err) {
-            res.status('404');
-            res.send('');
+            res.end('333');
         }).pipe(res);
     } else {
-        var pie = tcpie(ip, 9000, {count: 2, interval: 10, timeout: 500});
-        pie.on('connect', function () {
-            res.cookie('isImgUse', 1, {maxAge: 600000});
-            request({
-                method: req.method,
-                url: p,
-                headers: req.headers,
-                timeout:3000
-            }).on('error', function (err) {
-                res.status('404');
-                res.send('');
-            }).pipe(res);
-        }).on('error', function () {
+        var pie = tcpie(ip, 9000, {count: 1, interval: 500, timeout: 1000});
+        pie.on('connect', function(data) {
+            try{
+                res.cookie('isImgUse', 1, {maxAge: 600000});
+                var temp = request({
+                    method: req.method,
+                    url: p,
+                    headers: req.headers,
+                    timeout:1000
+                });
+                temp.on('error', function (err) {
+                    console.log(err);
+                }).pipe(res);
+            }catch(e){
+                console.info('stack',e);
+            }
+        }).on('error', function(data, err) {
+            console.error(err, data);
             res.status('404');
             res.send('');
-        }).on('timeout',function(){
-            res.status('404');
-            res.send('');
+        }).on('timeout', function(data) {
+            console.info('timeout', data);
         }).start();
     }
-
 };
 
 
