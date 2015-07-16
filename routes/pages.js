@@ -145,15 +145,7 @@ exports.page = function(req, res) {
 }
 
 exports.pagePreview = function(req, res) {
-    var clientId = req.query.clientId;
-    //如果有clientId 那么连接webSocket
-    if (clientId) {
-        var userAgent = req.headers['user-agent'];
-        ws.send(clientId, 1, JSON.stringify({
-            'status': 'ready',
-            'user-agent': userAgent
-        }));
-    };
+
     var pageName = req.params.name,
         projectName = req.params.projectName,
         modules,
@@ -193,9 +185,7 @@ exports.pagePreview = function(req, res) {
                 console.error(e);
             }
 
-            if (clientId) {
-                content += "<script src=" + link + "/projects/public/scripts/manager_page_preview.js></script>"
-            };
+
 
             renderData.content = content;
 

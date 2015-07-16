@@ -47,7 +47,7 @@ if ('development' == app.get('env')) {
 app.get('/', projects.index);
 
 //用户提交的反馈信息
-app.post('/feedBack', pages.feedBack);
+//app.post('/feedBack', pages.feedBack);
 app.post('/changeCurPage', pages.changeCurPage);
 app.post('/checkWs', pages.checkWs);
 
