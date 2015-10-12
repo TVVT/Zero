@@ -51,7 +51,7 @@ exports.feedBack = function(req, res) {
         var data = fields;
         var feedBack = data.feedback ? data.feedback : '';
         if (data.isOK) {
-            var bugUrl = 'http://192.168.112.94:4000/zeroBugReceiver';
+            var bugUrl = 'http://tvvt.yhd.cn:4000/zeroBugReceiver';
             var bugData = {
                 bugdetail: feedBack,
                 browserinfo: data.clientInfo,

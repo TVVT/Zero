@@ -91,7 +91,7 @@ exports.getImg = function (req, res) {
     }
 
 
-    var ip = '192.168.112.94';
+    var ip = 'tvvt.yhd.cn';
     var url = req.url.replace('/img/', '/');
     var p = 'http://' + ip + ':9000' + url;
     req.headers['Host'] = req.headers.host;
