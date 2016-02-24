@@ -62,12 +62,20 @@ function render(project, html,pageData) {
             var defaultDataPath;
 
             if (options[0].indexOf('/') > -1) {
-                //走public下的ejs
+                // 如果是带文件夹路径
                 var rResult = options[0].match(mRegx);
                 var mProject = rResult[1];
                 var mModule = rResult[2];
-                defaultDataPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.json');
-                realPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
+                if(mProject == 'public'){
+                    //走public下的ejs
+                    defaultDataPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.json');
+                    realPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '/'+mModule+'.ejs');
+                }else{
+                    //走其他项目下的ejs
+                    defaultDataPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '.json');
+                    realPath = path.join(__dirname, projectsFolder + mProject + '/components/' + mModule + '.ejs');
+                }
+                
             } else {
                 defaultDataPath = path.join(__dirname, projectsFolder + project + '/components/' + options[0] + '.json');
                 realPath = path.join(__dirname, projectsFolder + project + '/components/' + options[0] + '.ejs');
